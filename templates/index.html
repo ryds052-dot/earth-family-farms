@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Earth Family Farms is a peaceful eco-farm stay in the hills of St. Ann, Jamaica."
+    />
+    <title>Earth Family Farms | Come home to nature</title>
+
+    <!--
+      Tailwind CSS lets us style the page with small, readable class names.
+      This CDN version is ideal for learning and prototyping.
+      Later, we can install Tailwind locally for a production website.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              earth: {
+                50: "#f6f8f1",
+                100: "#e8efdc",
+                500: "#68845b",
+                700: "#3f5a3d",
+                900: "#203226",
+              },
+              clay: "#c47b5a",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* A gentle scroll makes navigation links feel more natural. */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Keeps the hero image calm and readable behind the white text. */
+      .hero-overlay {
+        background:
+          linear-gradient(90deg, rgba(19, 39, 27, 0.82), rgba(19, 39, 27, 0.2)),
+          linear-gradient(0deg, rgba(19, 39, 27, 0.4), transparent 55%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-earth-50 font-sans text-earth-900 antialiased">
+    <!-- Navigation -->
+    <header class="absolute left-0 right-0 top-0 z-20">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8"
+        aria-label="Main navigation"
+      >
+        <a href="#" class="font-display text-2xl font-bold tracking-tight text-white">
+          Earth Family <span class="text-lime-200">Farms</span>
+        </a>
+
+        <!-- Desktop navigation links -->
+        <div class="hidden items-center gap-8 text-sm font-semibold text-white md:flex">
+          <a class="transition hover:text-lime-200" href="#story">Our story</a>
+          <a class="transition hover:text-lime-200" href="#experience">The experience</a>
+          <a class="transition hover:text-lime-200" href="#stays">Stay with us</a>
+          <a
+            class="rounded-full bg-white px-5 py-3 text-earth-900 transition hover:bg-lime-100"
+            href="#book"
+          >
+            Plan your stay
+          </a>
+        </div>
+
+        <!-- Simple mobile menu button. The small script at the bottom opens the links. -->
+        <button
+          id="menu-button"
+          class="rounded-lg p-2 text-white md:hidden"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile navigation links -->
+      <div id="mobile-menu" class="mx-4 hidden rounded-2xl bg-white p-5 shadow-xl md:hidden">
+        <div class="flex flex-col gap-4 text-sm font-semibold text-earth-900">
+          <a href="#story">Our story</a>
+          <a href="#experience">The experience</a>
+          <a href="#stays">Stay with us</a>
+          <a class="rounded-full bg-earth-700 px-5 py-3 text-center text-white" href="#book">
+            Plan your stay
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero: the first visual impression of the farm -->
+      <section
+        class="relative flex min-h-[720px] items-end overflow-hidden bg-earth-900"
+        style="background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=85'); background-position: center;"
+      >
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-40 lg:px-8 lg:pb-32">
+          <div class="max-w-2xl">
+            <p class="mb-6 text-sm font-bold uppercase tracking-[0.25em] text-lime-200">
+              St. Ann, Jamaica
+            </p>
+            <h1 class="font-display text-5xl leading-tight text-white sm:text-6xl lg:text-8xl">
+              Come home<br />
+              <span class="text-lime-200">to nature.</span>
+            </h1>
+            <p class="mt-7 max-w-xl text-lg leading-8 text-white/85">
+              A slow, soulful stay on a working Jamaican eco-farm. Wake with the birds,
+              eat what the land provides, and remember how good simple living feels.
+            </p>
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a
+                class="rounded-full bg-lime-200 px-7 py-4 text-center font-bold text-earth-900 transition hover:bg-white"
+                href="#book"
+              >
+                Find your way here
+              </a>
+              <a
+                class="rounded-full border border-white/60 px-7 py-4 text-center font-bold text-white transition hover:border-white hover:bg-white/10"
+                href="#story"
+              >
+                Discover the farm
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-7 right-6 hidden text-right text-xs uppercase tracking-[0.2em] text-white/70 md:block lg:right-8">
+          <span class="block">14 miles from Ocho Rios</span>
+          <span class="mt-2 block">Where the hills meet the sea</span>
+        </div>
+      </section>
+
+      <!-- Introductory story -->
+      <section id="story" class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-clay">A little more life</p>
+            <h2 class="mt-5 max-w-md font-display text-4xl leading-tight text-earth-900 sm:text-5xl">
+              Rooted in the land. Open to you.
+            </h2>
+          </div>
+          <div class="max-w-2xl text-lg leading-8 text-earth-700">
+            <p>
+              Earth Family Farms is a place to pause. Our family-run farm sits in the green
+              hills of St. Ann, where mornings are filled with golden light, fresh coffee,
+              and the sound of the breeze moving through the trees.
+            </p>
+            <p class="mt-5">
+              Come for a weekend, stay for a season of memories. We are building a gentler
+              way to travel—one that gives back to the earth and leaves room for wonder.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights / amenities -->
+      <section id="experience" class="bg-earth-900 px-6 py-24 text-white lg:px-8 lg:py-32">
+        <div class="mx-auto max-w-7xl">
+          <div class="max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-lime-200">The experience</p>
+            <h2 class="mt-5 font-display text-4xl leading-tight sm:text-5xl">
+              The best kind of busy is no busy at all.
+            </h2>
+          </div>
+
+          <div class="mt-16 grid gap-10 border-t border-white/20 pt-10 md:grid-cols-3">
+            <article>
+              <div class="text-4xl" aria-hidden="true">☀</div>
+              <h3 class="mt-6 font-display text-2xl">Farm to table</h3>
+              <p class="mt-3 leading-7 text-white/65">
+                Taste the island through fresh, seasonal meals made with ingredients grown
+                right here on the farm.
+              </p>
+            </article>
+            <article>
+              <div class="text-4xl" aria-hidden="true">⌁</div>
+              <h3 class="mt-6 font-display text-2xl">Wild swimming</h3>
+              <p class="mt-3 leading-7 text-white/65">
+                Follow the sound of the water to a cool hidden pool, or head to the coast
+                for an easy Caribbean afternoon.
+              </p>
+            </article>
+            <article>
+              <div class="text-4xl" aria-hidden="true">✦</div>
+              <h3 class="mt-6 font-display text-2xl">Room to breathe</h3>
+              <p class="mt-3 leading-7 text-white/65">
+                There is no itinerary here. Read beneath a mango tree, walk the trails, and
+                let the day unfold at its own pace.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accommodation cards -->
+      <section id="stays" class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-clay">Stay a while</p>
+            <h2 class="mt-5 font-display text-4xl text-earth-900 sm:text-5xl">Your place in the trees.</h2>
+          </div>
+          <p class="max-w-sm leading-7 text-earth-700">
+            Each stay is designed for comfort, quiet, and a closer connection to the natural world.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+          <article class="group overflow-hidden rounded-3xl bg-white shadow-sm">
+            <div class="h-80 overflow-hidden">
+              <img
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=85"
+                alt="Cozy wooden cabin surrounded by green trees"
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-display text-3xl">The Canopy Cabin</h3>
+                  <p class="mt-2 text-sm text-earth-700">2 guests · Queen bed · Private deck</p>
+                </div>
+                <span class="rounded-full bg-earth-100 px-3 py-1 text-sm font-bold text-earth-700">$145/night</span>
+              </div>
+              <a class="mt-7 inline-block font-bold text-earth-700 underline decoration-clay decoration-2 underline-offset-4" href="#book">
+                View the cabin
+              </a>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-3xl bg-white shadow-sm">
+            <div class="h-80 overflow-hidden">
+              <img
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1200&q=85"
+                alt="Small peaceful cabin in a lush natural setting"
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-display text-3xl">The Garden House</h3>
+                  <p class="mt-2 text-sm text-earth-700">4 guests · Two bedrooms · Outdoor shower</p>
+                </div>
+                <span class="rounded-full bg-earth-100 px-3 py-1 text-sm font-bold text-earth-700">$220/night</span>
+              </div>
+              <a class="mt-7 inline-block font-bold text-earth-700 underline decoration-clay decoration-2 underline-offset-4" href="#book">
+                View the house
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Booking form -->
+      <section id="book" class="px-6 pb-24 lg:px-8 lg:pb-32">
+        <div class="mx-auto grid max-w-7xl gap-12 overflow-hidden rounded-3xl bg-clay px-8 py-12 text-white sm:px-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-16 lg:py-20">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/75">Your next chapter</p>
+            <h2 class="mt-5 font-display text-4xl leading-tight sm:text-6xl">
+              Ready to make room for wonder?
+            </h2>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-white/85">
+              Choose your dates and let us know who is coming. We will save your request
+              and make sure your cabin is available.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white p-6 text-earth-900 shadow-xl sm:p-8">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="mb-6 space-y-3" aria-live="polite">
+                  {% for category, message in messages %}
+                    <p class="rounded-xl px-4 py-3 text-sm font-semibold {% if category == 'success' %}bg-earth-100 text-earth-700{% else %}bg-red-50 text-red-700{% endif %}">
+                      {{ message }}
+                    </p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('book') }}" method="post" class="space-y-5">
+              <div>
+                <label for="guest_name" class="text-sm font-bold">Your name</label>
+                <input id="guest_name" name="guest_name" type="text" required maxlength="100" autocomplete="name"
+                  class="mt-2 w-full rounded-xl border border-earth-100 px-4 py-3 outline-none transition focus:border-earth-500 focus:ring-2 focus:ring-earth-100"
+                  placeholder="e.g. Maya Campbell" />
+              </div>
+
+              <div>
+                <label for="email" class="text-sm font-bold">Email address</label>
+                <input id="email" name="email" type="email" required autocomplete="email"
+                  class="mt-2 w-full rounded-xl border border-earth-100 px-4 py-3 outline-none transition focus:border-earth-500 focus:ring-2 focus:ring-earth-100"
+                  placeholder="you@example.com" />
+              </div>
+
+              <div>
+                <label for="cabin_name" class="text-sm font-bold">Choose your stay</label>
+                <select id="cabin_name" name="cabin_name" required
+                  class="mt-2 w-full rounded-xl border border-earth-100 bg-white px-4 py-3 outline-none transition focus:border-earth-500 focus:ring-2 focus:ring-earth-100">
+                  <option value="" disabled selected>Select a cabin</option>
+                  {% for cabin in cabins %}
+                    <option value="{{ cabin }}">{{ cabin }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="check_in" class="text-sm font-bold">Check-in</label>
+                  <input id="check_in" name="check_in" type="date" required
+                    class="mt-2 w-full rounded-xl border border-earth-100 px-4 py-3 outline-none transition focus:border-earth-500 focus:ring-2 focus:ring-earth-100" />
+                </div>
+                <div>
+                  <label for="check_out" class="text-sm font-bold">Check-out</label>
+                  <input id="check_out" name="check_out" type="date" required
+                    class="mt-2 w-full rounded-xl border border-earth-100 px-4 py-3 outline-none transition focus:border-earth-500 focus:ring-2 focus:ring-earth-100" />
+                </div>
+              </div>
+
+              <button type="submit"
+                class="w-full rounded-full bg-earth-700 px-7 py-4 font-bold text-white transition hover:bg-earth-900">
+                Confirm booking
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-earth-100 px-6 py-10 lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-earth-700 sm:flex-row sm:items-center sm:justify-between">
+        <p class="font-display text-xl font-bold text-earth-900">Earth Family Farms</p>
+        <p>St. Ann, Jamaica · Come home to nature.</p>
+        <p>© 2026 Earth Family Farms</p>
+      </div>
+    </footer>
+
+    <script>
+      // Open and close the navigation links on small screens.
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        const menuIsOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuButton.setAttribute("aria-expanded", String(!menuIsOpen));
+      });
+
+      // Close the mobile menu after a visitor chooses a link.
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
+  </body>
+</html>
