@@ -1,3 +1,5 @@
+import resend
+
 """Earth Family Farms Flask application and booking system."""
 
 import re
@@ -137,7 +139,25 @@ def book():
                 datetime.now().isoformat(timespec="seconds"),
             ),
         )
-
+# Send email notification via Resend
+    try:
+        resend.api_key = "re_your_actual_api_key_here"  # Put your Resend API key here
+        params = {
+            "from": "onboarding@resend.dev",
+            "to": ["your-actual-email@yahoo.com"], # Put your real email here!
+            "subject": f"🌿 New Booking: {guest_name} ({cabin_name})",
+            "html": f"""
+                <h2>New reservation received for Earth Family Farms!</h2>
+                <p><strong>Guest Name:</strong> {guest_name}</p>
+                <p><strong>Email:</strong> {email}</p>
+                <p><strong>Accommodation:</strong> {cabin_name}</p>
+                <p><strong>Check-in:</strong> {check_in}</p>
+                <p><strong>Check-out:</strong> {check_out}</p>
+            """
+        }
+        resend.Emails.send(params)
+    except Exception as e:
+        print(f"Email failed to send: {e}")
     flash(
         f"Thanks, {guest_name}! Your request for {cabin_name} has been received.",
         "success",
