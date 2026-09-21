@@ -2,12 +2,14 @@ import resend
 
 """Earth Family Farms Flask application and booking system."""
 
+import os
 import re
 import sqlite3
 from contextlib import contextmanager
 from datetime import date, datetime
 from pathlib import Path
 
+import resend
 from flask import Flask, flash, redirect, render_template, request, url_for
 
 
@@ -57,6 +59,40 @@ def initialize_database():
 
 
 initialize_database()
+
+
+def send_booking_email(guest_name, email, cabin_name, check_in, check_out):
+    """Send a booking notification via Resend if the app is configured."""
+
+    api_key = os.getenv("RESEND_API_KEY")
+    booking_email = os.getenv("BOOKING_EMAIL", "ryds052@gmail.com")
+    from_email = os.getenv("RESEND_FROM_EMAIL", "onboarding@resend.dev")
+
+    if not api_key:
+        print("RESEND_API_KEY is not configured. Booking saved, but no email was sent.")
+        return False
+
+    try:
+        resend.api_key = api_key
+        resend.Emails.send(
+            {
+                "from": from_email,
+                "to": [booking_email],
+                "subject": f"🌿 New Booking: {guest_name} ({cabin_name})",
+                "html": f"""
+                    <h2>New reservation received for Earth Family Farms.</h2>
+                    <p><strong>Guest Name:</strong> {guest_name}</p>
+                    <p><strong>Email:</strong> {email}</p>
+                    <p><strong>Accommodation:</strong> {cabin_name}</p>
+                    <p><strong>Check-in:</strong> {check_in}</p>
+                    <p><strong>Check-out:</strong> {check_out}</p>
+                """,
+            }
+        )
+        return True
+    except Exception as exc:
+        print(f"Booking email failed to send: {exc}")
+        return False
 
 
 @app.route("/")
@@ -139,25 +175,8 @@ def book():
                 datetime.now().isoformat(timespec="seconds"),
             ),
         )
-# Send email notification via Resend
-    try:
-        resend.api_key = "re_your_actual_api_key_here"  # Put your Resend API key here
-        params = {
-            "from": "onboarding@resend.dev",
-            "to": ["your-actual-email@yahoo.com"], # Put your real email here!
-            "subject": f"🌿 New Booking: {guest_name} ({cabin_name})",
-            "html": f"""
-                <h2>New reservation received for Earth Family Farms!</h2>
-                <p><strong>Guest Name:</strong> {guest_name}</p>
-                <p><strong>Email:</strong> {email}</p>
-                <p><strong>Accommodation:</strong> {cabin_name}</p>
-                <p><strong>Check-in:</strong> {check_in}</p>
-                <p><strong>Check-out:</strong> {check_out}</p>
-            """
-        }
-        resend.Emails.send(params)
-    except Exception as e:
-        print(f"Email failed to send: {e}")
+    send_booking_email(guest_name, email, cabin_name, check_in_text, check_out_text)
+
     flash(
         f"Thanks, {guest_name}! Your request for {cabin_name} has been received.",
         "success",
