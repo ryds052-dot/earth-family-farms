@@ -17,9 +17,9 @@ app.config["SECRET_KEY"] = "change-this-development-key"
 # Store the database beside app.py so it is easy to find while learning.
 DATABASE_PATH = Path(__file__).with_name("farm.db")
 
-# These are the only cabins guests can select. The same list is used by the
-# form and by the server, so a visitor cannot submit an unknown cabin name.
-CABINS = ("The Canopy Cabin", "The Garden House")
+# These are the accommodation options guests can select. The same list is used
+# by the form and by the server, so a visitor cannot submit an unknown option.
+CABINS = ("Queen Cabin", "Campsite", "Dorm Bunks", "Dorm Tent")
 
 
 @contextmanager
