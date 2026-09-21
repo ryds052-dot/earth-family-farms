@@ -19,7 +19,7 @@ DATABASE_PATH = Path(__file__).with_name("farm.db")
 
 # These are the accommodation options guests can select. The same list is used
 # by the form and by the server, so a visitor cannot submit an unknown option.
-CABINS = ("Queen Cabin", "Campsite", "Dorm Bunks", "Dorm Tent")
+CABINS = ["Campsite", "Dorm Bunks", "Dorm Tent", "Queen Cabin"]
 
 
 @contextmanager
