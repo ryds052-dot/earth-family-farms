@@ -151,50 +151,75 @@
             </div>
         </section>
 
-        <section id="stays" class="py-20 px-4 sm:px-6 lg:px-8">
+       <!-- Stays Section ends around here -->
+        </section>
+
+        <!-- INSERT EARTH FAMILY ESTATES SECTION HERE -->
+        <section id="estates" class="bg-stone-900 text-white py-24 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-14">
-                    <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 mb-4">Stay options</p>
-                    <h2 class="display-font text-4xl md:text-5xl font-semibold text-stone-900">Choose your rhythm</h2>
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-block rounded-full bg-emerald-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4 border border-emerald-700/40">
+                        Earth Family Estates • Ocho Rios, St. Ann
+                    </span>
+                    <h2 class="display-font text-4xl md:text-6xl font-semibold mb-6">37 Prime Residential Acres for Sale</h2>
+                    <p class="text-stone-300 text-lg leading-relaxed">
+                        Tucked into 100 acres of lush rolling hills, perched upon a peaceful ridge, and overlooking the majestic White River Basin[cite: 3]. Live elevated. Rooted in nature. Designed for freedom[cite: 3].
+                    </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-                    <article class="bg-white border border-stone-200 rounded-[1.75rem] p-6 shadow-sm flex flex-col justify-between min-h-[260px]">
-                        <div>
-                            <h3 class="text-2xl font-semibold text-stone-900 mb-2">Campsite</h3>
-                            <p class="text-stone-600 leading-6 mb-5">Bring your own tent and linens for a simple, immersive escape under the stars.</p>
-                        </div>
-                        <div class="text-3xl font-bold text-emerald-700">$20<span class="text-sm font-medium text-stone-500"> / night</span></div>
-                    </article>
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- Drone Video Player -->
+                    <div class="relative rounded-[2rem] overflow-hidden soft-shadow bg-stone-800 border border-stone-700 aspect-video flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
 
-                    <article class="bg-white border border-stone-200 rounded-[1.75rem] p-6 shadow-sm flex flex-col justify-between min-h-[260px]">
-                        <div>
-                            <h3 class="text-2xl font-semibold text-stone-900 mb-2">Dorm Bunks</h3>
-                            <p class="text-stone-600 leading-6 mb-5">Shared accommodation with a social, eco-retreat feel and all the essentials included.</p>
+                    <!-- Investment Offer Box -->
+                    <div class="space-y-6">
+                        <div class="bg-stone-800/50 border border-stone-700/80 p-6 rounded-2xl">
+                            <h3 class="text-2xl font-bold text-emerald-300 mb-2">Pre-Construction Offer</h3>
+                            <p class="text-stone-300 text-sm leading-relaxed mb-4">We are releasing only 3 acres at an exclusive pre-development rate for serious buyers[cite: 3].</p>
+                            <div class="text-3xl font-extrabold text-white">$100,000 USD <span class="text-sm font-normal text-stone-400">per 1 acre</span>[cite: 3]</div>
                         </div>
-                        <div class="text-3xl font-bold text-emerald-700">$30<span class="text-sm font-medium text-stone-500"> / night</span></div>
-                    </article>
+                        <div class="space-y-4 text-stone-300 text-sm">
+                            <div class="flex items-start gap-3">
+                                <span class="text-emerald-400 font-bold">✓</span>
+                                <span><strong>Location:</strong> Bonham Spring, St. Ann (Formerly part of Bonham Spring, reg. at Vol. 1405 Fol. 836)[cite: 5].</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-emerald-400 font-bold">✓</span>
+                                <span><strong>Natural Features:</strong> Bordered by natural gullies, mature forest canopy, and trail access down to the river[cite: 5].</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-emerald-400 font-bold">✓</span>
+                                <span><strong>Investment Security:</strong> Subdivision approvals pending; sales contingent upon deposit, final approvals, and title issuance[cite: 3, 5].</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <article class="bg-white border border-stone-200 rounded-[1.75rem] p-6 shadow-sm flex flex-col justify-between min-h-[260px]">
-                        <div>
-                            <h3 class="text-2xl font-semibold text-stone-900 mb-2">Dorm Tent</h3>
-                            <p class="text-stone-600 leading-6 mb-5">An enclosed shared tent option with comfortable, simple accommodations for a group stay.</p>
+                <!-- Visual Layout & Flyer Preview -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Master Subdivision Layout</h3>
+                        <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
+                            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Subdivision Map" class="w-full h-auto object-cover">
                         </div>
-                        <div class="text-3xl font-bold text-emerald-700">$30<span class="text-sm font-medium text-stone-500"> / night</span></div>
-                    </article>
-
-                    <article class="bg-emerald-50 border-2 border-emerald-600 rounded-[1.75rem] p-6 shadow-sm flex flex-col justify-between min-h-[260px]">
-                        <div>
-                            <span class="inline-block rounded-full bg-emerald-700 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white mb-3">Most popular</span>
-                            <h3 class="text-2xl font-semibold text-stone-900 mb-2">Queen Cabin</h3>
-                            <p class="text-stone-600 leading-6 mb-5">Private cabin comfort with shared facilities, ideal for couples or a restful solo getaway.</p>
+                    </div>
+                    <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Investment Opportunity</h3>
+                        <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
+                            <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Estates Flyer" class="w-full h-auto object-cover">
                         </div>
-                        <div class="text-3xl font-bold text-emerald-700">$55<span class="text-sm font-medium text-stone-500"> / double</span></div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
+        <!-- END OF ESTATES SECTION -->
 
+        <!-- Book Section starts here -->
         <section id="book" class="py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
                 <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-center">
