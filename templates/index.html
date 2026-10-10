@@ -55,16 +55,20 @@
     <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" style="height: 38px; width: auto;">
 </a>
                 </a>
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/80">
+<<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             
-            <!-- Brand Logo -->
-            <a href="#top" class="flex items-center py-2">
-                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" class="h-12 w-auto object-contain">
+            <!-- Logo & Brand Name -->
+            <a href="#top" class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" class="h-12 w-auto object-contain rounded-md">
+                <div class="flex flex-col">
+                    <span class="text-base font-bold tracking-[0.16em] text-stone-900 uppercase">Earth Family</span>
+                    <span class="text-[10px] text-stone-500 uppercase tracking-[0.26em]">Farms</span>
+                </div>
             </a>
             
-            <!-- Navigation Links -->
+            <!-- Center Navigation Links -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">About</a>
                 <a href="#experiences" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Experiences</a>
@@ -72,7 +76,7 @@
                 <a href="#book" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Book</a>
             </div>
 
-            <!-- Action Button -->
+            <!-- Right Call-to-Action Button -->
             <div class="flex items-center">
                 <a href="#book" class="bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-sm">
                     Book now
@@ -82,11 +86,6 @@
         </div>
     </div>
 </nav>
-
-                <a href="#book" class="hidden sm:inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-700/20 transition hover:bg-emerald-800">Book now</a>
-            </div>
-        </div>
-    </nav>
 <header id="top" class="relative overflow-hidden bg-stone-900 text-white py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
         <span class="inline-block rounded-full bg-emerald-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-6 border border-emerald-700/40">
