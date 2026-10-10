@@ -55,13 +55,30 @@
     <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" style="height: 38px; width: auto;">
 </a>
                 </a>
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Centered or Clean Left Logo -->
+            <a href="#top" class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" style="height: 48px; width: auto; border-radius: 8px;">
+            </a>
+            
+            {/* Navigation Links */}
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">About</a>
+                <a href="#experiences" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Experiences</a>
+                <a href="#stays" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Stays</a>
+                <a href="#book" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Book</a>
+            </div>
 
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-700">
-                    <a href="#about" class="hover:text-emerald-700 transition">About</a>
-                    <a href="#experiences" class="hover:text-emerald-700 transition">Experiences</a>
-                    <a href="#stays" class="hover:text-emerald-700 transition">Stays</a>
-                    <a href="#book" class="hover:text-emerald-700 transition">Book</a>
-                </div>
+            <div class="flex items-center">
+                <a href="#book" class="bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-sm">
+                    Book now
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 
                 <a href="#book" class="hidden sm:inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-700/20 transition hover:bg-emerald-800">Book now</a>
             </div>
