@@ -51,15 +51,9 @@
     </style>
 </head>
 <body>
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="#top" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-lg shadow-sm">E</div>
-                    <div>
-                        <div class="text-base font-bold tracking-[0.16em] text-stone-900 uppercase">Earth Family</div>
-                        <div class="text-[10px] text-stone-500 uppercase tracking-[0.26em]">Farms</div>
-                    </div>
+  <a href="#top" class="flex items-center space-x-2">
+    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Earth Family Farms Logo" style="height: 38px; width: auto;">
+</a>
                 </a>
 
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-700">
