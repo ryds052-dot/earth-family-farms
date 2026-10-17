@@ -67,12 +67,11 @@
             </a>
             
             <!-- Center Navigation Links -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">About</a>
-                <a href="#experiences" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Experiences</a>
-                <a href="#stays" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Stays</a>
-                <a href="#estates" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Estates</a>
-                <a href="#book" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Book</a>
+<a href="javascript:void(0)" data-scroll="about" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">About</a>
+<a href="javascript:void(0)" data-scroll="experiences" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Experiences</a>
+<a href="javascript:void(0)" data-scroll="stays" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Stays</a>
+<a href="javascript:void(0)" data-scroll="estates" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Estates</a>
+<a href="javascript:void(0)" data-scroll="book" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Book</a>
             </div>
 
             <!-- Right Call-to-Action Button -->
@@ -483,4 +482,20 @@
 </footer>
 
 </body>
+<script>
+    document.querySelectorAll('[data-scroll]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-scroll');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 </html>
