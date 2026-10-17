@@ -128,10 +128,31 @@
                 </p>
             </div>
 
-            <div class="relative rounded-3xl overflow-hidden border border-amber-200/10 shadow-2xl">
-<img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1200&q=80" alt="Secluded cabin high in the rainforest canopy" class="w-full h-[480px] object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent"></div>
+           <!-- Interactive Sanctuary Viewer (Pasted where old img was) -->
+<div class="relative w-full h-[480px] lg:h-[580px] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border border-emerald-900/50 shadow-2xl lg:soft-shadow-heavy group">
+    
+    <!-- Large Active Viewer Area -->
+    <div id="sanctuary-active-viewer" class="absolute inset-0 z-0">
+        <!-- Default Active Image: Option B (Bamboo Treehouse) -->
+        <img src="https://images.unsplash.com/photo-1613063529329-a764d8969e0b?auto=format&fit=crop&w=1200&q=80" alt="Sustainable Bamboo Treehouse Canopy" class="w-full h-full object-cover sanctuary-main-image active-sanctuary">
+        <!-- Hidden Image C (Waterfall) -->
+        <img src="https://images.unsplash.com/photo-1548625368-68552685960b?auto=format&fit=crop&w=1200&q=80" alt="Secluded Waterfall River Pool" class="w-full h-full object-cover sanctuary-main-image hidden">
+        <!-- Hidden Image D (Shala) -->
+        <img src="https://images.unsplash.com/photo-1599901860904-17e6df70144c?auto=format&fit=crop&w=1200&q=80" alt="Sunrise Wellness Shala View" class="w-full h-full object-cover sanctuary-main-image hidden">
+    </div>
+    
+    <!-- Interaction Overlays (Buttons and Text) -->
+    <div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
+        <div class="flex items-center justify-between gap-4 p-4 rounded-xl glass-panel-heavy">
+            <div class="flex items-center gap-3">
+                <span id="sanctuary-index" class="text-xs font-semibold uppercase tracking-widest text-emerald-300">1 OF 3</span>
+                <span class="text-stone-300">IMAGE VIEWER</span>
             </div>
+            <div class="flex items-center gap-2">
+                <button class="p-2 rounded-full bg-emerald-700/60 hover:bg-emerald-600 transition" onclick="prevImage()">
+                    <span class="text-amber-100">←</span>
+                </button>
+                <button class="p-2 rounded-full
         </div>
     </section>
 
