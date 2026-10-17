@@ -51,6 +51,8 @@
     </style>
 </head>
 <body>
+
+<!-- NAVIGATION BAR -->
 <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -69,6 +71,7 @@
                 <a href="#about" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">About</a>
                 <a href="#experiences" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Experiences</a>
                 <a href="#stays" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Stays</a>
+                <a href="#estates" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Estates</a>
                 <a href="#book" class="text-stone-700 hover:text-emerald-800 font-medium transition-colors">Book</a>
             </div>
 
@@ -82,9 +85,11 @@
         </div>
     </div>
 </nav>
+
+<!-- HERO SECTION -->
 <header id="top" class="relative overflow-hidden bg-stone-900 text-white py-24 px-4">
-<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/25 via-transparent to-transparent pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/25 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
         <span class="inline-block rounded-full bg-emerald-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-6 border border-emerald-700/40">
             St. Ann, Jamaica • Private Eco-Sanctuary
         </span>
@@ -108,210 +113,369 @@
     </div>
 </header>
 
-    <main>
-        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-                <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 mb-4">About the farm</p>
-                    <h2 class="display-font text-4xl md:text-5xl font-semibold text-stone-900 mb-5">A slower rhythm, rooted in nature.</h2>
-                    <p class="text-base leading-8 text-stone-600 mb-5">
-                        Earth Family Farms offers a warm, grounded escape in the green hills of St. Ann. From farm-to-table meals and river adventures to soulful cultural experiences, each stay is shaped around rest, connection, and authentic Jamaican living.
-                    </p>
-                    <p class="text-base leading-8 text-stone-600">
-                        Whether you are joining us for a weekend reset or a longer wellness retreat, you will find a peaceful place to breathe, explore, and reconnect with both nature and yourself.
-                    </p>
-                </div>
-
-                <div class="relative soft-shadow rounded-[2rem] overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80" alt="Hands harvesting produce on a tropical farm" class="w-full h-[520px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-stone-900/10 to-transparent"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiences" class="bg-[#f0eee8] py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 mb-4">Experiences</p>
-                    <h2 class="display-font text-4xl md:text-5xl font-semibold text-stone-900">The Earth Family experience</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
-                        <div class="text-4xl mb-5">🌿</div>
-                        <h3 class="text-2xl font-semibold text-stone-900 mb-3">Herb & Nature Tours</h3>
-                        <p class="text-stone-600 leading-7 mb-5">Discover authentic Jamaican agricultural traditions and immersive guided experiences in the heart of the countryside.</p>
-                        <div class="text-lg font-bold text-stone-900">From $30 USD <span class="text-sm text-stone-500 font-medium">per person</span></div>
-                    </article>
-
-                    <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
-                        <div class="text-4xl mb-5">🌊</div>
-                        <h3 class="text-2xl font-semibold text-stone-900 mb-3">River Walks</h3>
-                        <p class="text-stone-600 leading-7 mb-5">Take a scenic trail down to crystal-clear river waters for refreshing swims, photography, and quiet restorative moments.</p>
-                        <div class="text-lg font-bold text-stone-900">From $20 USD <span class="text-sm text-stone-500 font-medium">per person</span></div>
-                    </article>
-
-                    <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
-                        <div class="text-4xl mb-5">🥥</div>
-                        <h3 class="text-2xl font-semibold text-stone-900 mb-3">Farm-to-Table Dining</h3>
-                        <p class="text-stone-600 leading-7 mb-5">Enjoy freshly harvested meals and juices prepared with care, honoring the richness of the land and local abundance.</p>
-                        <div class="text-lg font-bold text-emerald-700">Included in your stay</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-       <!-- Stays Section ends around here -->
-        </section>
-
-        <!-- INSERT EARTH FAMILY ESTATES SECTION HERE -->
-        <section id="estates" class="bg-stone-900 text-white py-24 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="inline-block rounded-full bg-emerald-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4 border border-emerald-700/40">
-                        Earth Family Estates • Ocho Rios, St. Ann
-                    </span>
-                    <h2 class="display-font text-4xl md:text-6xl font-semibold mb-6">37 Prime Residential Acres for Sale</h2>
-                    <p class="text-stone-300 text-lg leading-relaxed">
-                        Tucked into 100 acres of lush rolling hills, perched upon a peaceful ridge, and overlooking the majestic White River Basin. Live elevated. Rooted in nature. Designed for freedom.
-                    </p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <!-- Drone Video Player -->
-                    <div class="relative rounded-[2rem] overflow-hidden soft-shadow bg-stone-800 border border-stone-700 aspect-video flex items-center justify-center">
-                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                            <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-
-                    <!-- Investment Offer Box -->
-                    <div class="space-y-6">
-                        <div class="bg-stone-800/50 border border-stone-700/80 p-6 rounded-2xl">
-                            <h3 class="text-2xl font-bold text-emerald-300 mb-2">Pre-Construction Offer</h3>
-                            <p class="text-stone-300 text-sm leading-relaxed mb-4">We are releasing only 3 acres at an exclusive pre-development rate for serious buyers.</p>
-                            <div class="text-3xl font-extrabold text-white">$100,000 USD <span class="text-sm font-normal text-stone-400">per 1 acre</span></div>
-                        </div>
-                        <div class="space-y-4 text-stone-300 text-sm">
-                            <div class="flex items-start gap-3">
-                                <span class="text-emerald-400 font-bold">✓</span>
-                                <span><strong>Location:</strong> Bonham Spring, St. Ann (Formerly part of Bonham Spring].</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-emerald-400 font-bold">✓</span>
-                                <span><strong>Natural Features:</strong> Bordered by natural gullies, mature forest canopy, and trail access down to the river.</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-emerald-400 font-bold">✓</span>
-                                <span><strong>Investment Security:</strong> Subdivision approvals pending; sales contingent upon deposit, final approvals, and title issuance.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual Layout & Flyer Preview -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
-                        <h3 class="text-xl font-semibold mb-4 text-white">Master Subdivision Layout</h3>
-                        <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
-                            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Subdivision Map" class="w-full h-auto object-cover">
-                        </div>
-                    </div>
-                    <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
-                        <h3 class="text-xl font-semibold mb-4 text-white">Investment Opportunity</h3>
-                        <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
-                            <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Estates Flyer" class="w-full h-auto object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END OF ESTATES SECTION -->
-
-        <!-- Book Section starts here -->
-        <section id="book" class="py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-center">
-                    <div class="bg-stone-900 text-white rounded-[2rem] p-8 lg:p-10 soft-shadow">
-                        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4">Reserve</p>
-                        <h2 class="display-font text-4xl md:text-5xl font-semibold mb-4">Book your retreat</h2>
-                        <p class="text-stone-200 leading-7">
-                            Secure your stay in the hills of St. Ann and let us take care of the rest. Our team will help you choose the accommodation that suits your pace and plans.
-                        </p>
-                        <div class="mt-8 space-y-4 text-stone-200">
-                            <div class="flex items-center gap-3">
-                                <span class="text-emerald-300">•</span>
-                                <span>Farm-to-table meals included</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-emerald-300">•</span>
-                                <span>Nature guided experiences available</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-emerald-300">•</span>
-                                <span>Private and shared stay options</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-[2rem] border border-stone-200 soft-shadow">
-                        {% with messages = get_flashed_messages(with_categories=true) %}
-                            {% if messages %}
-                                {% for category, message in messages %}
-                                    <div class="mb-4 rounded-xl px-4 py-3 text-sm {{ 'bg-red-100 text-red-700' if category == 'error' else 'bg-emerald-100 text-emerald-700' }}">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
-
-                        <form action="/book" method="POST" class="space-y-5">
-                            <div>
-                                <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Your full name</label>
-                                <input type="text" name="guest_name" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Email address</label>
-                                <input type="email" name="email" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Accommodation</label>
-                                <select name="cabin_name" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
-                                    {% for cabin in cabins %}
-                                        <option value="{{ cabin }}">{{ cabin }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Check-in</label>
-                                    <input type="date" name="check_in" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Check-out</label>
-                                    <input type="date" name="check_out" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-700/20 transition hover:bg-emerald-800">Confirm booking</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-stone-900 text-stone-300 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<main>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
             <div>
-                <p class="text-xl font-semibold text-white">Earth Family Farms</p>
-                <p class="mt-2 text-sm text-stone-300">St. Ann, Jamaica</p>
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 mb-4">About the farm</p>
+                <h2 class="display-font text-4xl md:text-5xl font-semibold text-stone-900 mb-5">A slower rhythm, rooted in nature.</h2>
+                <p class="text-base leading-8 text-stone-600 mb-5">
+                    Earth Family Farms offers a warm, grounded escape in the green hills of St. Ann. From farm-to-table meals and river adventures to soulful cultural experiences, each stay is shaped around rest, connection, and authentic Jamaican living.
+                </p>
+                <p class="text-base leading-8 text-stone-600">
+                    Whether you are joining us for a weekend reset or a longer wellness retreat, you will find a peaceful place to breathe, explore, and reconnect with both nature and yourself.
+                </p>
             </div>
-            <div class="text-sm text-stone-300">
-                <p>Phone: 876-376-9526</p>
-                <p>Instagram: @EARTHFAMILYFARMS</p>
+
+            <div class="relative soft-shadow rounded-[2rem] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80" alt="Hands harvesting produce on a tropical farm" class="w-full h-[520px] object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-stone-900/10 to-transparent"></div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- EXPERIENCES HIGHLIGHTS SECTION -->
+    <section id="experiences" class="bg-[#f0eee8] py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700 mb-4">Experiences</p>
+                <h2 class="display-font text-4xl md:text-5xl font-semibold text-stone-900">The Earth Family experience</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
+                    <div class="text-4xl mb-5">🌿</div>
+                    <h3 class="text-2xl font-semibold text-stone-900 mb-3">Herb & Nature Tours</h3>
+                    <p class="text-stone-600 leading-7 mb-5">Discover authentic Jamaican agricultural traditions and immersive guided experiences in the heart of the countryside.</p>
+                    <div class="text-lg font-bold text-stone-900">From $30 USD <span class="text-sm text-stone-500 font-medium">per person</span></div>
+                </article>
+
+                <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
+                    <div class="text-4xl mb-5">🌊</div>
+                    <h3 class="text-2xl font-semibold text-stone-900 mb-3">River Walks</h3>
+                    <p class="text-stone-600 leading-7 mb-5">Take a scenic trail down to crystal-clear river waters for refreshing swims, photography, and quiet restorative moments.</p>
+                    <div class="text-lg font-bold text-stone-900">From $20 USD <span class="text-sm text-stone-500 font-medium">per person</span></div>
+                </article>
+
+                <article class="bg-white p-7 rounded-[1.75rem] shadow-sm border border-stone-200 hover:-translate-y-1 transition duration-200">
+                    <div class="text-4xl mb-5">🥥</div>
+                    <h3 class="text-2xl font-semibold text-stone-900 mb-3">Farm-to-Table Dining</h3>
+                    <p class="text-stone-600 leading-7 mb-5">Enjoy freshly harvested meals and juices prepared with care, honoring the richness of the land and local abundance.</p>
+                    <div class="text-lg font-bold text-emerald-700">Included in your stay</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOMMODATIONS & EXPERIENCES PRICING GRID SECTION -->
+    <section id="stays" class="bg-stone-900 text-stone-100 py-20 px-4 sm:px-6 lg:px-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="tracking-widest uppercase text-xs font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-4 py-1.5 rounded-full">
+                    Stay • Explore • Reconnect
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif text-white mt-4 mb-4">
+                    Accommodations & Experiences
+                </h2>
+                <p class="text-stone-400 max-w-2xl mx-auto text-base sm:text-lg">
+                    Immerse yourself in our private sanctuary in St. Ann. Choose your retreat space or join guided eco-tours.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. CAMPSITE -->
+                <div class="bg-stone-800/60 border border-stone-700/60 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Campsite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-emerald-400 text-xs px-3 py-1 rounded-full font-medium border border-stone-700">Stay</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Campsite</h3>
+                            <p class="text-stone-400 text-sm mb-4">Bring your own tent & linen and sleep under the mountain canopy.</p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$20.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">per night</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg transition-colors">Book Space</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DORM BUNKS -->
+                <div class="bg-stone-800/60 border border-stone-700/60 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" alt="Dorm Bunks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-emerald-400 text-xs px-3 py-1 rounded-full font-medium border border-stone-700">Stay</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Dorm Bunks</h3>
+                            <p class="text-stone-400 text-sm mb-4">Rustic bunk beds in a shared wooden cabin with shared facilities.</p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$30.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">per night</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg transition-colors">Book Bunk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DORM TENT -->
+                <div class="bg-stone-800/60 border border-stone-700/60 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&q=80" alt="Dorm Tent" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-emerald-400 text-xs px-3 py-1 rounded-full font-medium border border-stone-700">Stay</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Dorm Tent</h3>
+                            <p class="text-stone-400 text-sm mb-1">Enclosed spacious tent area with shared facilities.</p>
+                            <span class="text-xs text-emerald-400 mb-4 block">+ $10 per additional person</span>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$30.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">per night</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg transition-colors">Book Tent</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. QUEEN CABIN -->
+                <div class="bg-stone-800/60 border border-emerald-500/30 rounded-2xl overflow-hidden hover:border-emerald-500 transition-all duration-300 flex flex-col group relative shadow-xl shadow-emerald-950/20">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Queen Cabin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-md">Most Popular</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Queen Cabin</h3>
+                            <p class="text-stone-400 text-sm mb-1">Private cabin with queen bed & shared facilities (2 max standard).</p>
+                            <span class="text-xs text-emerald-400 mb-4 block">+ $10 per person (4 max capacity)</span>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$55.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">double occupancy</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg transition-colors">Reserve Cabin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. NATURE HIKE TO RIVER -->
+                <div class="bg-stone-800/60 border border-stone-700/60 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="River Hike" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-emerald-400 text-xs px-3 py-1 rounded-full font-medium border border-stone-700">Experience</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Nature Hike to River</h3>
+                            <p class="text-stone-400 text-sm mb-4">Guided trek through untouched forest trails leading to private natural river springs.</p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$20.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">per person</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-stone-700 hover:bg-stone-600 text-white px-4 py-2 rounded-lg transition-colors">Book Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. MARIJUANA TOUR -->
+                <div class="bg-stone-800/60 border border-stone-700/60 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80" alt="Farm Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-emerald-400 text-xs px-3 py-1 rounded-full font-medium border border-stone-700">Experience</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white mb-2">Marijuana Tour</h3>
+                            <p class="text-stone-400 text-sm mb-4">Educational herb garden walk through our organic farm cultivation (Includes complimentary spliff).</p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-700/50 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-white">$30.00 <span class="text-xs text-stone-400">USD</span></span>
+                                <span class="text-xs text-stone-400 block">per person</span>
+                            </div>
+                            <a href="#book" class="text-xs font-semibold bg-stone-700 hover:bg-stone-600 text-white px-4 py-2 rounded-lg transition-colors">Book Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm-to-Table Banner -->
+            <div class="mt-16 bg-gradient-to-r from-emerald-950 via-stone-800 to-emerald-950 border border-emerald-800/40 rounded-2xl p-8 text-center relative overflow-hidden">
+                <h3 class="text-2xl font-bold font-serif text-white mb-3">Farm-to-Table Experience</h3>
+                <p class="text-stone-300 text-sm max-w-3xl mx-auto mb-6">
+                    Hiking Trail • Nature Walk • Farm Tour • Private River Access • Natural Foods & Fresh Juices
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-emerald-400">
+                    <span>📞 876-376-9526</span>
+                    <span>📸 @EARTHFAMILYFARMS_</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EARTH FAMILY ESTATES SECTION -->
+    <section id="estates" class="bg-stone-900 text-white py-24 px-4 sm:px-6 lg:px-8 border-t border-stone-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block rounded-full bg-emerald-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4 border border-emerald-700/40">
+                    Earth Family Estates • Ocho Rios, St. Ann
+                </span>
+                <h2 class="display-font text-4xl md:text-6xl font-semibold mb-6">37 Prime Residential Acres for Sale</h2>
+                <p class="text-stone-300 text-lg leading-relaxed">
+                    Tucked into 100 acres of lush rolling hills, perched upon a peaceful ridge, and overlooking the majestic White River Basin. Live elevated. Rooted in nature. Designed for freedom.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Drone Video Player -->
+                <div class="relative rounded-[2rem] overflow-hidden soft-shadow bg-stone-800 border border-stone-700 aspect-video flex items-center justify-center">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                        <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Investment Offer Box -->
+                <div class="space-y-6">
+                    <div class="bg-stone-800/50 border border-stone-700/80 p-6 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-emerald-300 mb-2">Pre-Construction Offer</h3>
+                        <p class="text-stone-300 text-sm leading-relaxed mb-4">We are releasing only 3 acres at an exclusive pre-development rate for serious buyers.</p>
+                        <div class="text-3xl font-extrabold text-white">$100,000 USD <span class="text-sm font-normal text-stone-400">per 1 acre</span></div>
+                    </div>
+                    <div class="space-y-4 text-stone-300 text-sm">
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold">✓</span>
+                            <span><strong>Location:</strong> Bonham Spring, St. Ann (Formerly part of Bonham Spring).</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold">✓</span>
+                            <span><strong>Natural Features:</strong> Bordered by natural gullies, mature forest canopy, and trail access down to the river.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold">✓</span>
+                            <span><strong>Investment Security:</strong> Subdivision approvals pending; sales contingent upon deposit, final approvals, and title issuance.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Layout & Flyer Preview -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Master Subdivision Layout</h3>
+                    <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
+                        <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Subdivision Map" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="bg-stone-800/40 border border-stone-700 p-6 rounded-[2rem] text-center">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Investment Opportunity</h3>
+                    <div class="rounded-xl overflow-hidden border border-stone-700 mb-4">
+                        <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Estates Flyer" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOK SECTION -->
+    <section id="book" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-center">
+                <div class="bg-stone-900 text-white rounded-[2rem] p-8 lg:p-10 soft-shadow">
+                    <p class="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4">Reserve</p>
+                    <h2 class="display-font text-4xl md:text-5xl font-semibold mb-4">Book your retreat</h2>
+                    <p class="text-stone-200 leading-7">
+                        Secure your stay in the hills of St. Ann and let us take care of the rest. Our team will help you choose the accommodation that suits your pace and plans.
+                    </p>
+                    <div class="mt-8 space-y-4 text-stone-200">
+                        <div class="flex items-center gap-3">
+                            <span class="text-emerald-300">•</span>
+                            <span>Farm-to-table meals included</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-emerald-300">•</span>
+                            <span>Nature guided experiences available</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-emerald-300">•</span>
+                            <span>Private and shared stay options</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] border border-stone-200 soft-shadow">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="mb-4 rounded-xl px-4 py-3 text-sm {{ 'bg-red-100 text-red-700' if category == 'error' else 'bg-emerald-100 text-emerald-700' }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form action="/book" method="POST" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Your full name</label>
+                            <input type="text" name="guest_name" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Email address</label>
+                            <input type="email" name="email" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Accommodation</label>
+                            <select name="cabin_name" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+                                {% for cabin in cabins %}
+                                    <option value="{{ cabin }}">{{ cabin }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Check-in</label>
+                                <input type="date" name="check_in" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 mb-2">Check-out</label>
+                                <input type="date" name="check_out" required class="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-700/20 transition hover:bg-emerald-800">Confirm booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-stone-900 text-stone-300 py-12 px-4 sm:px-6 lg:px-8 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div>
+            <p class="text-xl font-semibold text-white">Earth Family Farms</p>
+            <p class="mt-2 text-sm text-stone-300">St. Ann, Jamaica</p>
+        </div>
+        <div class="text-sm text-stone-300">
+            <p>Phone: 876-376-9526</p>
+            <p>Instagram: @EARTHFAMILYFARMS_</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
