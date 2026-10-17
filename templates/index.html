@@ -13,12 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --forest-deep: #0e1e15;
-            --sand-light: #f7f4ee;
-            --gold-accent: #d4af37;
-        }
-
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0d1a12;
@@ -29,14 +23,13 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Subtle background texture effect */
         .hero-bg {
-            background: linear-gradient(180deg, rgba(13, 26, 18, 0.72) 0%, rgba(13, 26, 18, 0.92) 100%), 
+            background: linear-gradient(180deg, rgba(13, 26, 18, 0.75) 0%, rgba(13, 26, 18, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1511497584788-876761c11969?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
         }
 
         .glass-nav {
-            background: rgba(13, 26, 18, 0.75);
+            background: rgba(13, 26, 18, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
@@ -87,58 +80,51 @@
             St. Ann, Jamaica • Private Eco-Sanctuary
         </span>
         
-      <!-- ABOUT SECTION -->
-<section id="about" class="py-28 px-6 bg-stone-900 border-t border-stone-800">
-    <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
-        <!-- Left Text Content -->
-        <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 mb-4">The Earth Family Philosophy</p>
-            <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-amber-50 mb-6 leading-tight">Grounded in the hills. <br>Nurtured by the land.</h2>
-            <p class="text-stone-300 leading-relaxed mb-6 font-light">
-                Located in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers a quiet escape from conventional resort tourism. Our sanctuary blends sustainable agro-tourism with serene retreat spaces.
-            </p>
-            <p class="text-stone-300 leading-relaxed font-light">
-                Whether you arrive seeking creative solitude, pure river waters, or nourishing farm-to-table cuisine, you will experience an authentic rhythm anchored in nature.
-            </p>
-        </div>
+        <!-- Headline Copy -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-amber-50 mb-8 font-serif leading-[1.15]">
+            Unspoiled Nature. <br><span class="italic font-normal text-amber-200/90">Deep Stillness.</span>
+        </h1>
+        
+        <!-- Subheadline Copywriting -->
+        <p class="text-lg sm:text-xl text-emerald-200/90 italic mb-6 max-w-2xl mx-auto font-serif">
+            A sanctuary perched above the coastal noise—crafted for intentional rest, creative focus, and authentic Jamaican earth living.
+        </p>
 
-        <!-- Right Image Container -->
-        <div class="relative rounded-3xl overflow-hidden border border-amber-200/10 shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1200&q=80" alt="Lush eco treehouse in the tropical canopy" class="w-full h-[480px] object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+        <p class="max-w-2xl mx-auto text-stone-300 text-sm sm:text-base leading-relaxed mb-10 font-light">
+            Reconnect with mountain river springs, organic farm harvests, and tranquil canopy cabins. Direct reservations with no intermediaries.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="javascript:void(0)" data-scroll="stays" class="w-full sm:w-auto bg-amber-200 hover:bg-amber-100 text-stone-950 font-semibold px-8 py-4 rounded-full transition shadow-xl text-xs uppercase tracking-widest">
+                Explore Accommodations
+            </a>
+            <a href="javascript:void(0)" data-scroll="experiences" class="w-full sm:w-auto bg-stone-900/80 hover:bg-stone-800 text-amber-100 font-medium px-8 py-4 rounded-full transition backdrop-blur-md border border-amber-200/20 text-xs uppercase tracking-widest">
+                View Experiences
+            </a>
         </div>
     </div>
-</section>
+</header>
+
+<main>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-28 px-6 bg-stone-900 border-t border-stone-800">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 mb-4">The Earth Family Philosophy</p>
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-amber-50 mb-6 leading-tight">Grounded in the hills. <br>Nurtured by the land.</h2>
+                <p class="text-stone-300 leading-relaxed mb-6 font-light">
+                    Located in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers a quiet escape from conventional resort tourism. Our sanctuary blends sustainable agro-tourism with serene retreat spaces.
+                </p>
                 <p class="text-stone-300 leading-relaxed font-light">
                     Whether you arrive seeking creative solitude, pure river waters, or nourishing farm-to-table cuisine, you will experience an authentic rhythm anchored in nature.
                 </p>
             </div>
 
-           <!-- Interactive Sanctuary Viewer (Pasted where old img was) -->
-<div class="relative w-full h-[480px] lg:h-[580px] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border border-emerald-900/50 shadow-2xl lg:soft-shadow-heavy group">
-    
-    <!-- Large Active Viewer Area -->
-    <div id="sanctuary-active-viewer" class="absolute inset-0 z-0">
-        <!-- Default Active Image: Option B (Bamboo Treehouse) -->
-        <img src="https://images.unsplash.com/photo-1613063529329-a764d8969e0b?auto=format&fit=crop&w=1200&q=80" alt="Sustainable Bamboo Treehouse Canopy" class="w-full h-full object-cover sanctuary-main-image active-sanctuary">
-        <!-- Hidden Image C (Waterfall) -->
-        <img src="https://images.unsplash.com/photo-1548625368-68552685960b?auto=format&fit=crop&w=1200&q=80" alt="Secluded Waterfall River Pool" class="w-full h-full object-cover sanctuary-main-image hidden">
-        <!-- Hidden Image D (Shala) -->
-        <img src="https://images.unsplash.com/photo-1599901860904-17e6df70144c?auto=format&fit=crop&w=1200&q=80" alt="Sunrise Wellness Shala View" class="w-full h-full object-cover sanctuary-main-image hidden">
-    </div>
-    
-    <!-- Interaction Overlays (Buttons and Text) -->
-    <div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
-        <div class="flex items-center justify-between gap-4 p-4 rounded-xl glass-panel-heavy">
-            <div class="flex items-center gap-3">
-                <span id="sanctuary-index" class="text-xs font-semibold uppercase tracking-widest text-emerald-300">1 OF 3</span>
-                <span class="text-stone-300">IMAGE VIEWER</span>
+            <div class="relative rounded-3xl overflow-hidden border border-amber-200/10 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1200&q=80" alt="Lush eco treehouse in the tropical canopy" class="w-full h-[480px] object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
             </div>
-            <div class="flex items-center gap-2">
-                <button class="p-2 rounded-full bg-emerald-700/60 hover:bg-emerald-600 transition" onclick="prevImage()">
-                    <span class="text-amber-100">←</span>
-                </button>
-                <button class="p-2 rounded-full
         </div>
     </section>
 
@@ -248,7 +234,7 @@
                 </div>
 
                 <!-- 5. NATURE HIKE -->
-                <div class="bg-stone-900/80 border border-stone-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                <div id="experiences" class="bg-stone-900/80 border border-stone-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
                     <div class="h-56 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="River Hike" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-emerald-300 text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-stone-700">Experience</span>
@@ -268,7 +254,7 @@
                     </div>
                 </div>
 
-                <!-- 6. MARIJUANA TOUR -->
+                <!-- 6. HERB TOUR -->
                 <div class="bg-stone-900/80 border border-stone-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
                     <div class="h-56 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80" alt="Botanical Farm Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
