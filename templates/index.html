@@ -108,25 +108,45 @@
 
 <main>
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-28 px-6 bg-stone-900 border-t border-stone-800">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+<section id="about" class="py-20 bg-stone-900 text-stone-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
             <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 mb-4">The Earth Family Philosophy</p>
-                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-amber-50 mb-6 leading-tight">Grounded in the hills. <br>Nurtured by the land.</h2>
-                <p class="text-stone-300 leading-relaxed mb-6 font-light">
-                    Located in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers a quiet escape from conventional resort tourism. Our sanctuary blends sustainable agro-tourism with serene retreat spaces.
+                <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">The Earth Family Philosophy</span>
+                <h2 class="text-3xl sm:text-4xl font-serif mt-3 mb-6 text-white leading-tight">
+                    Grounded in the hills.<br>Nurtured by the land.
+                </h2>
+                <p class="text-stone-300 text-lg mb-4 leading-relaxed">
+                    Set across a breathtaking <strong class="text-white">100-acre private eco-sanctuary</strong> in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers an exclusive escape from conventional resort tourism.
                 </p>
-                <p class="text-stone-300 leading-relaxed font-light">
-                    Whether you arrive seeking creative solitude, pure river waters, or nourishing farm-to-table cuisine, you will experience an authentic rhythm anchored in nature.
+                <p class="text-stone-300 text-lg mb-6 leading-relaxed">
+                    We are currently releasing <strong class="text-emerald-400">37 prime residential acres</strong> for direct purchase—providing a rare opportunity to own a piece of unspoiled Jamaican highland, surrounded by river springs, forest trails, and complete autonomy.
                 </p>
+                <div class="flex items-center space-x-6 text-sm text-stone-400 border-t border-stone-800 pt-6">
+                    <div>
+                        <span class="block text-2xl font-bold text-white">100</span>
+                        <span>Total Sanctuary Acres</span>
+                    </div>
+                    <div class="h-8 w-px bg-stone-800"></div>
+                    <div>
+                        <span class="block text-2xl font-bold text-emerald-400">37</span>
+                        <span>Prime Residential Acres Offered</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="relative rounded-3xl overflow-hidden border border-amber-200/10 shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1200&q=80" alt="Lush eco treehouse in the tropical canopy" class="w-full h-[480px] object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+            <!-- Drone Video / Property Media -->
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-stone-800">
+                <video autoplay loop muted playsinline class="w-full h-[480px] object-cover">
+                    <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+                </video>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ACCOMMODATIONS & EXPERIENCES SECTION -->
     <section id="stays" class="bg-[#09120c] text-stone-100 py-28 px-6 border-t border-stone-800/80">
