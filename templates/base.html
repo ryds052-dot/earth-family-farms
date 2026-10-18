@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Earth Family Farms | Ocho Rios Eco-Sanctuary{% endblock %}</title>
+    <title>{% block title %}Earth Family Farms | Ocho Rios Eco-Sanctuary & Estates{% endblock %}</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,16 +35,15 @@
 </head>
 <body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white antialiased">
 
-    <!-- Header Navigation -->
+    <!-- Global Navigation Header -->
     <header class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-xl border-b border-stone-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             
-            <!-- Top Left Logo Container -->
+            <!-- Logo & Brand Header -->
             <a href="/" class="flex items-center space-x-3 group">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" 
-                     alt="Earth Family Farms" 
-                     onerror="this.style.display='none'"
-                     class="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="/static/images/logo.png" 
+                     alt="Earth Family Farms Logo" 
+                     class="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105">
                 <div>
                     <span class="block text-base md:text-lg font-serif font-bold tracking-wide text-white group-hover:text-emerald-400 transition-colors">EARTH FAMILY</span>
                     <span class="block text-[10px] tracking-widest text-emerald-500 uppercase font-semibold">Sanctuary & Farms</span>
@@ -67,7 +66,7 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
+            <!-- Mobile Drawer Button -->
             <button id="mobileMenuBtn" class="md:hidden text-stone-300 hover:text-white p-2.5 rounded-xl bg-stone-900 border border-stone-800 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -90,7 +89,6 @@
         </div>
     </header>
 
-    <!-- Page Content Slot -->
     <main class="flex-grow">
         {% block content %}{% endblock %}
     </main>
@@ -98,18 +96,23 @@
     <!-- Global Footer -->
     <footer class="bg-stone-950 border-t border-stone-800/80 py-16 text-stone-400 text-xs">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-            <div>
-                <span class="font-serif font-bold text-white text-base block tracking-wide">EARTH FAMILY FARMS</span>
-                <p class="text-stone-400 text-xs mt-0.5">100-Acre Eco-Sanctuary • Ocho Rios, St. Ann, Jamaica</p>
+            
+            <div class="flex items-center space-x-3">
+                <img src="/static/images/logo.png" alt="Earth Family Farms Logo" class="h-10 w-10 object-contain">
+                <div>
+                    <span class="font-serif font-bold text-white text-base block tracking-wide">EARTH FAMILY FARMS</span>
+                    <p class="text-stone-400 text-xs mt-0.5">100-Acre Eco-Sanctuary • Ocho Rios, St. Ann, Jamaica</p>
+                </div>
             </div>
 
             <div class="text-left md:text-center space-y-1 bg-stone-900/50 p-4 rounded-2xl border border-stone-800/80">
-                <p class="text-stone-300">Call / WhatsApp: <strong class="text-emerald-400">876-376-9526</strong></p>
-                <p class="text-stone-300">Instagram: <strong class="text-emerald-400">@EARTHFAMILYFARMS_</strong></p>
+                <p class="text-stone-300">Call / WhatsApp: <a href="https://wa.me/18763769526" target="_blank" class="text-emerald-400 font-bold hover:underline">876-376-9526</a></p>
+                <p class="text-stone-300">Instagram: <a href="https://instagram.com/earthfamilyfarms_" target="_blank" class="text-emerald-400 font-bold hover:underline">@EARTHFAMILYFARMS_</a></p>
             </div>
 
             <div class="text-left md:text-right text-stone-400 space-y-1">
                 <p>&copy; 2026 Earth Family Farms. All Rights Reserved.</p>
+                <p class="text-[10px] text-stone-500">Unplug • Reclaim • Own The Earth</p>
             </div>
         </div>
     </footer>
