@@ -20,48 +20,58 @@ def experiences():
 
 @app.route('/stays')
 def stays():
-    # Structured accommodation options passed directly to the template
+    # Exact offerings from Earth Family Farms flyer
     accommodations = [
         {
-            "name": "Eco-Hostel Bunks",
-            "price": "$25 USD",
-            "period": "night",
+            "name": "Campsite",
+            "price": "$20.00 USD",
+            "period": "per night",
+            "type": "Bring Your Own Tent",
+            "description": "Bring your own tent & linen to set up on designated terraced grounds surrounded by nature.",
+            "features": [
+                "Terraced campsite access",
+                "Shared outdoor facilities",
+                "Pure mineral river spring access",
+                "Scenic natural surroundings"
+            ]
+        },
+        {
+            "name": "Dorm Bunks",
+            "price": "$30.00 USD",
+            "period": "per night",
             "type": "Shared Lodge",
-            "description": "Open-air, thoughtfully crafted shared dorm bunks designed for digital nomads, solo travelers, and nature seekers in the Ocho Rios highlands.",
+            "description": "Handcrafted wooden bunk beds inside comfortable shared lodging with natural ventilation.",
             "features": [
-                "Solar-heated rainwater showers",
-                "Panoramic morning ridge views",
-                "Secure locker storage",
-                "Natural cross-breeze ventilation",
-                "Direct access to river springs"
+                "Bunk beds with comfortable bedding",
+                "Shared eco-facilities & showers",
+                "Panoramic ridge & rainforest views",
+                "Tranquil atmosphere for solo travelers"
             ]
         },
         {
-            "name": "Private Eco-Camping",
-            "price": "$10 USD",
-            "period": "night",
-            "type": "Terraced Pitch",
-            "description": "Pitch your tent under the rainforest canopy on designated terraced clearings surrounded by native flora and pristine wilderness.",
+            "name": "Dorm Tent",
+            "price": "$30.00 USD",
+            "period": "per night",
+            "type": "Enclosed Setup",
+            "description": "Enclosed, pre-setup tent area with shared facilities. Additional guests at $10 per person.",
             "features": [
-                "Access to pure mineral spring water",
-                "Communal fire pits & outdoor sinks",
-                "Composting & eco-toilet facilities",
-                "Full night-sky canopy views",
-                "Complimentary river trail access"
+                "Pre-pitched enclosed dome tent",
+                "Shared eco-facilities",
+                "Additional $10 USD/person (flexible group setup)",
+                "Full outdoor immersion"
             ]
         },
         {
-            "name": "Luxury Ridge Suites",
-            "price": "Inquire",
-            "period": "custom stay",
-            "type": "Private Sanctuary",
-            "description": "Private, high-end off-grid cabins perched along the ridge, constructed with sustainably sourced local timber and floor-to-ceiling wilderness glass.",
+            "name": "Queen Cabin",
+            "price": "$55.00 USD",
+            "period": "per night (double occupancy)",
+            "type": "Private Cabin",
+            "description": "Private, rustic wooden cabin with a plush queen bed. Additional $10 per person (up to 4 max).",
             "features": [
-                "Private balcony & lounge area",
-                "Solar-powered luxury amenities",
-                "Daily organic farm breakfast included",
-                "Private plunge pool access",
-                "Highland solitude & sunset ocean views"
+                "Private wooden cabin retreat",
+                "Shared facilities (2 guests included)",
+                "Expandable up to 4 guests max",
+                "Private balcony overlooking the sanctuary"
             ]
         }
     ]
@@ -75,12 +85,11 @@ def handle_inquiry():
     stay_type = data.get('stay_type', 'General Stay')
     message = data.get('message', '')
     
-    # Process inquiry (e.g. log, store, or email)
     print(f"[INQUIRY RECEIVED] Name: {name} | Email: {email} | Type: {stay_type} | Message: {message}")
     
     return jsonify({
         "status": "success",
-        "message": f"Thank you {name}, your reservation inquiry for {stay_type} has been received! Our team will reach out shortly."
+        "message": f"Thank you {name}, your inquiry for {stay_type} has been received! We will reach out shortly."
     })
 
 if __name__ == '__main__':
