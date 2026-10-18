@@ -1,47 +1,55 @@
-{% extends 'base.html' %}
-
-{% block title %}Experiences | Earth Family Sanctuary & Farms{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-<section class="py-20 px-4 max-w-7xl mx-auto">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Sanctuary Offerings</span>
-        <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">Curated Eco-Experiences</h1>
-        <p class="text-stone-300 text-lg leading-relaxed">
-            Immerse yourself in authentic Jamaican highland living—from pure river trail hikes to organic farm-to-table culinary sessions.
-        </p>
-    </div>
+<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Farm-To-Table & Nature</span>
+            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3">Sanctuary Tours</h1>
+            <p class="text-stone-400 mt-4 text-base leading-relaxed">
+                Connect directly with nature through our guided river hikes, organic farm walks, and fresh culinary harvests.
+            </p>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
-            <div>
-                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">01 • Wellness</span>
-                <h2 class="text-2xl font-serif text-white mt-2 mb-4">River Spring Springs & Trails</h2>
-                <p class="text-stone-400 text-sm leading-relaxed">
-                    Guided walks through untouched forest gullies, leading down to natural freshwater spring pools located within the 100-acre sanctuary.
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Tour 1 -->
+            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-600 transition-colors">
+                <div>
+                    <span class="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Guided Hike</span>
+                    <h2 class="text-2xl font-serif text-white mt-4">Nature Hike to River</h2>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-stone-100">$20.00 USD</span>
+                        <span class="text-stone-400 text-xs"> / per person</span>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed mt-2">
+                        Trek through untouched highland greenery down to our private spring river. Enjoy fresh mineral water swims and guided ecological history.
+                    </p>
+                </div>
+                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-xs">
+                    Book Hike Tour
+                </a>
+            </div>
+
+            <!-- Tour 2 -->
+            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-600 transition-colors">
+                <div>
+                    <span class="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Farm Tour</span>
+                    <h2 class="text-2xl font-serif text-white mt-4">Marijuana Farm Tour</h2>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-stone-100">$30.00 USD</span>
+                        <span class="text-stone-400 text-xs"> / per person</span>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed mt-2">
+                        Guided walk through our organic herb cultivations and farm grounds. Includes a complimentary spliff and insight into sustainable farming.
+                    </p>
+                </div>
+                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-xs">
+                    Book Farm Tour
+                </a>
             </div>
         </div>
 
-        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
-            <div>
-                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">02 • Agriculture</span>
-                <h2 class="text-2xl font-serif text-white mt-2 mb-4">Organic Harvest Tours</h2>
-                <p class="text-stone-400 text-sm leading-relaxed">
-                    Explore our sustainable agro-forestry plots, learning direct cultivation methods for local organic herbs, produce, and fruit trees.
-                </p>
-            </div>
-        </div>
-
-        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
-            <div>
-                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">03 • Retreat</span>
-                <h2 class="text-2xl font-serif text-white mt-2 mb-4">Private Highland Solitude</h2>
-                <p class="text-stone-400 text-sm leading-relaxed">
-                    Secluded ridge pavilions designed for sound therapy, creative writing, and uninterrupted stillness overlooking the White River Basin.
-                </p>
-            </div>
-        </div>
     </div>
 </section>
 {% endblock %}

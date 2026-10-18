@@ -1,57 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estates | Earth Family Sanctuary & Farms</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-stone-900 text-stone-100 font-sans antialiased">
+{% extends "base.html" %}
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover">
-                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase">Earth Family Farms</span>
-                </a>
-                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
-                    <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ABOUT</a>
-                    <a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">EXPERIENCES</a>
-                    <a href="{{ url_for('stays') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">STAYS</a>
-                    <a href="{{ url_for('estates') }}" class="text-emerald-400 font-bold transition-colors">ESTATES</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Estates Hero Section -->
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Earth Family Estates • Ocho Rios</span>
-            <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">37 Prime Residential Acres</h1>
-            <p class="text-stone-300 text-lg">
-                Perched upon a secluded ridge overlooking the White River Basin within our 100-acre private sanctuary. Designed for private estate ownership rooted in natural beauty.
+{% block content %}
+<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Real Estate & Development</span>
+            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3">Sanctuary Estates</h1>
+            <p class="text-stone-400 mt-4 text-base leading-relaxed">
+                37 prime acres allocated for eco-estate residential development within our private 100-acre sanctuary in Ocho Rios, Jamaica.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="overflow-hidden rounded-3xl border border-stone-800 shadow-2xl">
-                <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Subdivision Map" class="w-full h-auto object-cover">
-            </div>
-            <div class="bg-stone-950 p-8 rounded-3xl border border-stone-800">
-                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Pre-Construction Allocation</span>
-                <h2 class="text-3xl font-bold text-white mt-2 mb-4">$100,000 USD <span class="text-base font-normal text-stone-400">per acre</span></h2>
-                <ul class="space-y-3 text-stone-300 text-sm mb-8">
-                    <li class="flex items-center"><span class="text-emerald-400 mr-2">✓</span> Location: Bonham Spring, St. Ann</li>
-                    <li class="flex items-center"><span class="text-emerald-400 mr-2">✓</span> 100-acre total private eco-sanctuary setting</li>
-                    <li class="flex items-center"><span class="text-emerald-400 mr-2">✓</span> Bordered by natural forest gullies with private river trail access</li>
-                </ul>
-                <a href="#contact" class="block w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors">Inquire About Land Purchase</a>
+        <div class="bg-stone-900 border border-stone-800 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="text-xs uppercase font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Freehold Acreage</span>
+                    <h2 class="text-3xl font-serif text-white mt-4">Estate Lots</h2>
+                    <div class="my-4">
+                        <span class="text-4xl font-bold text-white">$100,000 USD</span>
+                        <span class="text-stone-400 text-sm"> / per acre</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-stone-300 mb-6">
+                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Elevated ocean & highland views</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Private natural spring river access</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Sustainable off-grid potential</li>
+                    </ul>
+                </div>
+
+                <div class="bg-stone-950 p-6 rounded-2xl border border-stone-800">
+                    <h3 class="text-xl font-serif text-white mb-2">Inquire About Land</h3>
+                    <p class="text-stone-400 text-xs mb-4">Direct consultations with estate management:</p>
+                    <div class="space-y-3 text-xs">
+                        <p class="text-stone-300"><strong>Call/WhatsApp:</strong> 876-376-9526</p>
+                        <p class="text-stone-300"><strong>Instagram:</strong> @EARTHFAMILYFARMS_</p>
+                    </div>
+                    <a href="https://wa.me/18763769526" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl mt-6 text-xs transition-colors">
+                        Contact via WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
 
-</body>
-</html>
+    </div>
+</section>
+{% endblock %}
