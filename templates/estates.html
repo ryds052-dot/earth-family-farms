@@ -99,38 +99,38 @@
             <p class="text-stone-400 text-xs mt-2">Direct submissions route immediately to our management team.</p>
         </div>
 
-        <form action="/stays" method="POST" class="space-y-6">
-            <input type="hidden" name="stay_type" value="37-Acre Land Estate Inquiry ($100k/acre)">
+       <form action="/stays" method="POST" class="space-y-6">
+    <input type="hidden" name="stay_type" value="37-Acre Land Estate Inquiry ($100k/acre)">
 
-            <div>
-                <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Full Name</label>
-                <input type="text" name="name" placeholder="Ryder Lee" required 
-                       class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-            </div>
+    <div>
+        <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Full Name</label>
+        <input type="text" name="name" placeholder="e.g., John Brown" required 
+               class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Email Address</label>
-                    <input type="email" name="email" placeholder="ryds052@gmail.com" required 
-                           class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">WhatsApp / Phone</label>
-                    <input type="tel" name="phone" placeholder="876-376-9526" required 
-                           class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Email Address</label>
+            <input type="email" name="email" placeholder="yourname@example.com" required 
+                   class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+        </div>
+        <div>
+            <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">WhatsApp / Phone</label>
+            <input type="tel" name="phone" placeholder="+1 (876) 000-0000" required 
+                   class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+        </div>
+    </div>
 
-            <div>
-                <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Acreage Interest / Development Intent</label>
-                <textarea name="message" rows="4" placeholder="Specify intended acreage (e.g., 1 acre, 5 acres) or development timeline..." required 
-                          class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
-            </div>
+    <div>
+        <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Acreage Interest / Development Intent</label>
+        <textarea name="message" rows="4" placeholder="Specify intended acreage (e.g., 1 acre, 5 acres) or development timeline..." required 
+                  class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
+    </div>
 
-            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-emerald-950/80 transition-all cursor-pointer">
-                Submit Estate Inquiry
-            </button>
-        </form>
+    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-emerald-950/80 transition-all cursor-pointer">
+        Submit Estate Inquiry
+    </button>
+</form>
     </div>
 </section>
 {% endblock %}
