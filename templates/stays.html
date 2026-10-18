@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stays | Earth Family Sanctuary & Farms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-900 text-stone-100 font-sans antialiased">
+    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover">
+                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase">Earth Family Farms</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
+                    <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ABOUT</a>
+                    <a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">EXPERIENCES</a>
+                    <a href="{{ url_for('stays') }}" class="text-emerald-400 font-bold transition-colors">STAYS</a>
+                    <a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ESTATES</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 px-4 max-w-7xl mx-auto text-center">
+        <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Accommodations</span>
+        <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">Boutique Sanctuary Stays</h1>
+        <p class="text-stone-300 text-lg max-w-2xl mx-auto mb-12">Immerse yourself in total stillness and sustainable comfort.</p>
+    </section>
+</body>
+</html>
