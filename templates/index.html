@@ -53,10 +53,10 @@
             
             <!-- Center Navigation Links -->
             <div class="hidden md:flex items-center space-x-10 text-xs font-semibold tracking-widest uppercase">
-                <a href="javascript:void(0)" data-scroll="about" class="text-stone-300 hover:text-amber-200 transition-colors">About</a>
-                <a href="javascript:void(0)" data-scroll="experiences" class="text-stone-300 hover:text-amber-200 transition-colors">Experiences</a>
-                <a href="javascript:void(0)" data-scroll="stays" class="text-stone-300 hover:text-amber-200 transition-colors">Stays</a>
-                <a href="javascript:void(0)" data-scroll="estates" class="text-stone-300 hover:text-amber-200 transition-colors">Estates</a>
+               <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 font-medium transition-colors">ABOUT</a>
+<a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 font-medium transition-colors">EXPERIENCES</a>
+<a href="{{ url_for('stays') }}" class="text-stone-300 hover:text-emerald-400 font-medium transition-colors">STAYS</a>
+<a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 font-medium transition-colors">ESTATES</a>
             </div>
 
             <!-- Right Call-to-Action Button -->
