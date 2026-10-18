@@ -1,52 +1,145 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-16 bg-stone-950 text-white min-h-screen">
-    <div class="max-w-6xl mx-auto px-6">
+<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-sm">Sanctuary Stays</span>
-            <h1 class="text-4xl md:text-5xl font-serif text-stone-100 mt-2">Accommodations</h1>
-            <p class="text-stone-400 mt-3 max-w-xl mx-auto">Immerse yourself in 100 acres of tranquil Jamaican highlands, organic farm harvests, and pure river spring waters.</p>
+        <!-- Page Header -->
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs md:text-sm">Sanctuary Stays & Lodging</span>
+            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3 tracking-tight">Accommodations</h1>
+            <p class="text-stone-400 mt-4 text-base md:text-lg leading-relaxed">
+                Immerse yourself in 100 acres of tranquil Jamaican highlands, solar-powered eco-lodging, organic farm harvests, and pure mineral spring waters.
+            </p>
         </div>
 
         <!-- Accommodations Grid -->
         {% if accommodations %}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for item in accommodations %}
-            <div class="bg-stone-900/80 border border-stone-800 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-between hover:border-emerald-600 transition-all duration-300">
+            <div class="bg-stone-900/90 border border-stone-800 hover:border-emerald-600/60 rounded-2xl p-8 backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-950/40">
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-3 py-1 rounded-full">{{ item.type }}</span>
-                    <h2 class="text-2xl font-serif text-white mt-4">{{ item.name }}</h2>
-                    <div class="mt-2 mb-4">
-                        <span class="text-3xl font-bold text-white">{{ item.price }}</span>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-3 py-1 rounded-full">
+                            {{ item.type }}
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-serif text-white mb-2">{{ item.name }}</h2>
+                    
+                    <div class="my-4 pb-4 border-b border-stone-800">
+                        <span class="text-3xl md:text-4xl font-bold text-stone-100">{{ item.price }}</span>
                         <span class="text-stone-400 text-sm">/ {{ item.period }}</span>
                     </div>
-                    <p class="text-stone-300 text-sm leading-relaxed mb-6">{{ item.description }}</p>
-                    
-                    <ul class="space-y-2 mb-8">
+
+                    <p class="text-stone-300 text-sm leading-relaxed mb-6">
+                        {{ item.description }}
+                    </p>
+
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-3">Included Amenities</h3>
+                    <ul class="space-y-2.5 mb-8">
                         {% for feature in item.features %}
-                        <li class="flex items-center text-xs text-stone-400">
-                            <svg class="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            {{ feature }}
+                        <li class="flex items-start text-xs md:text-sm text-stone-300">
+                            <svg class="w-4 h-4 text-emerald-500 mr-2.5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>{{ feature }}</span>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
 
-                <a href="#inquiry" class="w-full text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-sm">
-                    Book / Inquire
+                <a href="#stay-inquiry" onclick="selectStay('{{ item.name }}')" class="w-full text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-sm shadow-md">
+                    Reserve / Inquire
                 </a>
             </div>
             {% endfor %}
         </div>
         {% else %}
-        <div class="text-center py-12">
-            <p class="text-stone-500">No accommodation options available at this time.</p>
+        <div class="text-center py-16 bg-stone-900/50 rounded-2xl border border-stone-800">
+            <p class="text-stone-400">No accommodation options are currently available.</p>
         </div>
         {% endif %}
 
+        <!-- Interactive AJAX Inquiry Form Section -->
+        <div id="stay-inquiry" class="mt-20 max-w-2xl mx-auto bg-stone-900/90 border border-stone-800 rounded-2xl p-8 md:p-10 backdrop-blur-md">
+            <div class="text-center mb-8">
+                <span class="text-emerald-500 text-xs uppercase tracking-widest font-semibold">Direct Reservations</span>
+                <h3 class="text-2xl md:text-3xl font-serif text-stone-100 mt-1">Inquire About a Stay</h3>
+                <p class="text-stone-400 text-sm mt-2">Send us your requested dates and stay preferences. We respond within 24 hours.</p>
+            </div>
+
+            <form id="stayInquiryForm" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-stone-400 mb-2">Selected Accommodation</label>
+                    <select id="stayType" class="w-full bg-stone-950 border border-stone-700 text-stone-200 p-3 rounded-xl focus:border-emerald-500 focus:outline-none text-sm">
+                        <option value="Eco-Hostel Bunks">Eco-Hostel Bunks ($25/night)</option>
+                        <option value="Private Eco-Camping">Private Eco-Camping ($10/night)</option>
+                        <option value="Luxury Ridge Suites">Luxury Ridge Suites (Inquire)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-stone-400 mb-2">Full Name</label>
+                        <input type="text" id="guestName" required placeholder="Your Name" class="w-full bg-stone-950 border border-stone-700 text-stone-200 p-3 rounded-xl focus:border-emerald-500 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-stone-400 mb-2">Email Address</label>
+                        <input type="email" id="guestEmail" required placeholder="you@example.com" class="w-full bg-stone-950 border border-stone-700 text-stone-200 p-3 rounded-xl focus:border-emerald-500 focus:outline-none text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-stone-400 mb-2">Travel Dates & Notes</label>
+                    <textarea id="guestMessage" rows="4" placeholder="Let us know your estimated dates, number of guests, or special requests..." class="w-full bg-stone-950 border border-stone-700 text-stone-200 p-3 rounded-xl focus:border-emerald-500 focus:outline-none text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg text-sm">
+                    Send Stay Request
+                </button>
+            </form>
+
+            <div id="ajaxResponse" class="mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-sm hidden text-center"></div>
+        </div>
+
     </div>
 </section>
+
+<script>
+function selectStay(stayName) {
+    const selectElem = document.getElementById('stayType');
+    if (selectElem) {
+        selectElem.value = stayName;
+    }
+}
+
+document.getElementById('stayInquiryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const payload = {
+        name: document.getElementById('guestName').value,
+        email: document.getElementById('guestEmail').value,
+        stay_type: document.getElementById('stayType').value,
+        message: document.getElementById('guestMessage').value
+    };
+
+    try {
+        const res = await fetch('/api/inquire', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        const responseDiv = document.getElementById('ajaxResponse');
+        responseDiv.textContent = data.message;
+        responseDiv.classList.remove('hidden');
+
+        document.getElementById('stayInquiryForm').reset();
+    } catch (err) {
+        console.error('AJAX Error:', err);
+    }
+});
+</script>
 {% endblock %}
