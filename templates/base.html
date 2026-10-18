@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Earth Family Farms | Ocho Rios Eco-Sanctuary{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -50,7 +51,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
+            <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-stone-300">
                 <a href="/" class="hover:text-emerald-400 transition-colors py-2">Home</a>
                 <a href="/about" class="hover:text-emerald-400 transition-colors py-2">About</a>
@@ -59,7 +60,7 @@
                 <a href="/estates" class="hover:text-emerald-400 transition-colors py-2">Estates</a>
             </nav>
 
-            <!-- Reserve Button -->
+            <!-- Reserve CTA Button -->
             <div class="hidden md:flex items-center">
                 <a href="/stays#stay-inquiry" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-lg shadow-emerald-950/60">
                     Reserve Stay
@@ -74,7 +75,7 @@
             </button>
         </div>
 
-        <!-- Mobile Drawer -->
+        <!-- Mobile Drawer Navigation -->
         <div id="mobileMenu" class="hidden md:hidden bg-stone-950/98 border-b border-stone-800 px-6 py-6 space-y-4 backdrop-blur-2xl">
             <a href="/" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">Home</a>
             <a href="/about" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">About</a>
@@ -89,11 +90,12 @@
         </div>
     </header>
 
+    <!-- Page Content Slot -->
     <main class="flex-grow">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
+    <!-- Global Footer -->
     <footer class="bg-stone-950 border-t border-stone-800/80 py-16 text-stone-400 text-xs">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
             <div>
