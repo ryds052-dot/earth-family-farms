@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Earth Family Sanctuary & Farms{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-900 text-stone-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Unified Sticky Header -->
+    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="{{ url_for('home') }}" class="flex items-center space-x-3 group">
+                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover border border-stone-700">
+                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase group-hover:text-emerald-400 transition-colors">Earth Family Farms</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
+                    <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 transition-colors py-2">ABOUT</a>
+                    <a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 transition-colors py-2">EXPERIENCES</a>
+                    <a href="{{ url_for('stays') }}" class="text-stone-300 hover:text-emerald-400 transition-colors py-2">STAYS</a>
+                    <a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 transition-colors py-2">ESTATES</a>
+                </div>
+                <a href="#contact" class="hidden sm:inline-block bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full transition-all">
+                    Reserve Stay
+                </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dynamic Page Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-800 py-10 text-center text-xs text-stone-500 tracking-wider uppercase">
+        <p>© 2026 Earth Family Sanctuary & Farms • Ocho Rios, St. Ann, Jamaica</p>
+    </footer>
+
+</body>
+</html>

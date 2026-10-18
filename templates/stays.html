@@ -1,33 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stays | Earth Family Sanctuary & Farms</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-stone-900 text-stone-100 font-sans antialiased">
-    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover">
-                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase">Earth Family Farms</span>
-                </a>
-                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
-                    <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ABOUT</a>
-                    <a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">EXPERIENCES</a>
-                    <a href="{{ url_for('stays') }}" class="text-emerald-400 font-bold transition-colors">STAYS</a>
-                    <a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ESTATES</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+{% extends 'base.html' %}
 
-    <section class="py-20 px-4 max-w-7xl mx-auto text-center">
+{% block title %}Stays | Earth Family Sanctuary & Farms{% endblock %}
+
+{% block content %}
+<section class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Accommodations</span>
         <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">Boutique Sanctuary Stays</h1>
-        <p class="text-stone-300 text-lg max-w-2xl mx-auto mb-12">Immerse yourself in total stillness and sustainable comfort.</p>
-    </section>
-</body>
-</html>
+        <p class="text-stone-300 text-lg leading-relaxed">
+            Thoughtfully designed eco-lodges integrated into the natural contours of the Ocho Rios hills.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div class="bg-stone-950 rounded-3xl overflow-hidden border border-stone-800 flex flex-col justify-between">
+            <div class="p-8">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Private Pavilion</span>
+                <h2 class="text-2xl font-serif text-white mt-2 mb-3">Highland Eco-Suite</h2>
+                <p class="text-stone-400 text-sm leading-relaxed mb-6">
+                    Panoramic mountain views, open-air rainwater showers, and natural timber finishes designed for deep restorative rest.
+                </p>
+                <ul class="text-stone-300 text-xs space-y-2 mb-6">
+                    <li>✓ King Bed • Solar Powered</li>
+                    <li>✓ Private Deck & Ridge View</li>
+                    <li>✓ Organic Breakfast Included</li>
+                </ul>
+            </div>
+            <div class="p-8 pt-0">
+                <a href="#contact" class="block text-center bg-stone-800 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest py-3 rounded-xl transition-colors">Inquire for Availability</a>
+            </div>
+        </div>
+
+        <div class="bg-stone-950 rounded-3xl overflow-hidden border border-stone-800 flex flex-col justify-between">
+            <div class="p-8">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Full Sanctuary Rental</span>
+                <h2 class="text-2xl font-serif text-white mt-2 mb-3">The Estate Residence</h2>
+                <p class="text-stone-400 text-sm leading-relaxed mb-6">
+                    Exclusive access to the private compound for group retreats, family gatherings, and holistic wellness stays.
+                </p>
+                <ul class="text-stone-300 text-xs space-y-2 mb-6">
+                    <li>✓ Full Estate Access (100 Acres)</li>
+                    <li>✓ Private Chef & Farm-to-Table Dining</li>
+                    <li>✓ Guided River & Trail Excursions</li>
+                </ul>
+            </div>
+            <div class="p-8 pt-0">
+                <a href="#contact" class="block text-center bg-stone-800 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest py-3 rounded-xl transition-colors">Inquire for Availability</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

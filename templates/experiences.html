@@ -1,33 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences | Earth Family Sanctuary & Farms</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-stone-900 text-stone-100 font-sans antialiased">
-    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover">
-                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase">Earth Family Farms</span>
-                </a>
-                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
-                    <a href="{{ url_for('about') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ABOUT</a>
-                    <a href="{{ url_for('experiences') }}" class="text-emerald-400 font-bold transition-colors">EXPERIENCES</a>
-                    <a href="{{ url_for('stays') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">STAYS</a>
-                    <a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ESTATES</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+{% extends 'base.html' %}
 
-    <section class="py-20 px-4 max-w-7xl mx-auto text-center">
+{% block title %}Experiences | Earth Family Sanctuary & Farms{% endblock %}
+
+{% block content %}
+<section class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Sanctuary Offerings</span>
         <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">Curated Eco-Experiences</h1>
-        <p class="text-stone-300 text-lg max-w-2xl mx-auto mb-12">From organic farm tours and river spring dips to wellness retreats embedded deep in the Ocho Rios hills.</p>
-    </section>
-</body>
-</html>
+        <p class="text-stone-300 text-lg leading-relaxed">
+            Immerse yourself in authentic Jamaican highland living—from pure river trail hikes to organic farm-to-table culinary sessions.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
+            <div>
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">01 • Wellness</span>
+                <h2 class="text-2xl font-serif text-white mt-2 mb-4">River Spring Springs & Trails</h2>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Guided walks through untouched forest gullies, leading down to natural freshwater spring pools located within the 100-acre sanctuary.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
+            <div>
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">02 • Agriculture</span>
+                <h2 class="text-2xl font-serif text-white mt-2 mb-4">Organic Harvest Tours</h2>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Explore our sustainable agro-forestry plots, learning direct cultivation methods for local organic herbs, produce, and fruit trees.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-stone-950 rounded-3xl p-8 border border-stone-800 flex flex-col justify-between">
+            <div>
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">03 • Retreat</span>
+                <h2 class="text-2xl font-serif text-white mt-2 mb-4">Private Highland Solitude</h2>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Secluded ridge pavilions designed for sound therapy, creative writing, and uninterrupted stillness overlooking the White River Basin.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
