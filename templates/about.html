@@ -1,42 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Earth Family Sanctuary & Farms</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-stone-900 text-stone-100 font-sans antialiased">
-    <nav class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" class="h-10 w-10 rounded-full object-cover">
-                    <span class="text-base font-bold tracking-[0.16em] text-white uppercase">Earth Family Farms</span>
-                </a>
-                <div class="hidden md:flex space-x-8 text-sm tracking-widest">
-                    <a href="{{ url_for('about') }}" class="text-emerald-400 font-bold transition-colors">ABOUT</a>
-                    <a href="{{ url_for('experiences') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">EXPERIENCES</a>
-                    <a href="{{ url_for('stays') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">STAYS</a>
-                    <a href="{{ url_for('estates') }}" class="text-stone-300 hover:text-emerald-400 transition-colors">ESTATES</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+{% extends "base.html" %}
 
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-            <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">The Earth Family Philosophy</span>
-            <h1 class="text-4xl sm:text-5xl font-serif mt-4 mb-6 text-white">Grounded in the hills.<br>Nurtured by the land.</h1>
-            <p class="text-stone-300 text-lg leading-relaxed mb-6">
-                Set across a breathtaking <strong>100-acre private eco-sanctuary</strong> in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers an exclusive escape from conventional resort tourism.
+{% block title %}About | Earth Family Farms{% endblock %}
+
+{% block content %}
+<section class="py-20 md:py-32 bg-stone-950 text-white min-h-screen">
+    <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">The Earth Family Philosophy</span>
+            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3">Grounded in the hills.<br>Nurtured by the land.</h1>
+            <p class="text-stone-300 mt-6 text-base md:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+                Set across a breathtaking 100-acre private eco-sanctuary in the lush heights of Ocho Rios, St. Ann, Earth Family Farms offers an exclusive escape from conventional resort tourism.
             </p>
         </div>
-        <div class="overflow-hidden rounded-3xl border border-stone-800 shadow-2xl max-w-4xl mx-auto">
-            <video autoplay loop muted playsinline class="w-full h-[480px] object-cover">
-                <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
-            </video>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+            <div class="bg-stone-900 border border-stone-800 p-8 rounded-2xl">
+                <h3 class="text-xl font-serif text-emerald-400 mb-3">Our Mission</h3>
+                <p class="text-stone-300 text-sm leading-relaxed">
+                    To cultivate sustainable land practices, preserve native Jamaican botanical wealth, and offer authentic off-grid living experiences that revitalize mind, body, and spirit.
+                </p>
+            </div>
+            <div class="bg-stone-900 border border-stone-800 p-8 rounded-2xl">
+                <h3 class="text-xl font-serif text-emerald-400 mb-3">100-Acre Sanctuary</h3>
+                <p class="text-stone-300 text-sm leading-relaxed">
+                    Featuring organic herb gardens, fresh spring river trails, eco-cabins, campsites, and 37 acres dedicated to low-density sustainable estate development.
+                </p>
+            </div>
         </div>
-    </section>
-</body>
-</html>
+
+        <div class="text-center pt-8">
+            <a href="/stays" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all">
+                Plan Your Visit
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
