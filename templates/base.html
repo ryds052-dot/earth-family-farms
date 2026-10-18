@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Earth Family Sanctuary & Farms{% endblock %}</title>
+    <title>{% block title %}Earth Family Farms | Ocho Rios Eco-Sanctuary{% endblock %}</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,84 +27,89 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
     </style>
 </head>
-<body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+<body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white antialiased">
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-800/80">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-xl border-b border-stone-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             
-            <!-- Brand Logo -->
+            <!-- Official Logo replacing EF placeholder -->
             <a href="/" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full bg-emerald-950 border border-emerald-700/60 flex items-center justify-center text-emerald-400 font-bold font-serif text-lg group-hover:border-emerald-500 transition-colors">
-                    EF
-                </div>
-                <div>
-                    <span class="block text-base font-serif font-bold tracking-wide text-white group-hover:text-emerald-400 transition-colors">EARTH FAMILY</span>
-                    <span class="block text-[10px] tracking-widest text-emerald-500 uppercase font-semibold">Sanctuary & Farms</span>
-                </div>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" 
+                     alt="Earth Family Farms Logo" 
+                     class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-stone-300">
-                <a href="/about" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="/experiences" class="hover:text-emerald-400 transition-colors">Experiences</a>
-                <a href="/stays" class="hover:text-emerald-400 transition-colors">Stays</a>
-                <a href="/estates" class="hover:text-emerald-400 transition-colors">Estates</a>
+            <nav class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest text-stone-300">
+                <a href="/" class="hover:text-emerald-400 transition-colors py-2">Home</a>
+                <a href="/about" class="hover:text-emerald-400 transition-colors py-2">About</a>
+                <a href="/experiences" class="hover:text-emerald-400 transition-colors py-2">Experiences</a>
+                <a href="/stays" class="hover:text-emerald-400 transition-colors py-2">Stays</a>
+                <a href="/estates" class="hover:text-emerald-400 transition-colors py-2">Estates</a>
             </nav>
 
-            <!-- CTA Button -->
-            <div class="hidden md:block">
-                <a href="/stays#stay-inquiry" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-emerald-900/30">
+            <!-- Reserve CTA Button -->
+            <div class="hidden md:flex items-center">
+                <a href="/stays#stay-inquiry" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-lg shadow-emerald-950/60 hover:shadow-emerald-900/80">
                     Reserve Stay
                 </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-stone-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <button id="mobileMenuBtn" class="md:hidden text-stone-300 hover:text-white p-2.5 rounded-xl bg-stone-900 border border-stone-800 focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden bg-stone-900/95 border-b border-stone-800 px-6 py-6 space-y-4">
-            <a href="/about" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400">About</a>
-            <a href="/experiences" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400">Experiences</a>
-            <a href="/stays" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400">Stays</a>
-            <a href="/estates" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400">Estates</a>
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-stone-950/98 border-b border-stone-800 px-6 py-6 space-y-4 backdrop-blur-2xl">
+            <a href="/" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">Home</a>
+            <a href="/about" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">About</a>
+            <a href="/experiences" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">Experiences</a>
+            <a href="/stays" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">Stays</a>
+            <a href="/estates" class="block text-sm uppercase tracking-wider font-semibold text-stone-200 hover:text-emerald-400 py-1">Estates</a>
             <div class="pt-4 border-t border-stone-800">
-                <a href="/stays#stay-inquiry" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl">
+                <a href="/stays#stay-inquiry" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl shadow-lg">
                     Reserve Stay
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Page Content Inserted Here -->
+    <!-- Main Page Content -->
     <main class="flex-grow">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Global Footer -->
-    <footer class="bg-stone-900 border-t border-stone-800 py-12 text-stone-400 text-xs">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div>
-                <span class="font-serif font-bold text-white text-base block">EARTH FAMILY FARMS</span>
-                <p class="mt-1 text-stone-400">100-Acre Eco-Sanctuary • Ocho Rios, St. Ann, Jamaica</p>
+    <footer class="bg-stone-950 border-t border-stone-800/80 py-16 text-stone-400 text-xs">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+            
+            <div class="flex items-center space-x-4">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-12 w-auto object-contain">
+                <div>
+                    <span class="font-serif font-bold text-white text-base block tracking-wide">EARTH FAMILY FARMS</span>
+                    <p class="text-stone-400 text-xs mt-0.5">100-Acre Eco-Sanctuary • Ocho Rios, St. Ann, Jamaica</p>
+                </div>
             </div>
-            <div class="text-left md:text-center space-y-1">
-                <p>WhatsApp / Direct: <strong class="text-stone-200">876-376-9526</strong></p>
-                <p>Instagram: <strong class="text-emerald-400">@EARTHFAMILYFARMS_</strong></p>
+
+            <div class="text-left md:text-center space-y-1 bg-stone-900/50 p-4 rounded-2xl border border-stone-800/80">
+                <p class="text-stone-300">Call / WhatsApp: <strong class="text-emerald-400">876-376-9526</strong></p>
+                <p class="text-stone-300">Instagram: <strong class="text-emerald-400">@EARTHFAMILYFARMS_</strong></p>
             </div>
-            <div class="text-left md:text-right text-stone-400">
+
+            <div class="text-left md:text-right text-stone-400 space-y-1">
                 <p>&copy; 2026 Earth Family Farms. All Rights Reserved.</p>
+                <p class="text-[10px] text-stone-500">Stay • Explore • Reconnect</p>
             </div>
         </div>
     </footer>
