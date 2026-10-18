@@ -1,47 +1,136 @@
 {% extends "base.html" %}
 
+{% block title %}37-Acre Land Estates | Earth Family Farms{% endblock %}
+
 {% block content %}
-<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
-    <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="text-center mb-16 max-w-3xl mx-auto">
-            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Real Estate & Development</span>
-            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3">Sanctuary Estates</h1>
-            <p class="text-stone-400 mt-4 text-base leading-relaxed">
-                37 prime acres allocated for eco-estate residential development within our private 100-acre sanctuary in Ocho Rios, Jamaica.
+<!-- Hero Section with Background Drone Video -->
+<section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden border-b border-stone-800">
+    
+    <!-- Background Video Loop -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-35">
+        <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- Overlay Gradient for Crisp Text Contrast -->
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/40 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 max-w-5xl mx-auto px-6 text-center py-24">
+        <span class="inline-block text-emerald-400 bg-emerald-950/90 border border-emerald-800/80 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6 shadow-xl">
+            Freehold Estate Parcels • $100,000 USD / Acre
+        </span>
+
+        <h1 class="text-4xl md:text-7xl font-serif font-bold text-stone-100 tracking-tight leading-tight">
+            Claim Your Legacy in St. Ann
+        </h1>
+
+        <p class="mt-6 text-base md:text-xl text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+            37 prime acres allocated within our 100-acre private eco-sanctuary. Master-planned for low-density off-grid luxury villas, private retreats, and sustainable eco-living.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#estate-inquiry" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-xl transition-all">
+                Inquire Parcels & Map
+            </a>
+            <a href="#drone-showcase" class="w-full sm:w-auto bg-stone-900/80 border border-stone-700 hover:border-emerald-500 text-stone-200 font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
+                Watch Aerial Tour
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Full Interactive Drone Showcase Section -->
+<section id="drone-showcase" class="py-20 bg-stone-950 border-b border-stone-800/80">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">High-Resolution Flyover</span>
+            <h2 class="text-3xl md:text-5xl font-serif text-white mt-2">100-Acre Topography & River Canopy</h2>
+            <p class="text-stone-400 text-sm max-w-2xl mx-auto mt-3">
+                Explore the natural springs, rolling elevation changes, and virgin canopy surrounding the 37-acre residential subdivision.
             </p>
         </div>
 
-        <div class="bg-stone-900 border border-stone-800 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <span class="text-xs uppercase font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Freehold Acreage</span>
-                    <h2 class="text-3xl font-serif text-white mt-4">Estate Lots</h2>
-                    <div class="my-4">
-                        <span class="text-4xl font-bold text-white">$100,000 USD</span>
-                        <span class="text-stone-400 text-sm"> / per acre</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-stone-300 mb-6">
-                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Elevated ocean & highland views</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Private natural spring river access</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-emerald-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Sustainable off-grid potential</li>
-                    </ul>
-                </div>
+        <div class="relative rounded-3xl overflow-hidden border border-stone-800/90 shadow-2xl bg-stone-900 group">
+            <video controls poster="{{ url_for('static', filename='subdivision-map.jpg') }}" class="w-full h-auto max-h-[620px] object-cover">
+                <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+        </div>
+    </div>
+</section>
 
-                <div class="bg-stone-950 p-6 rounded-2xl border border-stone-800">
-                    <h3 class="text-xl font-serif text-white mb-2">Inquire About Land</h3>
-                    <p class="text-stone-400 text-xs mb-4">Direct consultations with estate management:</p>
-                    <div class="space-y-3 text-xs">
-                        <p class="text-stone-300"><strong>Call/WhatsApp:</strong> 876-376-9526</p>
-                        <p class="text-stone-300"><strong>Instagram:</strong> @EARTHFAMILYFARMS_</p>
-                    </div>
-                    <a href="https://wa.me/18763769526" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl mt-6 text-xs transition-colors">
-                        Contact via WhatsApp
-                    </a>
-                </div>
+<!-- Estate Highlights Grid -->
+<section class="py-20 bg-stone-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-stone-900/80 border border-stone-800 p-8 rounded-2xl">
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Ownership Type</span>
+                <h3 class="text-xl font-serif text-white mt-2 mb-3">Freehold Title</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Clear, unencumbered freehold tenure offering full property rights for international investors and private owners.
+                </p>
+            </div>
+
+            <div class="bg-stone-900/80 border border-stone-800 p-8 rounded-2xl">
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Natural Assets</span>
+                <h3 class="text-xl font-serif text-white mt-2 mb-3">Spring River Access</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Direct access to natural mineral spring trails, mountain water sources, and organic agricultural yields.
+                </p>
+            </div>
+
+            <div class="bg-stone-900/80 border border-stone-800 p-8 rounded-2xl">
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Location</span>
+                <h3 class="text-xl font-serif text-white mt-2 mb-3">Ocho Rios Highlands</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Situated in St. Ann with cool high-elevation breezes, located just minutes away from coastlines and North Coast highways.
+                </p>
             </div>
         </div>
+    </div>
+</section>
 
+<!-- Estate Inquiry Form Section -->
+<section id="estate-inquiry" class="py-20 bg-stone-950 border-t border-stone-800/80">
+    <div class="max-w-3xl mx-auto px-6 bg-stone-900/90 border border-stone-800 p-8 md:p-12 rounded-3xl shadow-2xl">
+        <div class="text-center mb-8">
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Private Land Consultation</span>
+            <h2 class="text-3xl font-serif text-white mt-2">Request Parcel Map & Pricing</h2>
+            <p class="text-stone-400 text-xs mt-2">Direct submissions route immediately to our management team.</p>
+        </div>
+
+        <form action="/stays" method="POST" class="space-y-6">
+            <input type="hidden" name="stay_type" value="37-Acre Land Estate Inquiry ($100k/acre)">
+
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Full Name</label>
+                <input type="text" name="name" placeholder="Ryder Lee" required 
+                       class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Email Address</label>
+                    <input type="email" name="email" placeholder="ryds052@gmail.com" required 
+                           class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">WhatsApp / Phone</label>
+                    <input type="tel" name="phone" placeholder="876-376-9526" required 
+                           class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Acreage Interest / Development Intent</label>
+                <textarea name="message" rows="4" placeholder="Specify intended acreage (e.g., 1 acre, 5 acres) or development timeline..." required 
+                          class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-emerald-950/80 transition-all cursor-pointer">
+                Submit Estate Inquiry
+            </button>
+        </form>
     </div>
 </section>
 {% endblock %}
