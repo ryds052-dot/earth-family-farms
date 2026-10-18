@@ -20,7 +20,6 @@ def experiences():
 
 @app.route('/stays')
 def stays():
-    # Exact offerings from Earth Family Farms flyer
     accommodations = [
         {
             "name": "Campsite",
