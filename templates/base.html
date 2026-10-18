@@ -35,15 +35,17 @@
 </head>
 <body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white antialiased">
 
-    <!-- Sticky Navigation Header -->
+    <!-- Header Navigation -->
     <header class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-xl border-b border-stone-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             
-            <!-- Official Logo replacing EF placeholder -->
+            <!-- Logo Brand Header -->
             <a href="/" class="flex items-center space-x-3 group">
-               <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Earth Family Farms Logo" class="h-14 md:h-16 w-auto object-contain">
-                     alt="Earth Family Farms Logo" 
-                     class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="hidden sm:block">
+                    <span class="block text-base font-serif font-bold tracking-wide text-white group-hover:text-emerald-400 transition-colors">EARTH FAMILY</span>
+                    <span class="block text-[10px] tracking-widest text-emerald-500 uppercase font-semibold">Sanctuary & Farms</span>
+                </div>
             </a>
 
             <!-- Desktop Nav Links -->
@@ -85,7 +87,7 @@
         </div>
     </header>
 
-    <!-- Main Page Content -->
+    <!-- Main Content -->
     <main class="flex-grow">
         {% block content %}{% endblock %}
     </main>
