@@ -2,33 +2,21 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative py-28 md:py-40 bg-stone-950 overflow-hidden border-b border-stone-800/80">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-950/30 via-stone-950 to-stone-950 pointer-events-none"></div>
+<!-- Inside index.html Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <!-- Background Drone Video -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105">
+        <source src="/static/land-drone.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Smooth Dark Vignette Overlay so text pops -->
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/50 to-stone-950"></div>
 
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-        <span class="inline-block text-emerald-400 bg-emerald-950/90 border border-emerald-800/80 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6 shadow-md">
-            Ocho Rios, St. Ann • Jamaica
-        </span>
-
-        <h1 class="text-4xl md:text-7xl font-serif font-bold text-stone-100 tracking-tight leading-tight max-w-4xl mx-auto">
-            Escape The Ordinary.<br>Own The Highland.
-        </h1>
-
-        <p class="mt-6 text-base md:text-xl text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
-            Welcome to Earth Family Farms — 100 private acres of lush Jamaican sanctuary. Crystal mineral spring rivers, organic farm tours, timber cabins, and private estate land sales.
-        </p>
-
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/stays" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm px-8 py-4 rounded-xl shadow-xl shadow-emerald-950/80 transition-all duration-300">
-                Explore Accommodations ($20 - $55)
-            </a>
-            <a href="/estates" class="w-full sm:w-auto bg-stone-900 border border-stone-700 hover:border-emerald-500 text-stone-200 font-semibold text-sm px-8 py-4 rounded-xl transition-all duration-300">
-                Land Estates ($100k / Acre)
-            </a>
-        </div>
+    <!-- Your Existing Hero Text Container (add relative z-10) -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <!-- Keep your existing OCHO RIOS badge, H1 title, and buttons here -->
     </div>
 </section>
-
 <!-- Offerings Section -->
 <section class="py-24 bg-stone-950">
     <div class="max-w-7xl mx-auto px-6">
