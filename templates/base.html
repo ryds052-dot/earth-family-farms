@@ -29,6 +29,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* 1. Native Smooth Scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* 2. Page Entry Fade Animation */
+    body {
+        animation: pageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes pageFadeIn {
+        0% { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 3. Scroll-Reveal Classes */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 4. Smooth Card Hover Lift & Image Zoom */
+    .bg-stone-900, .bg-stone-900\/60, .bg-stone-900\/70 {
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border-color 0.4s ease, 
+                    box-shadow 0.4s ease !important;
+    }
+
+    .bg-stone-900:hover, .bg-stone-900\/60:hover, .bg-stone-900\/70:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.12);
+    }
+
+    /* 5. Custom Luxury Dark Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0c0a09;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #292524;
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #059669;
+    }
+</style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
     </style>
@@ -124,5 +183,8 @@
             menu.classList.toggle('hidden');
         });
     </script>
+    git add templates/base.html
+git commit -m "Add smooth scroll-reveal and luxury fade animations"
+git push origin main
 </body>
 </html>
