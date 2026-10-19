@@ -1,56 +1,39 @@
 {% extends "base.html" %}
 
-{% block title %}The Sanctuary Story | Earth Family Farms{% endblock %}
-
 {% block content %}
-<!-- Hero Header -->
-<section class="relative py-24 md:py-36 bg-stone-950 text-white min-h-screen">
-    <div class="max-w-5xl mx-auto px-6">
-        
-        <div class="text-center mb-16">
-            <span class="text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6 inline-block">
-                Ocho Rios Highlands • Jamaica
-            </span>
-            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-2 leading-tight">
-                Rooted In Heritage.<br>Unapologetically Off-Grid.
-            </h1>
-            <p class="text-stone-300 mt-6 text-base md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
-                Earth Family Farms isn't a hotel — it’s a 100-acre private eco-sanctuary engineered for those seeking genuine connection with nature, raw Jamaican ecology, and self-sustaining paradise.
+<section class="pt-32 pb-24 bg-stone-950 text-stone-100 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <img src="/static/images/logo.png" alt="Earth Family Farms" class="h-20 w-20 mx-auto rounded-2xl bg-white p-2 shadow-xl mb-6 object-contain">
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Farm • Nature • Community</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">100 Acres of Living Heritage</h1>
+            <p class="text-stone-400 text-sm md:text-base mt-4 leading-relaxed">
+                Located in the lush coastal highlands of Ocho Rios, St. Ann, Jamaica, Earth Family Farms is a sanctuary dedicated to organic cultivation, holistic wellness, and sustainable community living.
             </p>
         </div>
 
-        <!-- Pillar Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
-            <div class="bg-stone-900/80 border border-stone-800/90 p-8 rounded-2xl shadow-xl">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Our Philosophy</span>
-                <h3 class="text-2xl font-serif text-white mt-2 mb-3">Reclaiming Pure Living</h3>
-                <p class="text-stone-300 text-sm leading-relaxed">
-                    We built Earth Family Farms as an antidote to crowded resort concrete. Here, mountain spring water runs cold, organic crops grow without chemical interference, and the air carries pure highland breezes from St. Ann.
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-stone-900 rounded-3xl p-8 md:p-12 mb-16">
+            <div class="overflow-hidden rounded-2xl border border-stone-800">
+                <img src="/static/images/river-hike.jpg" alt="Collier Gully Spring Convergence" class="w-full h-80 object-cover">
             </div>
-
-            <div class="bg-stone-900/80 border border-stone-800/90 p-8 rounded-2xl shadow-xl">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">The Property</span>
-                <h3 class="text-2xl font-serif text-white mt-2 mb-3">100 Acres of Pure Jamaican Highland</h3>
-                <p class="text-stone-300 text-sm leading-relaxed">
-                    Featuring private river trails, natural mineral pools, organic herb gardens, off-grid eco-cabins, and 37 prime acres master-planned for sustainable freehold estate lots.
+            <div>
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">The Land & Water</span>
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-1">Where the Rivers Meet</h2>
+                <p class="text-stone-300 text-sm leading-relaxed mt-4">
+                    Our sanctuary is blessed with over 300 mature coconut palms, seasonal black sapote, soursop, mango, banana, pineapple, and jackfruit groves, and the pristine spring waters of Collier Gully.
                 </p>
-            </div>
-        </div>
-
-        <!-- Call to Action Card -->
-        <div class="bg-gradient-to-br from-emerald-950/60 via-stone-900 to-stone-950 border border-emerald-800/60 p-10 md:p-14 rounded-3xl text-center shadow-2xl">
-            <h2 class="text-3xl md:text-4xl font-serif text-white">Experience The Haven First-Hand</h2>
-            <p class="text-stone-300 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">
-                Whether you're booking an off-grid cabin stay, taking a guided spring river hike, or scouting land for your private estate build — your sanctuary awaits.
-            </p>
-            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="/stays" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all">
-                    Book Lodging ($20 - $55)
-                </a>
-                <a href="/estates" class="w-full sm:w-auto bg-stone-900 border border-stone-700 hover:border-emerald-500 text-stone-200 font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
-                    Inquire Land Lots
-                </a>
+                <p class="text-stone-300 text-sm leading-relaxed mt-4">
+                    Whether you join us for a guided botanical tour, spend a night under the stars in The Queen Cabin, or claim a private parcel in our highland subdivision, you become part of an enduring ecological vision.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="/experiences" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
+                        Explore Tours
+                    </a>
+                    <a href="https://instagram.com/earthfamilyfarms_" target="_blank" class="bg-stone-800 hover:bg-stone-700 text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl border border-stone-700">
+                        Follow @EARTHFAMILYFARMS_
+                    </a>
+                </div>
             </div>
         </div>
 
