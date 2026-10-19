@@ -1,55 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
+<section class="py-16 md:py-24 bg-stone-950 text-stone-100">
     <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="text-center mb-16 max-w-2xl mx-auto">
-            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Farm-To-Table & Nature</span>
-            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3">Sanctuary Tours</h1>
-            <p class="text-stone-400 mt-4 text-base leading-relaxed">
-                Connect directly with nature through our guided river hikes, organic farm walks, and fresh culinary harvests.
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Guided Sanctuary Tours</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">Curated Farm Experiences</h1>
+            <p class="text-stone-400 text-sm md:text-base mt-4 leading-relaxed">
+                Explore 100 acres of untouched tropical forestry, exotic fruit groves, and the pristine spring convergence of Collier Gully in Ocho Rios.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Tour 1 -->
-            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-600 transition-colors">
+            <!-- Collier Gully River Hike Card -->
+            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all">
                 <div>
-                    <span class="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Guided Hike</span>
-                    <h2 class="text-2xl font-serif text-white mt-4">Nature Hike to River</h2>
-                    <div class="my-3">
+                    <img src="/static/images/river-hike.jpg" alt="Collier Gully Holistic River Hike" class="w-full h-56 object-cover rounded-xl mb-6 border border-stone-800">
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Nature & Wellness</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Collier Gully Holistic River Hike</h3>
+                    <div class="my-4">
                         <span class="text-3xl font-bold text-stone-100">$20.00 USD</span>
                         <span class="text-stone-400 text-xs"> / per person</span>
                     </div>
                     <p class="text-stone-300 text-sm leading-relaxed mt-2">
-                        Trek through untouched highland greenery down to our private spring river. Enjoy fresh mineral water swims and guided ecological history.
+                        Guided trek through our 300+ coconut trees and exotic fruit forest down to the hidden crystal-clear spring pools where the rivers meet.
                     </p>
                 </div>
-                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-xs">
-                    Book Hike Tour
+                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all">
+                    Book River Hike
                 </a>
             </div>
 
-            <!-- Tour 2 -->
-            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-600 transition-colors">
+            <!-- Organic Herb & Farm Tour Card -->
+            <div class="bg-stone-900 border border-stone-800 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all">
                 <div>
-                    <span class="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">Farm Tour</span>
-                    <h2 class="text-2xl font-serif text-white mt-4">Marijuana Farm Tour</h2>
-                    <div class="my-3">
+                    <img src="/static/estates-flyer.jpg" alt="Earth Family Farms Guided Tour" class="w-full h-56 object-cover rounded-xl mb-6 border border-stone-800">
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Botanical & Agricultural</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Marijuana & Exotic Fruit Farm Tour</h3>
+                    <div class="my-4">
                         <span class="text-3xl font-bold text-stone-100">$30.00 USD</span>
                         <span class="text-stone-400 text-xs"> / per person</span>
                     </div>
                     <p class="text-stone-300 text-sm leading-relaxed mt-2">
-                        Guided walk through our organic herb cultivations and farm grounds. Includes a complimentary spliff and insight into sustainable farming.
+                        Guided walk through our organic herb cultivations, seasonal black sapote, soursop, and jackfruit groves. Includes fresh farm tastings.
                     </p>
                 </div>
-                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors text-xs">
+                <a href="/stays#stay-inquiry" class="mt-8 text-center bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all">
                     Book Farm Tour
                 </a>
             </div>
         </div>
-
     </div>
 </section>
 {% endblock %}
