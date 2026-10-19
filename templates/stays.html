@@ -1,203 +1,100 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-16 md:py-24 bg-stone-950 text-white min-h-screen">
+<section class="pt-32 pb-24 bg-stone-950 text-stone-100 min-h-screen">
     <div class="max-w-7xl mx-auto px-6">
-        
-        <!-- Header -->
-        <div class="text-center mb-16 max-w-2xl mx-auto">
-            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs md:text-sm">Stay • Explore • Reconnect</span>
-            <h1 class="text-4xl md:text-6xl font-serif text-stone-100 mt-3 tracking-tight">Accommodations</h1>
-            <p class="text-stone-400 mt-4 text-base md:text-lg leading-relaxed">
-                Experience authentic Jamaican eco-living across our 100-acre sanctuary in Ocho Rios.
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Off-Grid Luxury Sanctuary</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">Sanctuary Stays in Ocho Rios</h1>
+            <p class="text-stone-400 text-sm md:text-base mt-4 leading-relaxed">
+                Immerse yourself in our 100-acre organic fruit forest with handcrafted timber architecture, cool mountain breezes, and starlit campfires.
             </p>
         </div>
 
-        <!-- Accommodations Grid (2x2 Grid) -->
-        {% if accommodations %}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {% for item in accommodations %}
-            <div class="bg-stone-900/90 border border-stone-800 hover:border-emerald-600/60 rounded-2xl p-6 backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-emerald-950/40">
+        <!-- Queen Cabin Feature Showcase -->
+        <div class="max-w-5xl mx-auto bg-stone-900 rounded-3xl p-8 md:p-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-950">
+                    <img src="/static/images/queen-cabin.jpg" alt="The Queen Cabin Experience" class="w-full h-96 object-cover">
+                </div>
                 <div>
-                    <span class="text-[10px] font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-2.5 py-1 rounded-full">
-                        {{ item.type }}
-                    </span>
-
-                    <h2 class="text-xl font-serif text-white mt-4 mb-1">{{ item.name }}</h2>
-                    
-                    <div class="my-3 pb-3 border-b border-stone-800">
-                        <span class="text-2xl font-bold text-stone-100">{{ item.price }}</span>
-                        <span class="text-stone-400 text-xs block mt-0.5">{{ item.period }}</span>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="/static/images/logo.png" alt="Earth Family Farms Logo" class="h-10 w-10 rounded-lg bg-white p-1 object-contain">
+                        <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Signature Timber Sanctuary</span>
                     </div>
-
-                    <p class="text-stone-300 text-xs leading-relaxed mb-5">
-                        {{ item.description }}
+                    <h2 class="text-3xl font-serif font-bold text-white">The Queen Cabin Experience</h2>
+                    <div class="my-4">
+                        <span class="text-3xl font-bold text-emerald-400">$55.00 USD</span>
+                        <span class="text-stone-400 text-xs"> / per night</span>
+                    </div>
+                    <p class="text-stone-300 text-sm leading-relaxed">
+                        Tucked inside our 100-acre tropical fruit forest in Ocho Rios. Unwind in a private handcrafted timber cabin featuring a covered veranda hammock, solar-powered warm lighting, and a private stone campfire pit under the stars.
                     </p>
-
-                    <ul class="space-y-2 mb-6">
-                        {% for feature in item.features %}
-                        <li class="flex items-start text-xs text-stone-300">
-                            <svg class="w-3.5 h-3.5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>{{ feature }}</span>
-                        </li>
-                        {% endfor %}
+                    <ul class="mt-6 space-y-2 text-xs text-stone-300 uppercase tracking-wider">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Covered Veranda Hammock & Forest Views</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Solar-Powered Warm Ambient Lighting</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Private Stone Campfire Pit & Farm Harvest Access</li>
                     </ul>
+                    <a href="#stay-inquiry" class="mt-8 inline-block btn-emerald text-white text-xs font-bold uppercase tracking-widest py-4 px-8 rounded-xl">
+                        Reserve The Queen Cabin
+                    </a>
                 </div>
-
-                <a href="#stay-inquiry" onclick="selectStay('{{ item.name }}')" class="w-full text-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-2.5 rounded-xl transition-colors text-xs shadow-md">
-                    Reserve / Inquire
-                </a>
             </div>
-            {% endfor %}
         </div>
-        {% endif %}
 
-        <!-- Farm-to-Table & Tours Banner -->
-        <div class="bg-stone-900/80 border border-emerald-900/60 rounded-3xl p-8 md:p-12 mb-20 backdrop-blur-md">
+        <!-- Reservation & Excursion Inquiry Form -->
+        <div id="stay-inquiry" class="max-w-3xl mx-auto bg-stone-900 rounded-3xl p-8 md:p-12 border border-stone-800">
             <div class="text-center mb-8">
-                <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Farm-To-Table Experience</span>
-                <h2 class="text-3xl font-serif text-white mt-1">Guided Tours & Experiences</h2>
-                <p class="text-stone-400 text-sm mt-2">Hiking Trails • Nature Walks • Farm Tours • Private River Access • Natural Foods & Juices</p>
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Direct Sanctuary Booking</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-white mt-1">Reserve Your Stay or Farm Tour</h3>
+                <p class="text-stone-400 text-sm mt-2">Submit your preferred dates below or message our concierge directly on WhatsApp at 876-376-9526.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="bg-stone-950/80 p-6 rounded-2xl border border-stone-800 flex items-center justify-between">
+            <form action="/stays" method="POST" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <h3 class="text-lg font-serif text-white">Nature Hike to River</h3>
-                        <p class="text-stone-400 text-xs mt-1">Guided trek through untouched forest down to pure spring river waters.</p>
+                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Full Name</label>
+                        <input type="text" name="name" required placeholder="Your Name" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
                     </div>
-                    <div class="text-right ml-4">
-                        <span class="text-xl font-bold text-emerald-400">$20.00</span>
-                        <span class="text-[10px] text-stone-400 block">USD / person</span>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Email or WhatsApp Number</label>
+                        <input type="text" name="contact" required placeholder="you@example.com / 876-..." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
                     </div>
                 </div>
 
-                <div class="bg-stone-950/80 p-6 rounded-2xl border border-stone-800 flex items-center justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <h3 class="text-lg font-serif text-white">Marijuana Tour</h3>
-                        <p class="text-stone-400 text-xs mt-1">Guided walk through organic farm cultivation (Includes complimentary spliff).</p>
+                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Select Experience / Stay</label>
+                        <select name="package" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            <option value="Queen Cabin ($55/night)">The Queen Cabin Stay ($55 USD / night)</option>
+                            <option value="Cannabis & Exotic Fruit Tour ($30/person)">Marijuana & Exotic Fruit Farm Tour ($30 USD)</option>
+                            <option value="Collier Gully River Hike ($20/person)">Collier Gully Holistic River Hike ($20 USD)</option>
+                            <option value="Full Sanctuary Package">Combined Cabin Stay + Guided Farm & River Tour</option>
+                        </select>
                     </div>
-                    <div class="text-right ml-4">
-                        <span class="text-xl font-bold text-emerald-400">$30.00</span>
-                        <span class="text-[10px] text-stone-400 block">USD / person</span>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Preferred Date</label>
+                        <input type="date" name="date" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- AJAX Reservation Form -->
-         <!-- Featured Queen Cabin Visual Showcase -->
-<div class="max-w-5xl mx-auto mb-16 bg-stone-900/70 border border-stone-800 rounded-3xl overflow-hidden shadow-2xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 items-center">
-        <div class="h-72 md:h-full w-full overflow-hidden">
-            <img src="/static/images/queen-cabin.jpg" alt="Earth Family Farms Queen Cabin at Dusk" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-        </div>
-        <div class="p-8 md:p-10 space-y-4">
-            <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/80 border border-emerald-800/50 px-3 py-1 rounded-full">Featured Sanctuary Stay</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">The Queen Cabin Experience</h3>
-            <p class="text-stone-400 text-sm leading-relaxed">
-                Tucked inside our 100-acre tropical fruit forest in Ocho Rios. Unwind in a private handcrafted timber cabin featuring a covered veranda hammock, solar-powered warm lighting, and a private stone campfire pit under the stars.
-            </p>
-            <div class="pt-2 flex items-baseline gap-2">
-                <span class="text-2xl font-bold text-emerald-400">$55.00 USD</span>
-                <span class="text-xs text-stone-400">/ per night</span>
-            </div>
-        </div>
-    </div>
-</div>
-        <div id="stay-inquiry" class="max-w-2xl mx-auto bg-stone-900/90 border border-stone-800 rounded-2xl p-8 md:p-10 backdrop-blur-md">
-            <div class="text-center mb-8">
-                <span class="text-emerald-500 text-xs uppercase tracking-widest font-semibold">Direct Booking</span>
-                <h3 class="text-2xl md:text-3xl font-serif text-stone-100 mt-1">Reserve Your Stay</h3>
-                <p class="text-stone-400 text-sm mt-2">Call/WhatsApp: <strong>876-376-9526</strong> or fill out the form below.</p>
-            </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Special Requests or Group Size</label>
+                    <textarea name="notes" rows="3" placeholder="Tell us how many guests or any questions..." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500"></textarea>
+                </div>
 
-            <form action="/stays" method="POST" class="space-y-6">
-    <div>
-        <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Full Name</label>
-        <input type="text" name="name" placeholder="e.g., John Brown" required 
-               class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-            <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Email Address</label>
-            <input type="email" name="email" placeholder="yourname@example.com" required 
-                   class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-        </div>
-        <div>
-            <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">WhatsApp / Phone</label>
-            <input type="tel" name="phone" placeholder="+1 (876) 000-0000" required 
-                   class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors">
-        </div>
-    </div>
-
-    <div>
-        <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Accommodation / Experience Type</label>
-        <select name="stay_type" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 focus:outline-none focus:border-emerald-500 transition-colors">
-            <option value="Campsite ($20)">Campsite ($20/night)</option>
-            <option value="Dorm Bunk ($30)">Dorm Bunk ($30/night)</option>
-            <option value="Dorm Tent ($30)">Dorm Tent ($30/night)</option>
-            <option value="Queen Cabin ($55)">Queen Cabin ($55/night)</option>
-            <option value="Guided River Hike ($20)">Guided River Hike ($20/person)</option>
-            <option value="Marijuana Farm Tour ($30)">Marijuana Farm Tour ($30/person)</option>
-            <option value="Land Estate Inquiry">37-Acre Land Estate Inquiry ($100k/acre)</option>
-        </select>
-    </div>
-
-    <div>
-        <label class="block text-xs uppercase tracking-wider text-stone-400 font-semibold mb-2">Requested Dates / Notes</label>
-        <textarea name="message" rows="4" placeholder="Let us know your estimated arrival dates or special requests..." required 
-                  class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3.5 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
-    </div>
-
-    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-emerald-950/80 transition-all cursor-pointer">
-        Send Inquiry
-    </button>
-</form>
-
-            <div id="ajaxResponse" class="mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-sm hidden text-center"></div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <button type="submit" class="flex-1 btn-emerald text-white text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl text-center">
+                        Submit Reservation Request
+                    </button>
+                    <a href="https://wa.me/18763769526?text=Hello%20Earth%20Family%20Farms!%20I%20would%20like%20to%20book%20a%20stay%20or%20farm%20tour." target="_blank" class="bg-stone-800 hover:bg-stone-700 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl text-center transition-all">
+                        Instant WhatsApp Booking
+                    </a>
+                </div>
+            </form>
         </div>
 
     </div>
 </section>
-
-<script>
-function selectStay(stayName) {
-    const selectElem = document.getElementById('stayType');
-    if (selectElem) {
-        selectElem.value = stayName;
-    }
-}
-
-document.getElementById('stayInquiryForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const payload = {
-        name: document.getElementById('guestName').value,
-        email: document.getElementById('guestEmail').value,
-        stay_type: document.getElementById('stayType').value,
-        message: document.getElementById('guestMessage').value
-    };
-
-    try {
-        const res = await fetch('/api/inquire', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        const data = await res.json();
-        const responseDiv = document.getElementById('ajaxResponse');
-        responseDiv.textContent = data.message;
-        responseDiv.classList.remove('hidden');
-
-        document.getElementById('stayInquiryForm').reset();
-    } catch (err) {
-        console.error('AJAX Error:', err);
-    }
-});
-</script>
 {% endblock %}

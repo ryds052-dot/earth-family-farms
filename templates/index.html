@@ -1,69 +1,121 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Hero Section -->
-<!-- Inside index.html Hero Section -->
-<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-    <!-- Background Drone Video -->
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105">
+<!-- Cinematic Drone Video Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105">
         <source src="/static/land-drone.mp4" type="video/mp4">
     </video>
-    
-    <!-- Smooth Dark Vignette Overlay so text pops -->
-    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/50 to-stone-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/55 to-stone-950"></div>
 
-    <!-- Your Existing Hero Text Container (add relative z-10) -->
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <!-- Keep your existing OCHO RIOS badge, H1 title, and buttons here -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 bg-stone-900/80 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-[0.2em]">100-Acre Eco-Sanctuary • Ocho Rios, Jamaica</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white leading-tight tracking-tight">
+            Escape The Ordinary.<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">Own The Highland.</span>
+        </h1>
+
+        <p class="text-stone-300 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+            Tucked into the lush hills of Ocho Rios, Earth Family Farms unites organic tropical agriculture, holistic river excursions, handcrafted timber cabin stays, and private highland estate stewardship.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="/experiences" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl">
+                Explore Farm Tours
+            </a>
+            <a href="/estates" class="bg-stone-900/90 hover:bg-stone-800 text-stone-100 border border-stone-700 text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all">
+                View Highland Estates
+            </a>
+        </div>
     </div>
 </section>
-<!-- Offerings Section -->
+
+<!-- Key Sanctuary Metrics Strip -->
+<section class="py-12 border-y border-stone-800/80 bg-stone-950/90">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+            <div class="text-3xl md:text-4xl font-serif font-bold text-emerald-400">100+</div>
+            <div class="text-xs uppercase tracking-widest text-stone-400 mt-1">Acres of Tropical Forest</div>
+        </div>
+        <div>
+            <div class="text-3xl md:text-4xl font-serif font-bold text-emerald-400">300+</div>
+            <div class="text-xs uppercase tracking-widest text-stone-400 mt-1">Coconut & Exotic Fruit Trees</div>
+        </div>
+        <div>
+            <div class="text-3xl md:text-4xl font-serif font-bold text-emerald-400">2 Rivers</div>
+            <div class="text-xs uppercase tracking-widest text-stone-400 mt-1">Collier Gully Convergence</div>
+        </div>
+        <div>
+            <div class="text-3xl md:text-4xl font-serif font-bold text-emerald-400">Ocho Rios</div>
+            <div class="text-xs uppercase tracking-widest text-stone-400 mt-1">Ocean & Mountain Views</div>
+        </div>
+    </div>
+</section>
+
+<!-- 3 Pillars of Earth Family Farms -->
 <section class="py-24 bg-stone-950">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-emerald-500 font-semibold uppercase tracking-widest text-xs">Pure Jamaican Luxury</span>
-            <h2 class="text-3xl md:text-5xl font-serif text-white mt-2">Curated Experiences</h2>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Farm • Nature • Community</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-2">The Sanctuary Experience</h2>
+            <p class="text-stone-400 text-sm md:text-base mt-3">Discover our three core pillars of sustainable island living in St. Ann, Jamaica.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="/stays" class="group bg-stone-900/80 border border-stone-800/90 rounded-2xl p-8 hover:border-emerald-600/80 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-emerald-950/30">
+            <!-- Pillar 1: Experiences -->
+            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
                 <div>
-                    <span class="text-xs uppercase font-semibold text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full border border-emerald-800">Lodging</span>
-                    <h3 class="text-2xl font-serif text-white mt-4 group-hover:text-emerald-400 transition-colors">Off-Grid Cabins & Stays</h3>
-                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
-                        Campsites ($20), Dorm Bunks ($30), Dorm Tents ($30), and Queen Timber Cabins ($55) surrounded by nature.
+                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
+                        <img src="/static/images/farm-tour.jpg" alt="Cannabis & Exotic Fruit Tour" class="w-full h-72 object-contain p-1">
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">01 • Guided Excursions</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Botanical & River Tours</h3>
+                    <p class="text-stone-300 text-sm leading-relaxed mt-3">
+                        Walk our organic cannabis and exotic fruit groves or trek down to the crystal-clear spring pools of Collier Gully.
                     </p>
                 </div>
-                <span class="mt-8 text-xs font-semibold text-emerald-500 flex items-center">
-                    Reserve Stays &rarr;
-                </span>
-            </a>
+                <a href="/experiences" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
+                    View Experiences ($20–$30)
+                </a>
+            </div>
 
-            <a href="/experiences" class="group bg-stone-900/80 border border-stone-800/90 rounded-2xl p-8 hover:border-emerald-600/80 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-emerald-950/30">
+            <!-- Pillar 2: Eco-Stays -->
+            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
                 <div>
-                    <span class="text-xs uppercase font-semibold text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full border border-emerald-800">Tours</span>
-                    <h3 class="text-2xl font-serif text-white mt-4 group-hover:text-emerald-400 transition-colors">Spring River & Farm Walks</h3>
-                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
-                        Guided River Hikes ($20) to private mineral springs and Organic Marijuana Farm Walks ($30) with fresh herbal juice.
+                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
+                        <img src="/static/images/queen-cabin.jpg" alt="The Queen Cabin Experience" class="w-full h-72 object-cover">
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">02 • Eco-Sanctuary Stays</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">The Queen Cabin</h3>
+                    <p class="text-stone-300 text-sm leading-relaxed mt-3">
+                        Unwind in a private handcrafted timber cabin featuring a veranda hammock, solar warm lighting, and stone campfire pit.
                     </p>
                 </div>
-                <span class="mt-8 text-xs font-semibold text-emerald-500 flex items-center">
-                    Book Guided Tours &rarr;
-                </span>
-            </a>
+                <a href="/stays" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
+                    Book Cabin ($55 / Night)
+                </a>
+            </div>
 
-            <a href="/estates" class="group bg-stone-900/80 border border-stone-800/90 rounded-2xl p-8 hover:border-emerald-600/80 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-emerald-950/30">
+            <!-- Pillar 3: Estates -->
+            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
                 <div>
-                    <span class="text-xs uppercase font-semibold text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full border border-emerald-800">Real Estate</span>
-                    <h3 class="text-2xl font-serif text-white mt-4 group-hover:text-emerald-400 transition-colors">37-Acre Subdivision</h3>
-                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
-                        Freehold mountain estate lots allocated for luxury off-grid villa development at $100,000 USD / acre.
+                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
+                        <img src="/static/images/villa-concept.jpg" alt="Earth Family Estates Villa Concept" class="w-full h-72 object-cover">
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">03 • Land Stewardship</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Highland Estate Lots</h3>
+                    <p class="text-stone-300 text-sm leading-relaxed mt-3">
+                        Claim your private parcel in our master-planned eco-subdivision with sweeping ocean vistas and sustainable off-grid infrastructure.
                     </p>
                 </div>
-                <span class="mt-8 text-xs font-semibold text-emerald-500 flex items-center">
-                    Inquire Land Lots &rarr;
-                </span>
-            </a>
+                <a href="/estates" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
+                    Explore Subdivision Map
+                </a>
+            </div>
         </div>
     </div>
 </section>
