@@ -82,8 +82,6 @@ def custom_demo(villa_slug):
         return render_template('villa_funnel.html', villa=villa, whatsapp_url=whatsapp_url, guest_name=guest_name)
         
     return render_template('villa_funnel.html', villa=villa)
-
-if __name__ == '__main__':
     app.run(debug=True, port=5000)
 app.secret_key = 'earth-family-farms-secret-key'
 
