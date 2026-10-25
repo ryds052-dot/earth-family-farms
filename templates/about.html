@@ -5,7 +5,7 @@
     <div class="max-w-6xl mx-auto px-6">
 
         <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-            <img src="/static/images/logo.png" alt="Earth Family Farms" class="h-24 w-24 mx-auto rounded-2xl bg-white p-2 shadow-xl mb-6 object-contain">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms" class="h-24 w-24 mx-auto rounded-2xl bg-white p-2 shadow-xl mb-6 object-contain">
             <span class="text-emerald-400 text-xs font-semibold uppercase tracking-[0.2em]">Ocho Rios • St. Ann • Jamaica</span>
             <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mt-3">A Living Heritage</h1>
             <p class="text-stone-400 text-sm md:text-base mt-4 leading-relaxed">
@@ -15,7 +15,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-stone-900 border border-stone-800/80 rounded-3xl p-6 md:p-12 mb-16 shadow-2xl">
             <div class="overflow-hidden rounded-2xl border border-stone-700/80 bg-stone-950">
-                <img src="/static/images/river-hike.jpg" alt="The spring waters of Collier Gully" class="w-full h-80 md:h-[28rem] object-cover">
+                <img src="{{ url_for('static', filename='images/river-hike.jpg') }}" alt="The spring waters of Collier Gully" class="w-full h-80 md:h-[28rem] object-cover">
             </div>
             <div>
                 <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Farm • Nature • Community</span>
@@ -27,7 +27,7 @@
                     Here in Ocho Rios, St. Ann, Jamaica, guided farm experiences and time in nature connect guests with the land and an enduring vision for sustainable community living.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="/experiences" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
+                    <a href="{{ url_for('experiences') }}" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
                         Explore Experiences
                     </a>
                     <a href="https://instagram.com/earthfamilyfarms_" target="_blank" rel="noopener noreferrer" class="bg-stone-800 hover:bg-stone-700 text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl border border-stone-700">

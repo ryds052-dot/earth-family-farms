@@ -4,123 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earth Family Farms | 100-Acre Eco-Sanctuary & Estates • Ocho Rios, Jamaica</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #070908;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 85% 75%, rgba(5, 150, 105, 0.06) 0%, transparent 50%);
-            background-attachment: fixed;
-            color: #f5f5f4;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, .font-serif {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 0.03em;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0c0a09; }
-        ::-webkit-scrollbar-thumb { background: #1c1917; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.2); }
-        ::-webkit-scrollbar-thumb:hover { background: #059669; }
-
-        /* Smooth Page Entry Animation */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        main { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        main > section {
-            scroll-margin-top: 8rem;
-        }
-        main > section:first-child {
-            padding-top: 8rem;
-        }
-
-        /* Frosted Glassmorphism & Rim Lighting for Cards */
-        .bg-stone-900, .glass-card {
-            background: linear-gradient(145deg, rgba(28, 25, 23, 0.78) 0%, rgba(12, 10, 9, 0.92) 100%) !important;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        }
-
-        .bg-stone-900:hover, .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(52, 211, 153, 0.35) !important;
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.85), 
-                        0 0 35px -5px rgba(16, 185, 129, 0.18),
-                        inset 0 1px 0 rgba(52, 211, 153, 0.25) !important;
-        }
-
-        .bg-stone-900 img {
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .bg-stone-900:hover img {
-            transform: scale(1.04);
-        }
-
-        .image-lightbox.hidden {
-            display: none;
-        }
-
-        /* Luxury Emerald Buttons */
-        .btn-emerald, .bg-emerald-700, .bg-emerald-600 {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
-            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease !important;
-        }
-        .btn-emerald:hover, .bg-emerald-700:hover, .bg-emerald-600:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-            filter: brightness(1.08);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+    <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
 </head>
 <body class="bg-stone-950 text-stone-100 antialiased selection:bg-emerald-500 selection:text-stone-950">
 
     <!-- Sticky Luxury Navbar -->
     <header class="fixed top-0 left-0 right-0 z-40 bg-stone-950/85 backdrop-blur-xl border-b border-stone-800/80">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-3.5 group">
-                <img src="/static/images/logo.png" alt="Earth Family Farms Logo" class="h-11 w-11 rounded-lg object-contain bg-white p-1 shadow-md group-hover:scale-105 transition-transform">
+            <a href="{{ url_for('home') }}" class="flex items-center gap-3.5 group">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-11 w-11 rounded-lg object-contain bg-white p-1 shadow-md group-hover:scale-105 transition-transform">
                 <div>
                     <span class="block text-base md:text-lg font-serif font-bold tracking-wider text-white leading-none">EARTH FAMILY</span>
                     <span class="block text-[10px] uppercase tracking-[0.22em] text-emerald-400 font-semibold mt-1">Sanctuary & Farms</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.18em] text-stone-300">
-                <a href="/" class="hover:text-emerald-400 transition-colors">Home</a>
-                <a href="/about" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="/experiences" class="hover:text-emerald-400 transition-colors">Experiences</a>
-                <a href="/stays" class="hover:text-emerald-400 transition-colors">Stays</a>
-                <a href="/estates" class="hover:text-emerald-400 transition-colors">Estates</a>
+            <nav class="hidden lg:flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300">
+                <a href="{{ url_for('home') }}" class="hover:text-emerald-400 transition-colors">Home</a>
+                <a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">About</a>
+                <a href="{{ url_for('experiences') }}" class="hover:text-emerald-400 transition-colors">Experiences</a>
+                <a href="{{ url_for('stays') }}" class="hover:text-emerald-400 transition-colors">Stays</a>
+                <a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">Estates</a>
+                <a href="{{ url_for('invest') }}" class="text-amber-200 hover:text-amber-100 transition-colors">Invest</a>
+                <a href="{{ url_for('harvest') }}" class="text-amber-200 hover:text-amber-100 transition-colors">Harvest</a>
+                <a href="{{ url_for('vitals') }}" class="hover:text-emerald-400 transition-colors">Vitals</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="/stays#stay-inquiry" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl">
+                <a href="{{ url_for('stays') }}#stay-inquiry" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl">
                     Reserve Stay
                 </a>
             </div>
         </div>
 
         <!-- Mobile Quick Nav Bar -->
-        <div class="flex md:hidden items-center justify-around border-t border-stone-800/70 bg-stone-950/95 py-2.5 px-4 text-[10px] font-semibold uppercase tracking-widest text-stone-300">
-            <a href="/" class="hover:text-emerald-400">Home</a>
-            <a href="/about" class="hover:text-emerald-400">About</a>
-            <a href="/experiences" class="hover:text-emerald-400">Experiences</a>
-            <a href="/stays" class="hover:text-emerald-400">Stays</a>
-            <a href="/estates" class="hover:text-emerald-400">Estates</a>
+        <div class="flex lg:hidden items-center justify-start gap-6 overflow-x-auto whitespace-nowrap border-t border-stone-800/70 bg-stone-950/95 py-2.5 px-4 text-[10px] font-semibold uppercase tracking-widest text-stone-300">
+            <a href="{{ url_for('home') }}" class="flex-none hover:text-emerald-400">Home</a>
+            <a href="{{ url_for('about') }}" class="flex-none hover:text-emerald-400">About</a>
+            <a href="{{ url_for('experiences') }}" class="flex-none hover:text-emerald-400">Experiences</a>
+            <a href="{{ url_for('stays') }}" class="flex-none hover:text-emerald-400">Stays</a>
+            <a href="{{ url_for('estates') }}" class="flex-none hover:text-emerald-400">Estates</a>
+            <a href="{{ url_for('invest') }}" class="flex-none text-amber-200 hover:text-amber-100">Invest</a>
+            <a href="{{ url_for('harvest') }}" class="flex-none text-amber-200 hover:text-amber-100">Harvest</a>
+            <a href="{{ url_for('vitals') }}" class="flex-none hover:text-emerald-400">Vitals</a>
         </div>
     </header>
 
@@ -134,7 +65,7 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div class="md:col-span-2">
                 <div class="flex items-center gap-3 mb-4">
-                    <img src="/static/images/logo.png" alt="Earth Family Farms" class="h-10 w-10 rounded-lg bg-white p-1 object-contain">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms" class="h-10 w-10 rounded-lg bg-white p-1 object-contain">
                     <div>
                         <span class="block text-white font-serif font-bold tracking-wider">EARTH FAMILY FARMS</span>
                         <span class="block text-[10px] uppercase tracking-widest text-emerald-400">Farm • Nature • Community</span>
@@ -148,21 +79,24 @@
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Sanctuary Navigation</h4>
                 <ul class="space-y-2.5 text-sm">
-                    <li><a href="/experiences" class="hover:text-emerald-400 transition-colors">Guided Farm & River Tours</a></li>
-                    <li><a href="/stays" class="hover:text-emerald-400 transition-colors">The Queen Cabin Stay</a></li>
-                    <li><a href="/estates" class="hover:text-emerald-400 transition-colors">Highland Subdivision Estates</a></li>
-                    <li><a href="/about" class="hover:text-emerald-400 transition-colors">Our 100-Acre Heritage</a></li>
+                    <li><a href="{{ url_for('experiences') }}" class="hover:text-emerald-400 transition-colors">Guided Farm & River Tours</a></li>
+                    <li><a href="{{ url_for('stays') }}" class="hover:text-emerald-400 transition-colors">The Queen Cabin Stay</a></li>
+                    <li><a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">Highland Subdivision Estates</a></li>
+                    <li><a href="{{ url_for('invest') }}" class="hover:text-amber-200 transition-colors">Private Estate Investment</a></li>
+                    <li><a href="{{ url_for('harvest') }}" class="hover:text-amber-200 transition-colors">Commercial Harvest</a></li>
+                    <li><a href="{{ url_for('vitals') }}" class="hover:text-emerald-400 transition-colors">Sanctuary Live Vitals</a></li>
+                    <li><a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">Our 100-Acre Heritage</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Direct Concierge</h4>
                 <p class="text-sm mb-2">Call / WhatsApp:</p>
-                <a href="https://wa.me/18763769526" target="_blank" class="inline-block text-emerald-400 font-bold text-base hover:underline mb-4">
+                <a href="https://wa.me/18763769526" target="_blank" rel="noopener noreferrer" class="inline-block text-emerald-400 font-bold text-base hover:underline mb-4">
                     876-376-9526
                 </a>
                 <p class="text-sm mb-1">Instagram:</p>
-                <a href="https://instagram.com/earthfamilyfarms_" target="_blank" class="inline-block text-emerald-400 font-semibold text-sm hover:underline">
+                <a href="https://instagram.com/earthfamilyfarms_" target="_blank" rel="noopener noreferrer" class="inline-block text-emerald-400 font-semibold text-sm hover:underline">
                     @EARTHFAMILYFARMS_
                 </a>
             </div>
@@ -182,36 +116,6 @@
         <img id="lightbox-img" src="" alt="Full Resolution Preview" class="max-h-[94vh] max-w-[96vw] object-contain rounded-2xl border border-stone-800 shadow-2xl">
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lightbox = document.getElementById('image-lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeButton = document.getElementById('image-lightbox-close');
-            const closeLightbox = () => {
-                lightbox.classList.add('hidden');
-                lightbox.setAttribute('aria-hidden', 'true');
-                document.body.classList.remove('overflow-hidden');
-            };
-
-            document.querySelectorAll('section img').forEach(img => {
-                img.classList.add('cursor-zoom-in');
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.currentSrc || img.src;
-                    lightboxImg.alt = img.alt || 'Full Resolution Preview';
-                    lightbox.classList.remove('hidden');
-                    lightbox.setAttribute('aria-hidden', 'false');
-                    document.body.classList.add('overflow-hidden');
-                });
-            });
-
-            closeButton.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', event => {
-                if (event.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/portal.js') }}" defer></script>
 </body>
 </html>

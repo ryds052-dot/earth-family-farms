@@ -1,0 +1,40 @@
+<section class="py-16 bg-stone-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
+            <div>
+                <span class="text-xs uppercase tracking-[0.2em] text-amber-300 font-semibold">Estate intelligence</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-semibold text-white mt-2">Sanctuary Live Vitals</h2>
+                <p class="text-sm text-stone-400 mt-2">A sample operations dashboard for the Ocho Rios estate.</p>
+            </div>
+            <span class="inline-flex items-center gap-2 w-fit rounded-full border border-amber-400/30 bg-amber-950/30 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-amber-200">
+                <span class="h-2 w-2 rounded-full bg-amber-300"></span>
+                Simulated demo · Not connected to sensors
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            <article class="portal-panel rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-widest text-stone-400">Spring water output</p>
+                <p class="mt-4 text-3xl font-semibold text-amber-200">{{ vitals.water_output }} <span class="text-sm font-normal text-stone-400">gal/day</span></p>
+                <p class="mt-2 text-xs text-stone-500">Illustrative daily flow reading</p>
+            </article>
+            <article class="portal-panel rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-widest text-stone-400">Solar carbon offset</p>
+                <p class="mt-4 text-3xl font-semibold text-amber-200">{{ vitals.carbon_offset }} <span class="text-sm font-normal text-stone-400">tCO₂e/year</span></p>
+                <p class="mt-2 text-xs text-stone-500">Sample annual estimate</p>
+            </article>
+            <article class="portal-panel rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-widest text-stone-400">Forest canopy preserved</p>
+                <p class="mt-4 text-3xl font-semibold text-amber-200">{{ vitals.canopy_preservation }}<span class="text-xl">%</span></p>
+                <p class="mt-2 text-xs text-stone-500">Illustrative land-cover estimate</p>
+            </article>
+            <article class="portal-panel rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-widest text-stone-400">St. Ann microclimate</p>
+                <p class="mt-4 text-3xl font-semibold text-amber-200">{{ vitals.temperature }}°C</p>
+                <p class="mt-2 text-sm text-stone-300">{{ vitals.humidity }}% humidity <span class="text-stone-600">·</span> {{ vitals.wind }} km/h wind</p>
+                <p class="mt-2 text-xs text-stone-500">Sample conditions · not a live forecast</p>
+            </article>
+        </div>
+        <p class="mt-5 text-xs leading-relaxed text-stone-500">All figures shown are demonstration data only—not verified measurements or operational guarantees.</p>
+    </div>
+</section>

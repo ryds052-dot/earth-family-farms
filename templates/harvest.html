@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="min-h-screen bg-stone-950 py-20 text-stone-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <header class="max-w-4xl mb-12">
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">Harvest pipeline · St. Ann, Jamaica</span>
+            <h1 class="mt-3 text-4xl md:text-6xl font-semibold text-white">Commercial Harvest Exchange</h1>
+            <p class="mt-5 max-w-3xl text-sm md:text-base leading-relaxed text-stone-300">
+                Build a bulk supply inquiry for resort kitchens, boutique brands, and distribution partners. Pipeline quantities and timing below are sample planning data—not confirmed inventory or a supply commitment.
+            </p>
+        </header>
+
+        <div class="portal-notice mb-8 rounded-2xl p-5 md:p-6" role="note">
+            <p class="text-sm font-semibold text-amber-100">Sample seasonal pipeline · All volumes and windows require confirmation</p>
+            <p class="mt-2 text-xs leading-relaxed text-stone-300">This demonstration dashboard is not linked to field inventory, crop forecasting, certification records, or export documentation. Product, volume, quality, timing, and delivery are subject to confirmation by the estate team.</p>
+        </div>
+
+        <section aria-labelledby="pipeline-heading">
+            <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-amber-300">Agroforestry parcels</p>
+                    <h2 id="pipeline-heading" class="mt-2 text-2xl md:text-3xl font-semibold text-white">Seasonal Harvest Pipeline</h2>
+                </div>
+                <span class="rounded-full border border-stone-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-stone-300">Planning view · not live stock</span>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-stone-800">
+                <table class="min-w-full divide-y divide-stone-800 text-left">
+                    <thead class="bg-stone-900/90">
+                        <tr class="text-[10px] uppercase tracking-widest text-stone-400">
+                            <th scope="col" class="px-5 py-4">Crop / product</th>
+                            <th scope="col" class="px-5 py-4">Sample volume</th>
+                            <th scope="col" class="px-5 py-4">Planning window</th>
+                            <th scope="col" class="px-5 py-4">Pipeline status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-800/80 bg-stone-950/60">
+                        {% for key, crop in crops.items() %}
+                        <tr class="transition-colors hover:bg-stone-900/60">
+                            <th scope="row" class="whitespace-nowrap px-5 py-4 text-sm font-semibold text-white">{{ crop.name }}</th>
+                            <td class="whitespace-nowrap px-5 py-4 text-sm text-stone-300">~{{ crop.sample_volume }} {{ crop.unit }}</td>
+                            <td class="whitespace-nowrap px-5 py-4 text-xs text-stone-400">{{ crop.planning_window }}</td>
+                            <td class="whitespace-nowrap px-5 py-4"><span class="rounded-full border border-amber-400/30 bg-amber-950/30 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-amber-200">Confirm availability</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="bulk-inquiry" class="portal-panel mt-12 rounded-3xl p-6 md:p-9" aria-labelledby="bulk-heading">
+            <div class="max-w-3xl">
+                <p class="text-xs uppercase tracking-widest text-amber-300">B2B procurement</p>
+                <h2 id="bulk-heading" class="mt-2 text-2xl md:text-4xl font-semibold text-white">Build a Bulk Contract Inquiry</h2>
+                <p class="mt-3 text-sm leading-relaxed text-stone-400">Select products and requested volumes. Submitting opens a prefilled WhatsApp draft for the estate concierge; no order is placed until availability and terms are confirmed.</p>
+            </div>
+            {% if error %}
+            <p class="mt-6 rounded-xl border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">{{ error }}</p>
+            {% endif %}
+
+            <form action="{{ url_for('harvest') }}" method="post" class="mt-8 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    {% for key, crop in crops.items() %}
+                    <div class="portal-metric rounded-2xl p-4">
+                        <div class="flex items-start gap-3">
+                            <input id="crop-{{ key }}" type="checkbox" name="crops" value="{{ key }}" {% if key in form_data.get('crops', []) %}checked{% endif %} class="mt-1 accent-amber-300">
+                            <label for="crop-{{ key }}" class="min-w-0 flex-1 cursor-pointer">
+                                <span class="block text-sm font-semibold text-white">{{ crop.name }}</span>
+                                <span class="mt-1 block text-[10px] text-stone-500">Sample planning volume: {{ crop.sample_volume }} {{ crop.unit }}</span>
+                            </label>
+                        </div>
+                        <label for="quantity-{{ key }}" class="mt-3 block text-[10px] uppercase tracking-widest text-stone-400">Requested bulk volume</label>
+                        <div class="mt-1 flex items-center gap-2">
+                            <input id="quantity-{{ key }}" type="number" name="quantity_{{ key }}" min="0.1" max="100000" step="0.1" value="{{ form_data.get('quantities', {}).get(key, '') }}" class="w-full rounded-lg border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-white">
+                            <span class="text-[10px] text-stone-500">{{ crop.unit }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div>
+                        <label for="buyer-company" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Organization</label>
+                        <input id="buyer-company" name="company" required maxlength="120" value="{{ form_data.get('company', '') }}" autocomplete="organization" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                    </div>
+                    <div>
+                        <label for="buyer-type" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Buyer type</label>
+                        <select id="buyer-type" name="buyer_type" required class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                            <option value="">Select buyer type</option>
+                            {% for key, label in buyer_types.items() %}
+                            <option value="{{ key }}" {% if form_data.get('buyer_type') == key %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="buyer-contact" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Contact name</label>
+                        <input id="buyer-contact" name="contact_name" required maxlength="100" value="{{ form_data.get('contact_name', '') }}" autocomplete="name" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                    </div>
+                    <div>
+                        <label for="buyer-email" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Business email</label>
+                        <input id="buyer-email" type="email" name="email" required maxlength="254" value="{{ form_data.get('email', '') }}" autocomplete="email" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                    </div>
+                    <div>
+                        <label for="buyer-phone" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Phone / WhatsApp</label>
+                        <input id="buyer-phone" type="tel" name="phone" required maxlength="25" pattern="[0-9+().\- ]{7,25}" value="{{ form_data.get('phone', '') }}" autocomplete="tel" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                    </div>
+                    <div>
+                        <label for="delivery-window" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Preferred delivery</label>
+                        <select id="delivery-window" name="delivery_window" required class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                            <option value="">Select a window</option>
+                            <option value="0-30" {% if form_data.get('delivery_window') == '0-30' %}selected{% endif %}>Within 30 days</option>
+                            <option value="31-90" {% if form_data.get('delivery_window') == '31-90' %}selected{% endif %}>31–90 days</option>
+                            <option value="flexible" {% if form_data.get('delivery_window') == 'flexible' %}selected{% endif %}>Flexible</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="buyer-notes" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Specifications, delivery location, or additional requirements</label>
+                    <textarea id="buyer-notes" name="notes" rows="3" maxlength="2000" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">{{ form_data.get('notes', '') }}</textarea>
+                </div>
+                <button type="submit" class="inline-flex items-center justify-center rounded-xl border border-amber-200/40 bg-amber-200 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-stone-950 transition hover:bg-amber-100">
+                    Prepare wholesale inquiry in WhatsApp
+                </button>
+            </form>
+        </section>
+    </div>
+</section>
+{% endblock %}

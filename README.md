@@ -1,81 +1,87 @@
 # Earth Family Farms
 
-A beginner-friendly Flask landing page for a family eco-farm in St. Ann, Jamaica.
+A Flask site for Earth Family Farms in Ocho Rios, St. Ann, Jamaica. The site
+includes sanctuary and estate showcases, an accessible image lightbox, and
+stay/experience inquiry forms delivered through Resend.
 
 ## Project structure
 
 ```text
-code/
-├── app.py                 # Flask routes, validation, and SQLite database helpers
-├── farm.db                # Created automatically when the app first runs
-├── requirements.txt       # Python packages the project needs
-├── README.md              # Setup instructions
-└── templates/
-    └── index.html         # Landing page HTML and Tailwind CSS
+app.py                 Flask routes and server-side form validation
+requirements.txt       Python runtime dependencies
+package.json           Tailwind CSS build script and development dependency
+static/
+  css/site.css         Shared visual system
+  css/tailwind.css     Compiled local Tailwind utilities
+  css/tailwind.input.css Tailwind CSS build entrypoint
+  js/site.js           Shared image lightbox interactions
+  images/              Site photography and brand assets
+templates/             Jinja page templates
+tests/test_app.py      Route and booking-flow tests
 ```
 
-## Run the page locally
+## Local setup
 
-1. Install Python from [python.org](https://www.python.org/downloads/). During installation on Windows, check **Add Python to PATH**.
-2. Open PowerShell in this folder:
+Create and activate a virtual environment, then install dependencies:
 
-   ```powershell
-   cd C:\Users\ryder\Downloads\code
-   ```
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
 
-3. Create a virtual environment. This gives the project its own isolated Python packages:
+Tailwind utilities are built and served locally; no runtime CDN compilation is
+required. To rebuild them after changing template utility classes:
 
-   ```powershell
-   python -m venv .venv
-   ```
+```powershell
+npm ci
+npm run build:css
+```
 
-4. Activate the environment:
+Run the application:
 
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
+```powershell
+python app.py
+```
 
-   If PowerShell blocks activation, run:
+The local site is available at `http://127.0.0.1:5000`. Set `FLASK_DEBUG=true`
+only for local development when an interactive debugger is needed.
 
-   ```powershell
-   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-   ```
+## Booking inquiries
 
-   Then run the activation command again.
+The stays and experience inquiry form sends validated submissions through
+Resend. Configure these environment variables in the deployment environment:
 
-5. Install Flask:
+- `RESEND_API_KEY` — API key for sending booking inquiries.
+- `BOOKING_EMAIL` — inbox that receives inquiries.
+- `RESEND_FROM_EMAIL` — verified sender address (defaults to Resend's
+  onboarding sender).
 
-   ```powershell
-   pip install -r requirements.txt
-   ```
+Without both `RESEND_API_KEY` and `BOOKING_EMAIL`, the form returns a clear
+service-unavailable message and visitors can use the WhatsApp booking link
+instead.
 
-6. Start the development server:
+## Investor and harvest inquiry portals
 
-   ```powershell
-   python app.py
-   ```
+- `/invest` and `/estate-parcels` provide the interactive parcel scenario and
+  a consent-gated offering-memorandum / parcel-interest inquiry. The $25,000
+  per-acre assumption, 5% annual appreciation assumption, and use-specific
+  gross yields are illustrative only; they are not approved pricing,
+  appraisals, or promised returns.
+- `/harvest` and `/wholesale` provide a sample seasonal pipeline and validated
+  bulk-order inquiry builder. Product volumes and planning windows are
+  demonstration data, not inventory or supply commitments.
+- `/vitals` provides the same sample sustainability panel included on the
+  homepage. Its sensor and weather values are simulated and are not connected
+  to live estate monitoring.
 
-7. Open `http://127.0.0.1:5000` in your browser.
+Investor and wholesale forms validate submissions on the server and then
+redirect to a prefilled WhatsApp draft for the concierge at +1 876-287-4304.
+Visitors must confirm and send each message in WhatsApp; the site does not send
+messages automatically.
 
-## How the first Flask file works
+Run the test suite with:
 
-- `Flask(__name__)` creates the web application.
-- `@app.route("/")` says that the `home` function responds to the website's home address.
-- `render_template("index.html")` loads the HTML file from the `templates` folder.
-- `app.run(debug=True)` starts a local server and refreshes it when you save changes.
-- `farm.db` is created automatically the first time Flask starts.
-
-## Test a booking
-
-1. Start the app with `python app.py`.
-2. Open `http://127.0.0.1:5000/#book`.
-3. Complete the booking form with a cabin, name, email, and two dates.
-4. Submit the form. A success message appears and the reservation is stored in `farm.db`.
-5. Submit the same cabin with overlapping dates again. The app will reject it.
-
-The server uses parameterized SQLite queries, validates dates on the server (not only in
-the browser), and accepts a new check-in on the same day as another guest's check-out.
-The development secret key in `app.py` should be replaced with a private environment
-variable before deploying publicly.
-
-The Tailwind CSS CDN is loaded by `index.html`, so this first version does not need a separate CSS build step. The photo URLs are temporary Unsplash images and should be replaced with licensed farm photography before launch.
+```powershell
+python -m unittest discover -s tests
+```

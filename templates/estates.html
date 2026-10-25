@@ -24,8 +24,8 @@
                     <span class="text-xs text-stone-400">Collier Gully & Highland Ridge • Ocho Rios</span>
                 </div>
 
-                <video autoplay loop muted playsinline controls class="w-full h-[420px] md:h-[540px] object-cover bg-stone-950">
-                    <source src="/static/land-drone.mp4" type="video/mp4">
+                <video autoplay loop muted playsinline controls preload="metadata" class="w-full h-[420px] md:h-[540px] object-cover bg-stone-950">
+                    <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -40,13 +40,13 @@
                         <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-1">Master Subdivision Map</h2>
                         <p class="text-stone-400 text-sm mt-1">Click the subdivision map below to inspect individual lot boundaries in full resolution.</p>
                     </div>
-                    <a href="https://wa.me/18763769526?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20available%20subdivision%20estate%20lots." target="_blank" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl text-center">
+                    <a href="https://wa.me/18762874304?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20available%20subdivision%20estate%20lots." target="_blank" rel="noopener noreferrer" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl text-center">
                         Inquire About Available Lots
                     </a>
                 </div>
 
                 <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-950 p-2">
-                    <img src="/static/subdivision-map.jpg" alt="Master Subdivision Map" class="w-full max-h-[600px] object-contain mx-auto rounded-xl">
+                    <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Master Subdivision Map" class="w-full max-h-[600px] object-contain mx-auto rounded-xl">
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="h-full bg-stone-900 border border-stone-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-2xl">
                 <div>
                     <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950 p-2">
-                        <img src="/static/estates-flyer.jpg" alt="Earth Family Estates Official Flyer" class="w-full h-96 object-contain">
+                        <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Earth Family Estates Official Flyer" class="w-full h-96 object-contain">
                     </div>
                     <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Investment Overview</span>
                     <h3 class="text-2xl font-serif font-bold text-white mt-1">Sanctuary Land Offerings</h3>
@@ -69,7 +69,7 @@
             <div class="h-full bg-stone-900 border border-stone-800/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-2xl">
                 <div>
                     <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
-                        <img src="/static/images/villa-concept.jpg" alt="Luxury Eco-Villa Concept" class="w-full h-96 object-cover">
+                        <img src="{{ url_for('static', filename='images/villa-concept.jpg') }}" alt="Luxury Eco-Villa Concept" class="w-full h-96 object-cover">
                     </div>
                     <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Architectural Vision</span>
                     <h3 class="text-2xl font-serif font-bold text-white mt-1">Sustainable Tropical Villas</h3>

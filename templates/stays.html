@@ -16,11 +16,11 @@
         <div class="max-w-5xl mx-auto bg-stone-900 border border-stone-800/80 rounded-3xl p-6 md:p-10 mb-12 shadow-2xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-950">
-                    <img src="/static/images/queen-cabin.jpg" alt="The Queen Cabin Experience" class="w-full h-96 object-cover">
+                    <img src="{{ url_for('static', filename='images/queen-cabin.jpg') }}" alt="The Queen Cabin Experience" class="w-full h-96 object-cover">
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/static/images/logo.png" alt="Earth Family Farms Logo" class="h-10 w-10 rounded-lg bg-white p-1 object-contain">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-10 w-10 rounded-lg bg-white p-1 object-contain">
                         <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Signature Timber Sanctuary</span>
                     </div>
                     <h2 class="text-3xl font-serif font-bold text-white">The Queen Cabin Experience</h2>
@@ -51,44 +51,61 @@
                 <p class="text-stone-400 text-sm mt-2">Submit your preferred dates below or message our concierge directly on WhatsApp at 876-376-9526.</p>
             </div>
 
-            <form action="/stays" method="POST" class="space-y-5">
+            {% if success %}
+            <p class="mb-6 rounded-xl border border-emerald-500/30 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-300" role="status">
+                Your inquiry has been sent. Our concierge will be in touch soon.
+            </p>
+            {% endif %}
+            {% if error %}
+            <p class="mb-6 rounded-xl border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">
+                {{ error }}
+            </p>
+            {% endif %}
+
+            <form action="{{ url_for('stays') }}" method="POST" class="space-y-5">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Full Name</label>
-                        <input type="text" name="name" required placeholder="Your Name" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                        <label for="guest-name" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Full Name</label>
+                        <input id="guest-name" type="text" name="name" required maxlength="100" autocomplete="name" value="{{ form_data.get('name', '') }}" placeholder="Your Name" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Email or WhatsApp Number</label>
-                        <input type="text" name="contact" required placeholder="you@example.com / 876-..." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                        <label for="guest-email" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Email</label>
+                        <input id="guest-email" type="email" name="email" required maxlength="254" autocomplete="email" value="{{ form_data.get('email', '') }}" placeholder="you@example.com" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Select Experience / Stay</label>
-                        <select name="package" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                            <option value="Queen Cabin ($55/night)">The Queen Cabin Stay ($55 USD / night)</option>
-                            <option value="Cannabis & Exotic Fruit Tour ($30/person)">Marijuana & Exotic Fruit Farm Tour ($30 USD)</option>
-                            <option value="Collier Gully River Hike ($20/person)">Collier Gully Holistic River Hike ($20 USD)</option>
-                            <option value="Full Sanctuary Package">Combined Cabin Stay + Guided Farm & River Tour</option>
+                        <label for="guest-phone" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Phone or WhatsApp</label>
+                        <input id="guest-phone" type="tel" name="phone" required maxlength="25" autocomplete="tel" pattern="[0-9+().\- ]{7,25}" value="{{ form_data.get('phone', '') }}" placeholder="+1 876 ..." title="Enter a phone number using digits and common phone punctuation." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="guest-package" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Select Experience / Stay</label>
+                        <select id="guest-package" name="package" required class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            <option value="Queen Cabin ($55/night)" {% if form_data.get('package', 'Queen Cabin ($55/night)') == 'Queen Cabin ($55/night)' %}selected{% endif %}>The Queen Cabin Stay ($55 USD / night)</option>
+                            <option value="Cannabis &amp; Exotic Fruit Tour ($30/person)" {% if form_data.get('package') == 'Cannabis & Exotic Fruit Tour ($30/person)' %}selected{% endif %}>Marijuana &amp; Exotic Fruit Farm Tour ($30 USD)</option>
+                            <option value="Collier Gully River Hike ($20/person)" {% if form_data.get('package') == 'Collier Gully River Hike ($20/person)' %}selected{% endif %}>Collier Gully Holistic River Hike ($20 USD)</option>
+                            <option value="Full Sanctuary Package" {% if form_data.get('package') == 'Full Sanctuary Package' %}selected{% endif %}>Combined Cabin Stay + Guided Farm &amp; River Tour</option>
                         </select>
                     </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Preferred Date</label>
-                        <input type="date" name="date" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Special Requests or Group Size</label>
-                    <textarea name="notes" rows="3" placeholder="Tell us how many guests or any questions..." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500"></textarea>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="preferred-date" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Preferred Date</label>
+                        <input id="preferred-date" type="date" name="date" min="{{ today }}" value="{{ form_data.get('date', '') }}" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="booking-notes" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Special Requests or Group Size</label>
+                        <textarea id="booking-notes" name="notes" rows="3" maxlength="2000" placeholder="Tell us how many guests or any questions..." class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-emerald-500">{{ form_data.get('notes', '') }}</textarea>
+                    </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
                     <button type="submit" class="flex-1 btn-emerald text-white text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl text-center">
                         Submit Reservation Request
                     </button>
-                    <a href="https://wa.me/18763769526?text=Hello%20Earth%20Family%20Farms!%20I%20would%20like%20to%20book%20a%20stay%20or%20farm%20tour." target="_blank" class="bg-stone-800 hover:bg-stone-700 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl text-center transition-all">
+                    <a href="https://wa.me/18763769526?text=Hello%20Earth%20Family%20Farms!%20I%20would%20like%20to%20book%20a%20stay%20or%20farm%20tour." target="_blank" rel="noopener noreferrer" class="bg-stone-800 hover:bg-stone-700 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-widest py-4 px-6 rounded-xl text-center transition-all">
                         Instant WhatsApp Booking
                     </a>
                 </div>
