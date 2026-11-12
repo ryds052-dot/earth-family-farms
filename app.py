@@ -547,3 +547,7 @@ def custom_demo(villa_slug):
 
 if __name__ == "__main__":
     app.run(debug=os.environ.get("FLASK_DEBUG", "").lower() == "true")
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html'), 404

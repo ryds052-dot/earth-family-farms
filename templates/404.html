@@ -1,0 +1,13 @@
+﻿{% extends "base.html" %}
+{% block title %}<title>Page not found — Earth Family Farms</title>{% endblock %}
+{% block meta %}<meta name="description" content="That page is not here. Head back to the sanctuary or call the concierge.">{% endblock %}
+{% block content %}
+<section class="min-h-[70svh] flex items-center px-6 py-24">
+  <div class="max-w-7xl mx-auto w-full">
+    <span class="text-xs uppercase tracking-[0.2em] text-amber-300 font-semibold">404</span>
+    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mt-3">That page has wandered off.</h1>
+    <p class="text-stone-400 mt-4 max-w-md">Nothing here. The sanctuary is still where you left it.</p>
+    <a href="{{ url_for('home') }}" class="btn-emerald inline-block text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-md mt-8">Back to the farm</a>
+  </div>
+</section>
+{% endblock %}

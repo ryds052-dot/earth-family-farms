@@ -1,0 +1,4 @@
+﻿{
+  "buildCommand": "npm run build:css",
+  "rewrites": [{ "source": "/(.*)", "destination": "/app.py" }]
+}
