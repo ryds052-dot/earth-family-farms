@@ -224,10 +224,6 @@ def render_whatsapp_error(template, form_data, error, status_code=400, **context
 def home():
     return redirect(url_for('estates'))
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
 
 @app.route("/experiences")
 def experiences():
