@@ -222,8 +222,7 @@ def render_whatsapp_error(template, form_data, error, status_code=400, **context
 
 @app.route("/")
 def home():
-    return render_template("index.html", vitals=get_vitals_demo())
-
+    return redirect(url_for('estates'))
 
 @app.route("/about")
 def about():
