@@ -33,3 +33,15 @@
     if (field) field.value = chip.dataset.lot;
   }));
 })();
+  const dlg = document.getElementById('lightbox');
+  if (dlg) {
+    document.querySelectorAll('[data-full]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        dlg.querySelector('img').src = el.dataset.full;
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', () => dlg.close());
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && dlg.open) dlg.close(); });
+  }

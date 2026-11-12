@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block title %}<title>Private Land Viewing — Highland Estate, Ocho Rios</title>{% endblock %}
-{% block meta %}<meta name="description" content="Freehold parcels inside a 100-acre private highland estate above Ocho Rios. Spring water, ocean aspect, covenant-held canopy. Viewings by appointment.">{% endblock %}
+{% block meta %}<meta name="description" content="Freehold parcels inside a 100-acre private highland estate above Ocho Rios. Spring water, ocean aspect, covenant-held canopy. Viewings by appointment.">
+<meta property="og:title" content="Highland estate lots — private viewing, Ocho Rios">
+<meta property="og:description" content="Freehold parcels inside a 100-acre covenant-held highland estate. Viewings by appointment.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ url_for('static', filename='ridge-aerial.jpg', _external=True) }}">
+<meta name="twitter:card" content="summary_large_image">{% endblock %}
 
 {% block content %}
 <section class="hero relative flex items-end overflow-hidden bg-stone-950">
@@ -91,15 +96,15 @@
         <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Low density by design. Homes step down the slope on an elevated hardwood walk, sharing a fire pavilion and the view — the shape of a small eco-retreat rather than a subdivision.</p>
     </div>
     <div class="mt-9 overflow-hidden reveal">
-        <img src="{{ url_for('static', filename='villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2] md:aspect-[21/9]">
+        <img data-full="{{ url_for('static', filename='villa-community.jpg') }}" src="{{ url_for('static', filename='villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2] md:aspect-[21/9]">
     </div>
     <div class="max-w-7xl mx-auto grid grid-cols-1 gap-6 px-5 pt-6 md:grid-cols-2">
         <figure>
-            <img src="{{ url_for('static', filename='villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
+            <img data-full="{{ url_for('static', filename='villa-dusk.jpg') }}" src="{{ url_for('static', filename='villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
             <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 04</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Build vision</span>The house sits into the slope. Stone below, hardwood above, glass to the drop.</figcaption>
         </figure>
         <figure>
-            <img src="{{ url_for('static', filename='villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
+            <img data-full="{{ url_for('static', filename='villa-interior.jpg') }}" src="{{ url_for('static', filename='villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
             <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 05</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Inside out</span>Every principal room opens. The treetops are the wall.</figcaption>
         </figure>
     </div>
@@ -109,7 +114,7 @@
     <div class="grid grid-cols-3 gap-px bg-stone-800/60 snap">
         <img src="{{ url_for('static', filename='villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
         <img src="{{ url_for('static', filename='villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-        <img src="{{ url_for('static', filename='pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
+        <img data-full="{{ url_for('static', filename='pavilion-night.jpg') }}" src="{{ url_for('static', filename='pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
     </div>
     <div class="max-w-7xl mx-auto px-5 py-10">
         <p class="max-w-[46ch] text-[15px] leading-relaxed text-stone-400"><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Materials</span>Local limestone, stained hardwood, brass, no ornament. The palette is fixed by covenant so the ridge reads as one place in thirty years, not thirty houses.</p>
@@ -140,6 +145,59 @@
         </ol>
     </div>
 </section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Residence",
+  "name": "Earth Family Farms Highland Estate",
+  "description": "Freehold parcels inside a 100-acre private highland estate above Ocho Rios, St. Ann, Jamaica.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Ocho Rios", "addressRegion": "St. Ann", "addressCountry": "JM" },
+  "telephone": "+18765206119",
+  "image": "{{ url_for('static', filename='ridge-aerial.jpg', _external=True) }}"
+}
+</script>
+<section class="py-16 border-t border-stone-800/70 reveal">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Availability</span>
+        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Sixteen envelopes, released in order.</h2>
+        <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Upper terraces first. Struck through are taken, amber is under reservation, the rest are open.</p>
+        <div class="mt-8 grid grid-cols-4 gap-2 sm:grid-cols-8">
+            <span class="plot" data-state="held">A1</span><span class="plot" data-state="available">A2</span><span class="plot" data-state="reserved">A3</span><span class="plot" data-state="available">A4</span>
+            <span class="plot" data-state="available">B1</span><span class="plot" data-state="held">B2</span><span class="plot" data-state="available">B3</span><span class="plot" data-state="available">B4</span>
+            <span class="plot" data-state="available">C1</span><span class="plot" data-state="available">C2</span><span class="plot" data-state="reserved">C3</span><span class="plot" data-state="available">C4</span>
+            <span class="plot" data-state="available">D1</span><span class="plot" data-state="available">D2</span><span class="plot" data-state="available">D3</span><span class="plot" data-state="available">D4</span>
+        </div>
+        <p class="mt-4 text-[11px] text-stone-500">Plot references are illustrative pending the survey extract.</p>
+    </div>
+</section>
+
+<section class="py-16 border-t border-stone-800/70 reveal">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">The terms</span>
+        <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">Plain terms, before anyone travels.</h2>
+        <div class="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-3">
+            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">To reserve</p><p class="mt-2 font-serif text-lg font-bold text-white">10% deposit</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Holds the envelope off the market for 30 days while title and survey are checked.</p></div>
+            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Balance</p><p class="mt-2 font-serif text-lg font-bold text-white">90 days</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Completion on transfer. Staged terms considered for larger parcels.</p></div>
+            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Costs</p><p class="mt-2 font-serif text-lg font-bold text-white">Buyer's side</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Stamp duty, transfer and attorney fees are the buyer's. No estate commission.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 border-t border-stone-800/70 reveal">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Questions</span>
+        <h2 class="mt-3 max-w-[20ch] font-serif font-bold text-white">What buyers ask first.</h2>
+        <div class="mt-8 max-w-3xl">
+            <details class="faq"><summary>Is the title freehold and clean?</summary><p>Yes — freehold, transferred by registered instrument. The survey extract and title are released with the parcel sheet so your attorney can review before you commit anything.</p></details>
+            <details class="faq"><summary>Do I have to build within a set time?</summary><p>No hard deadline. The covenant sets what may be built, not when. Land can be held without penalty.</p></details>
+            <details class="faq"><summary>Can foreign buyers purchase?</summary><p>Yes. Non-residents can hold Jamaican freehold through the standard transfer process. Your attorney handles the filing.</p></details>
+            <details class="faq"><summary>What do the covenants actually restrict?</summary><p>Setbacks, height, material palette and density — enough to protect the canopy and sightlines, not enough to dictate your house.</p></details>
+            <details class="faq"><summary>Water and power?</summary><p>Spring water is on the estate. Power and connectivity are confirmed parcel by parcel during due diligence — we will not promise a connection that isn't in.</p></details>
+        </div>
+    </div>
+</section>
+
+<dialog id="lightbox" class="lightbox"><img alt="Enlarged estate photograph"></dialog>
 <section id="enquiry" class="border-t border-stone-800">
     <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 px-5 py-16 lg:grid-cols-2 lg:items-center">
         <div>
