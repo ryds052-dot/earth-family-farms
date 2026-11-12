@@ -1,0 +1,11 @@
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+farm.db
+tests/
+dist/
+.git/
+README.md
+vercel.json
