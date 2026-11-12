@@ -10,4 +10,8 @@
     p,li{line-height:1.75}
     .portal-panel,.lot,.card,.quote{border-radius:14px!important;border:1px solid var(--ln)!important;background:rgba(28,25,23,.55)!important;box-shadow:none!important}
     img{border-radius:10px}
-    .shadow-2xl,.shadow-xl,.shadow-lg{box-shadow:0 20px 44px -30px rgba(0,0,0,.9)!important}
+    .shadow-2xl,.shadow-xl,.shadow-lg{box-shadow:0 20px 44px -30px rgba(0,0,0,.9)!important}    input,select,textarea{background:transparent!important;border:0!important;border-bottom:1px solid var(--ln)!important;border-radius:0!important;padding:12px 2px!important;font-size:14px}
+    input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:#34d399!important}
+    .btn,.dock-cta{border-radius:999px}
+    .label{letter-spacing:.22em;font-size:10px;color:#78716c}
+    main::before{content:"Pre-development · awaiting subdivision approval";display:block;text-align:center;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:#a8a29e;background:#141110;border-bottom:1px solid var(--ln);padding:9px 14px}
