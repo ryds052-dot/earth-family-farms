@@ -1,13 +1,43 @@
+import urllib.request
+import json
+import os
 import html
+import urllib.request
+import json
+import os
 import logging
+import urllib.request
+import json
+import os
+import os
+import urllib.request
+import json
 import os
 import re
+import urllib.request
+import json
+import os
 import urllib.parse
+import urllib.request
+import json
+import os
 from datetime import date
+import urllib.request
+import json
+import os
 from decimal import Decimal, InvalidOperation
 
+import urllib.request
+import json
+import os
 from flask import Flask, abort, redirect, render_template, request, url_for
+import urllib.request
+import json
+import os
 import resend
+import urllib.request
+import json
+import os
 from resend.exceptions import ResendError
 
 VILLA_PROSPECTS = {
