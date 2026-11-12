@@ -2,16 +2,16 @@
 
 {% block content %}
 <!-- Cinematic Drone Video Hero Section -->
-<section class="relative min-h-[88svh] flex items-center justify-center overflow-hidden pt-28 pb-16">
-    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/villa-concept.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-55 scale-105">
+<section class="relative min-h-[88svh] flex items-center justify-center overflow-hidden pt-28 pb-16 bg-stone-950">
+    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/river-hike.jpg') }}" preload="metadata" class="absolute inset-0 w-full h-full object-cover opacity-55 scale-105">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-b from-stone-950/75 via-stone-950/35 to-stone-950"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div class="inline-flex items-center gap-2 bg-stone-900/80 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-6">
+        <div class="inline-flex items-center gap-2 bg-stone-900/80 border border-emerald-500/30 px-3.5 py-1.5 rounded-full mb-6">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-[0.2em]">100-Acre Eco-Sanctuary • Ocho Rios, Jamaica</span>
+            <span class="text-emerald-400 text-[10px] font-semibold uppercase tracking-[0.14em] whitespace-nowrap">100-Acre Eco-Sanctuary • Ocho Rios, Jamaica</span>
         </div>
 
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white leading-tight tracking-tight">

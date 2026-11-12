@@ -144,3 +144,7 @@ main > section:first-child {
 .image-lightbox[aria-hidden="true"] { display: none !important; }
 .image-lightbox[aria-hidden="false"] { display: flex !important; }
 
+
+.no-bar { scrollbar-width: none; }
+.no-bar::-webkit-scrollbar { display: none; }
+
