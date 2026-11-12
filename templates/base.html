@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
     <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
 </head>
 <body class="bg-stone-950 text-stone-100 antialiased selection:bg-emerald-500 selection:text-stone-950">
 
@@ -34,13 +35,7 @@
         </div>
 
         <!-- Mobile Quick Nav Bar -->
-        <div class="flex lg:hidden items-center justify-start gap-6 no-bar overflow-x-auto whitespace-nowrap border-t border-stone-800/70 bg-stone-950/95 py-2.5 px-4 text-[10px] font-semibold uppercase tracking-widest text-stone-300">
-            <a href="{{ url_for('home') }}" class="flex-none hover:text-emerald-400">Home</a>
-            <a href="{{ url_for('about') }}" class="flex-none hover:text-emerald-400">About</a>
-            <a href="{{ url_for('estates') }}" class="flex-none hover:text-emerald-400">Estates</a>
-            <a href="{{ url_for('invest') }}" class="flex-none text-amber-200 hover:text-amber-100">Invest</a>
-        </div>
-    </header>
+        </header>
 
     <!-- Main Page Content -->
     <a href="#main" class="skip-link">Skip to content</a>
@@ -48,6 +43,18 @@
         {% block content %}{% endblock %}
     </main>
 
+    <nav class="mobile-dock" aria-label="Quick actions">
+        <a class="dock-item" href="{{ url_for('estates') }}"{% if request.endpoint == 'estates' %} aria-current="page"{% endif %}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 19 6-9 4 5 3-4 5 8z"/><circle cx="8" cy="6" r="2"/></svg>The Land
+        </a>
+        <a class="dock-item" href="{{ url_for('invest') }}"{% if request.endpoint == 'invest' %} aria-current="page"{% endif %}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg>Invest
+        </a>
+        <a class="dock-item" href="{{ url_for('about') }}"{% if request.endpoint == 'about' %} aria-current="page"{% endif %}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/></svg>The Estate
+        </a>
+        <a class="dock-cta" href="{{ url_for('estates') }}">Enquire</a>
+    </nav>
     <!-- Global Sanctuary Footer -->
     <footer class="bg-stone-950 border-t border-stone-800/80 pt-16 pb-12 text-stone-400">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
