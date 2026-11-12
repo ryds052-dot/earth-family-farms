@@ -148,3 +148,8 @@ main > section:first-child {
 .no-bar { scrollbar-width: none; }
 .no-bar::-webkit-scrollbar { display: none; }
 
+
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 999; background: #0f2419; color: #fff; padding: 12px 16px; font-size: 13px; }
+.skip-link:focus { left: 8px; top: 8px; }
+:focus-visible { outline: 2px solid #34d399; outline-offset: 3px; }
+
