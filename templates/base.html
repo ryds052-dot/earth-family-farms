@@ -24,15 +24,11 @@
                 </div>
             </a>
 
-                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300">
-                <a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">The Land</a>
-                <a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">The Estate</a>
-                <a href="{{ url_for('viewings') }}" class="hover:text-emerald-400 transition-colors">Viewings</a>
-            </nav>
+                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300"><a href="{{ url_for('estates') }}" class="hover:text-emerald-400">The Land</a><a href="{{ url_for('invest') }}" class="text-amber-200">Invest</a><a href="{{ url_for('about') }}" class="hover:text-emerald-400">The Estate</a></nav>
 
             <div class="flex items-center gap-3">
                 <a href="{{ url_for('viewings') }}" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-md">
-                    Book a viewing
+                    Enquire
                 </a>
             </div>
         </div>
@@ -74,15 +70,7 @@
 
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Sanctuary Navigation</h4>
-                <ul class="space-y-2.5 text-sm">
-                    <li><a href="{{ url_for('experiences') }}" class="hover:text-emerald-400 transition-colors">Guided Farm & River Tours</a></li>
-                    <li><a href="{{ url_for('stays') }}" class="hover:text-emerald-400 transition-colors">The Queen Cabin Stay</a></li>
-                    <li><a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">Highland Subdivision Estates</a></li>
-                    <li><a href="{{ url_for('invest') }}" class="hover:text-amber-200 transition-colors">Private Estate Investment</a></li>
-                    <li><a href="{{ url_for('harvest') }}" class="hover:text-amber-200 transition-colors">Commercial Harvest</a></li>
-                    <li><a href="{{ url_for('vitals') }}" class="hover:text-emerald-400 transition-colors">Sanctuary Live Vitals</a></li>
-                    <li><a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">Our 100-Acre Heritage</a></li>
-                </ul>
+                <ul class="space-y-2.5 text-sm"><li><a href="{{ url_for('estates') }}">Highland Estate Lots</a></li><li><a href="{{ url_for('invest') }}">Private Estate Investment</a></li><li><a href="{{ url_for('about') }}">Our 100-Acre Heritage</a></li></ul>
             </div>
 
             <div>
