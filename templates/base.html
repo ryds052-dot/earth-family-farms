@@ -24,20 +24,15 @@
                 </div>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300">
-                <a href="{{ url_for('home') }}" class="hover:text-emerald-400 transition-colors">Home</a>
-                <a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="{{ url_for('experiences') }}" class="hover:text-emerald-400 transition-colors">Experiences</a>
-                <a href="{{ url_for('stays') }}" class="hover:text-emerald-400 transition-colors">Stays</a>
-                <a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">Estates</a>
-                <a href="{{ url_for('invest') }}" class="text-amber-200 hover:text-amber-100 transition-colors">Invest</a>
-                <a href="{{ url_for('harvest') }}" class="text-amber-200 hover:text-amber-100 transition-colors">Harvest</a>
-                <a href="{{ url_for('vitals') }}" class="hover:text-emerald-400 transition-colors">Vitals</a>
+                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300">
+                <a href="{{ url_for('estates') }}" class="hover:text-emerald-400 transition-colors">The Land</a>
+                <a href="{{ url_for('about') }}" class="hover:text-emerald-400 transition-colors">The Estate</a>
+                <a href="{{ url_for('viewings') }}" class="hover:text-emerald-400 transition-colors">Viewings</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="{{ url_for('stays') }}#stay-inquiry" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-md">
-                    Reserve Stay
+                <a href="{{ url_for('viewings') }}" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-md">
+                    Book a viewing
                 </a>
             </div>
         </div>
