@@ -1,0 +1,13 @@
+    :root{--ln:rgba(214,211,209,.10)}
+    body{background:#0a0908;color:#d6d3d1}
+    h1,h2,h3{letter-spacing:-.015em}
+    .sect{padding:92px 0}
+    @media(min-width:768px){.sect{padding:130px 0}}
+    .sect+.sect{border-top:1px solid var(--ln)}
+    .hero{min-height:78svh!important}
+    h1{font-size:clamp(2rem,5.2vw,3.5rem)!important;line-height:1.04}
+    h2{font-size:clamp(1.5rem,3vw,2.35rem)!important;line-height:1.14}
+    p,li{line-height:1.75}
+    .portal-panel,.lot,.card,.quote{border-radius:14px!important;border:1px solid var(--ln)!important;background:rgba(28,25,23,.55)!important;box-shadow:none!important}
+    img{border-radius:10px}
+    .shadow-2xl,.shadow-xl,.shadow-lg{box-shadow:0 20px 44px -30px rgba(0,0,0,.9)!important}
