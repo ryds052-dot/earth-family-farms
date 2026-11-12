@@ -10,7 +10,7 @@
 {% block content %}
 <section class="hero relative flex items-end overflow-hidden bg-stone-950">
     <img src="{{ url_for('static', filename='images/ridge-aerial.jpg') }}" alt="Forested ridge above the Ocho Rios coastline at golden hour" class="absolute inset-0 h-full w-full object-cover">
-    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='images/ridge-aerial.jpg') }}" class="absolute inset-0 hidden h-full w-full object-cover md:block" aria-hidden="true">
+    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='images/video-poster.jpg') }}" class="absolute inset-0 hidden h-full w-full object-cover md:block" aria-hidden="true">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/25"></div>
