@@ -1,328 +1,194 @@
 {% extends "base.html" %}
 {% block title %}<title>Private Land Viewing — Highland Estate, Ocho Rios</title>{% endblock %}
-{% block meta %}<meta name="description" content="Freehold parcels inside a 100-acre private highland estate above Ocho Rios. Spring water, ocean aspect, covenant-held canopy. Viewings by appointment.">
+{% block meta %}<meta name="description" content="Proposed freehold parcels inside a 100-acre private highland estate above Ocho Rios. Pre-development, approval in progress. Viewings by appointment.">
 <meta property="og:title" content="Highland estate lots — private viewing, Ocho Rios">
-<meta property="og:description" content="Freehold parcels inside a 100-acre covenant-held highland estate. Viewings by appointment.">
+<meta property="og:description" content="Proposed freehold parcels inside a 100-acre covenant-held highland estate. Viewings by appointment.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ url_for('static', filename='images/ridge-aerial.jpg', _external=True) }}">
 <meta name="twitter:card" content="summary_large_image">{% endblock %}
 
 {% block content %}
-<section class="hero relative flex items-end overflow-hidden bg-stone-950">
+<section class="hero relative flex items-end overflow-hidden bg-stone-950" style="min-height:86svh">
     <img src="{{ url_for('static', filename='images/ridge-aerial.jpg') }}" alt="Forested ridge above the Ocho Rios coastline at golden hour" class="absolute inset-0 h-full w-full object-cover">
-    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='images/video-poster.jpg') }}" class="absolute inset-0 hidden h-full w-full object-cover md:block" aria-hidden="true">
+    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='images/video-poster.jpg') }}" class="absolute inset-x-0 bottom-0 hidden h-[58%] w-full object-cover md:block" aria-hidden="true">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
-    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/62 to-stone-950/22"></div>
 
-    <div class="relative w-full max-w-7xl mx-auto px-5 pb-14 pt-28">
+    <div class="relative w-full max-w-7xl mx-auto px-5 pb-7 pt-20">
         <div class="flex flex-wrap gap-2">
-            <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300 backdrop-blur">
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Viewings by appointment
-            </span>
-            <span class="inline-flex items-center rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Awaiting approval</span>
+            <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300 backdrop-blur"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>By appointment</span>
+            <span class="inline-flex items-center rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-200 backdrop-blur">Awaiting approval</span>
         </div>
-        <h1 class="mt-5 font-serif font-bold text-white">Highland estate lots</h1>
-        <p class="mt-4 max-w-[34ch] text-[15px] leading-relaxed text-stone-300">
-            Proposed freehold parcels inside a working 100-acre estate above Ocho Rios. Pre-development, with subdivision approval in progress. Mature canopy, spring water, ocean aspect.
-        </p>
-        <div class="mt-8 flex flex-col gap-3">
-            <a href="#enquiry" class="btn-emerald flex min-h-[52px] items-center justify-center rounded-xl text-xs font-bold uppercase tracking-[0.16em] text-white">Request the parcel sheet</a>
-            <a href="{{ url_for('invest') }}" class="flex min-h-[52px] items-center justify-center rounded-xl border border-stone-500/50 bg-stone-950/40 text-xs font-bold uppercase tracking-[0.16em] text-stone-200 backdrop-blur">The investment case</a>
+        <h1 class="mt-3.5 font-serif font-bold text-white">Highland estate lots</h1>
+        <p class="mt-2.5 max-w-[28ch] text-[15px] leading-snug text-stone-300">Freehold parcels on a 100-acre ridge above Ocho Rios. Canopy, spring water, ocean aspect.</p>
+        <div class="mt-5 flex flex-col gap-2">
+            <a href="#enquiry" class="btn-primary">Request the parcel sheet</a>
+            <a href="#plan" class="btn-ghost">See the plan</a>
         </div>
     </div>
 </section>
 
-<section class="border-y border-stone-800/70 bg-stone-950">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 gap-px bg-stone-800/60 md:grid-cols-4">
-        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">100</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Acres, whole</p></div>
-        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Freehold</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Tenure, on transfer</p></div>
-        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Ocean</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Ridge aspect</p></div>
-        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Spring</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Water on land</p></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-5 py-4">
-        <p class="text-[11px] leading-relaxed text-amber-200/80"><span class="font-bold uppercase tracking-[0.14em] text-amber-300">Status:</span> subdivision approval in progress. Parcels are offered on a pre-development basis — lot lines, sizes and access are proposed until the survey is approved.</p>
+<section class="bg-stone-950 border-b border-stone-800/70">
+    <div class="max-w-7xl mx-auto grid grid-cols-4 gap-px bg-stone-800/60">
+        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">100</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Acres</p></div>
+        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Freehold</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Tenure</p></div>
+        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Ocean</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Aspect</p></div>
+        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Spring</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Water</p></div>
     </div>
 </section>
 
-<section class="py-16 reveal">
+<section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Why the land carries value</span>
-        <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">A ridge this close to the coast is not reproducible.</h2>
-        <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-stone-300">
-            <p>Coastal St. Ann is built out at the shoreline and climbing inland fast. Land above Ocho Rios with an ocean aspect, live spring water and mature hardwood canopy is a finite position — the parcels that exist are the parcels that will ever exist.</p>
-            <p>Inside the estate the land has been surveyed, laid out and engineered, and the subdivision plan is in for approval. Access roads, lot boundaries and building envelopes are drawn. A buyer is not paying for raw bush; the slow, technical work is behind the land, not ahead of it — and the price reflects pre-development, not approved.</p>
-            <p>Covenants do the rest. Setbacks, material palette and density limits keep the canopy intact, which protects both the view and the resale argument for every parcel on the ridge.</p>
+        <div class="sect-head"><span class="sect-num">01</span><span class="eyebrow">Why here</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">A ridge this close to the coast is not reproducible.</h2>
+        <div class="mt-5 space-y-3.5 text-[15px] leading-relaxed text-stone-300">
+            <p>Coastal St. Ann is built out at the shoreline and climbing inland fast. Land above Ocho Rios with an ocean aspect, live spring water and mature hardwood is finite — the parcels that exist are the parcels that will ever exist.</p>
+            <p>The slow, technical work is already behind it: surveyed, laid out, engineered, submitted. A buyer is not paying for raw bush.</p>
+            <p>Covenants keep the canopy and the sightlines, which is what protects the view from every parcel on the ridge — including yours.</p>
         </div>
+        <p class="mt-5 rounded-xl border border-amber-400/25 bg-amber-950/25 px-4 py-3 text-[13px] leading-relaxed text-amber-200/90">Approval in progress. Lot lines and access are proposed until the survey is approved — and the price reflects pre-development, not approved land.</p>
     </div>
 </section>
 
-<section class="relative overflow-hidden bg-stone-950">
-    <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full 100-acre development: spine road, terraced building pads and retained canopy" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/30"></div>
-    <div class="relative max-w-7xl mx-auto px-5 py-20 md:py-28">
-        <span class="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Pre-development · Awaiting approval</span>
-        <h2 class="mt-5 max-w-[20ch] font-serif font-bold text-white">The whole ridge, not a single pad.</h2>
-        <p class="mt-4 max-w-[42ch] text-[15px] leading-relaxed text-stone-300">
-            One hundred acres read as a single plan: a switchback spine road, terraced building envelopes held in disciplined rows, canopy kept as a green matrix between every one of them, an arrival court and pavilion at the head of the drive, trails and two retention ponds in the gullies. Nothing is improvised lot by lot. The plan is submitted, not yet approved.
-        </p>
-        <dl class="mt-9 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-stone-700/60 bg-stone-700/60">
-            <div class="bg-stone-950/85 px-4 py-4"><dt class="text-[9px] uppercase tracking-[0.16em] text-stone-500">Envelopes</dt><dd class="mt-1 font-serif text-lg font-bold text-white">Cut &amp; terraced</dd></div>
-            <div class="bg-stone-950/85 px-4 py-4"><dt class="text-[9px] uppercase tracking-[0.16em] text-stone-500">Access</dt><dd class="mt-1 font-serif text-lg font-bold text-white">Graded spine</dd></div>
-            <div class="bg-stone-950/85 px-4 py-4"><dt class="text-[9px] uppercase tracking-[0.16em] text-stone-500">Drainage</dt><dd class="mt-1 font-serif text-lg font-bold text-white">Swaled &amp; ponded</dd></div>
-        </dl>
-    </div>
-</section>
-
-<section class="border-t border-stone-800/70">
-    <div class="max-w-7xl mx-auto px-5 py-16">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Build sequence</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Infrastructure first, houses second.</h2>
-        <p class="mt-3 max-w-[40ch] text-sm leading-relaxed text-stone-400">Sequence runs on approval. Nothing is cut before the plan clears.</p>
-        <ol class="mt-8 space-y-6">
-            <li class="grid grid-cols-[auto_1fr] gap-4 border-b border-stone-800/70 pb-6">
-                <span class="font-serif text-2xl font-bold text-emerald-400">01</span>
-                <div><h3 class="font-serif text-lg font-bold text-white">Arrival and pavilion</h3><p class="mt-1 text-sm leading-relaxed text-stone-400">Entry drive, cleared court, open pavilion frame. The shared room of the estate goes up before anyone's house does.</p></div>
-            </li>
-            <li class="grid grid-cols-[auto_1fr] gap-4 border-b border-stone-800/70 pb-6">
-                <span class="font-serif text-2xl font-bold text-emerald-400">02</span>
-                <div><h3 class="font-serif text-lg font-bold text-white">First ridge terraces</h3><p class="mt-1 text-sm leading-relaxed text-stone-400">Western pads cut, drained and staked along the upper road. Timber frames rise through the canopy line.</p></div>
-            </li>
-            <li class="grid grid-cols-[auto_1fr] gap-4">
-                <span class="font-serif text-2xl font-bold text-emerald-400">03</span>
-                <div><h3 class="font-serif text-lg font-bold text-white">Eastern terraces and trails</h3><p class="mt-1 text-sm leading-relaxed text-stone-400">Remaining envelopes open up; foot trails and the pond edge complete the loop through the estate.</p></div>
-            </li>
-        </ol>
-    </div>
-</section>
-
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
+<section id="plan" class="sect reveal" style="padding-bottom:0">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
-        </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
+        <div class="sect-head"><span class="sect-num">02</span><span class="eyebrow">The plan</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">The whole ridge, not a single pad.</h2>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">One hundred acres read as one drawing: a spine road, terraced envelopes in disciplined rows, canopy held between every one. Nothing improvised lot by lot.</p>
     </div>
-</section>
-<section class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">The community, not just the parcel</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">A handful of villas, one walkway, and nothing else on the ridge.</h2>
-        <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Low density by design. Homes step down the slope on an elevated hardwood walk, sharing a fire pavilion and the view — the shape of a small eco-retreat rather than a subdivision.</p>
+    <div class="mt-7 overflow-hidden border-y border-stone-800">
+        <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full development: spine road, terraced pads and retained canopy" loading="lazy" class="w-full object-cover aspect-[4/3] md:aspect-[21/9]">
     </div>
-    <div class="mt-9 overflow-hidden reveal">
-        <img data-full="{{ url_for('static', filename='images/villa-community.jpg') }}" src="{{ url_for('static', filename='images/villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2] md:aspect-[21/9]">
-    </div>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-6 px-5 pt-6 md:grid-cols-2">
-        <figure>
-            <img data-full="{{ url_for('static', filename='images/villa-dusk.jpg') }}" src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
-            <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 04</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Build vision</span>The house sits into the slope. Stone below, hardwood above, glass to the drop.</figcaption>
-        </figure>
-        <figure>
-            <img data-full="{{ url_for('static', filename='images/villa-interior.jpg') }}" src="{{ url_for('static', filename='images/villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
-            <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 05</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Inside out</span>Every principal room opens. The treetops are the wall.</figcaption>
-        </figure>
-    </div>
-</section>
-
-<section class="border-t border-stone-800/70">
-    <div class="grid grid-cols-3 gap-px bg-stone-800/60 snap">
-        <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-        <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-        <img data-full="{{ url_for('static', filename='images/pavilion-night.jpg') }}" src="{{ url_for('static', filename='images/pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-    </div>
-    <div class="max-w-7xl mx-auto px-5 py-10">
-        <p class="max-w-[46ch] text-[15px] leading-relaxed text-stone-400"><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Materials</span>Local limestone, stained hardwood, brass, no ornament. The palette is fixed by covenant so the ridge reads as one place in thirty years, not thirty houses.</p>
-    </div>
-</section>
-
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
-        </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
-    </div>
-</section>
-<section class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Survey layout</span>
-        <h2 class="mt-3 font-serif font-bold text-white">The proposed layout</h2>
-        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Proposed lots, boundaries and access lines as drawn. Tap to read at full resolution. Subject to approval.</p>
-        <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="mt-7 block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 p-2">
-            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Surveyed subdivision map showing lot boundaries and access roads" loading="lazy" class="w-full rounded-xl object-contain">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-4 px-5 py-8 lg:grid-cols-2 lg:items-center">
+        <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 p-2">
+            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Proposed subdivision map with lot boundaries and access roads" loading="lazy" class="w-full rounded-xl object-contain">
         </a>
-        <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing%20of%20the%20estate%20lots." target="_blank" rel="noopener noreferrer" class="mt-4 flex min-h-[50px] items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-950/30 text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Ask about a specific lot</a>
-    </div>
-</section>
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
+        <div>
+            <h3 class="font-serif text-lg font-bold text-white">Read it full size</h3>
+            <p class="mt-2 max-w-[34ch] text-sm leading-relaxed text-stone-400">Every proposed lot and access line, drawn. Tap to open the map, then ask about the ones that suit you.</p>
+            <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing." target="_blank" rel="noopener noreferrer" class="btn-ghost mt-4">Ask about a lot</a>
         </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
     </div>
 </section>
-<section class="py-16 border-t border-stone-800/70 reveal">
+
+<section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">The viewing</span>
-        <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">Forty minutes on the ridge tells you more than a brochure.</h2>
-        <p class="mt-4 max-w-[42ch] text-[15px] leading-relaxed text-stone-400">By appointment, one party at a time, no other buyers on the road. You walk the actual envelopes with the survey in hand.</p>
-        <ol class="mt-10 space-y-7">
-            <li class="step"><span class="step-num">01</span><h3 class="font-serif text-lg font-bold text-white">The gate</h3><p class="mt-1 max-w-[36ch] text-sm leading-relaxed text-stone-400">You are met at the entrance and driven in. No parking puzzle, no self-navigation.</p></li>
-            <li class="step"><span class="step-num">02</span><h3 class="font-serif text-lg font-bold text-white">The canopy walk</h3><p class="mt-1 max-w-[36ch] text-sm leading-relaxed text-stone-400">Up through the hardwood and the springs, past the ponds, to the elevation where the sea opens.</p></li>
-            <li class="step"><span class="step-num">03</span><h3 class="font-serif text-lg font-bold text-white">The envelopes</h3><p class="mt-1 max-w-[36ch] text-sm leading-relaxed text-stone-400">Staked pads, cut edges, the sightline from each. Stand on the ones that suit you and see what the house would see.</p></li>
-            <li class="step"><span class="step-num">04</span><h3 class="font-serif text-lg font-bold text-white">The pavilion</h3><p class="mt-1 max-w-[36ch] text-sm leading-relaxed text-stone-400">Down to the shared room for the survey, the covenants and straight answers on price and title.</p></li>
-        </ol>
-    </div>
-</section>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Residence",
-  "name": "Earth Family Farms Highland Estate",
-  "description": "Freehold parcels inside a 100-acre private highland estate above Ocho Rios, St. Ann, Jamaica.",
-  "address": { "@type": "PostalAddress", "addressLocality": "Ocho Rios", "addressRegion": "St. Ann", "addressCountry": "JM" },
-  "telephone": "+18765206119",
-  "image": "{{ url_for('static', filename='images/ridge-aerial.jpg', _external=True) }}"
-}
-</script>
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
-        </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
-    </div>
-</section>
-<section class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Availability</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Sixteen proposed envelopes.</h2>
-        <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Upper terraces first. Struck through are spoken for, amber is under reservation, the rest are open. All pending approval.</p>
-        <div class="mt-8 grid grid-cols-4 gap-2 sm:grid-cols-8">
+        <div class="sect-head"><span class="sect-num">03</span><span class="eyebrow">Availability</span></div>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white">Sixteen proposed envelopes, upper terraces first.</h2>
+        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Struck through are spoken for, amber under reservation. All pending approval.</p>
+        <div class="mt-6 grid grid-cols-4 gap-2 sm:grid-cols-8">
             <span class="plot" data-state="held">A1</span><span class="plot" data-state="available">A2</span><span class="plot" data-state="reserved">A3</span><span class="plot" data-state="available">A4</span>
             <span class="plot" data-state="available">B1</span><span class="plot" data-state="held">B2</span><span class="plot" data-state="available">B3</span><span class="plot" data-state="available">B4</span>
             <span class="plot" data-state="available">C1</span><span class="plot" data-state="available">C2</span><span class="plot" data-state="reserved">C3</span><span class="plot" data-state="available">C4</span>
             <span class="plot" data-state="available">D1</span><span class="plot" data-state="available">D2</span><span class="plot" data-state="available">D3</span><span class="plot" data-state="available">D4</span>
         </div>
-        <p class="mt-4 text-[11px] text-stone-500">Plot references and statuses are indicative until the survey is approved.</p>
     </div>
 </section>
 
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
+<section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
-        </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
+        <div class="sect-head"><span class="sect-num">04</span><span class="eyebrow">Design doctrine</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">Stone below, hardwood above, glass to the drop.</h2>
+        <p class="mt-3.5 max-w-[42ch] text-[15px] leading-relaxed text-stone-400">The covenant fixes the language, not your floor plan: local limestone, stained hardwood, brass, no ornament. Setbacks and height keep every house low enough for the canopy to stay the horizon.</p>
+    </div>
+    <div class="mt-7 grid grid-cols-2 gap-px bg-stone-800/60">
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full object-cover aspect-[4/5]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-200">Set into the slope</figcaption>
+        </figure>
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full object-cover aspect-[4/5]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-200">Treetops as the wall</figcaption>
+        </figure>
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="w-full object-cover aspect-[4/5]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-200">Rafters, not ceilings</figcaption>
+        </figure>
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="w-full object-cover aspect-[4/5]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-200">Lantern, not floodlight</figcaption>
+        </figure>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 py-8">
+        <p class="max-w-[44ch] text-[15px] leading-relaxed text-stone-400">Plans and a contractor shortlist come with the parcel sheet. You are not handed an empty slope and a set of rules.</p>
     </div>
 </section>
-<section class="py-16 border-t border-stone-800/70 reveal">
+
+<section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">The terms</span>
-        <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">Plain terms, before anyone travels.</h2>
-        <div class="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-3">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">To reserve</p><p class="mt-2 font-serif text-lg font-bold text-white">10% deposit</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Holds the envelope off the market for 30 days while title and survey are checked.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Balance</p><p class="mt-2 font-serif text-lg font-bold text-white">90 days</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Completion on transfer, timed to approval. Staged terms considered for larger parcels.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Costs</p><p class="mt-2 font-serif text-lg font-bold text-white">Buyer's side</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Stamp duty, transfer and attorney fees are the buyer's. No estate commission.</p></div>
+        <div class="sect-head"><span class="sect-num">05</span><span class="eyebrow">The community</span></div>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white">A handful of villas and a fire pavilion. Nothing else.</h2>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Low density by design. Homes step down an elevated hardwood walk toward the shared room at the head of the ridge.</p>
+    </div>
+    <div class="mt-7 overflow-hidden">
+        <img src="{{ url_for('static', filename='images/villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2]">
+    </div>
+    <div class="max-w-7xl mx-auto px-5 pt-6">
+        <img src="{{ url_for('static', filename='images/pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="w-full rounded-2xl object-cover aspect-[16/10]">
+    </div>
+</section>
+
+<section class="sect reveal">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">06</span><span class="eyebrow">The viewing</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">Forty minutes on the ridge beats any brochure.</h2>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">One party at a time, no other buyers on the road. You walk the actual envelopes with the survey in hand.</p>
+        <ol class="mt-8 space-y-6">
+            <li class="step"><span class="step-num">01</span><h3 class="font-serif text-base font-bold text-white">The gate</h3><p class="mt-1 max-w-[34ch] text-sm leading-relaxed text-stone-400">Met at the entrance and driven in.</p></li>
+            <li class="step"><span class="step-num">02</span><h3 class="font-serif text-base font-bold text-white">The canopy walk</h3><p class="mt-1 max-w-[34ch] text-sm leading-relaxed text-stone-400">Up past the springs and ponds to where the sea opens.</p></li>
+            <li class="step"><span class="step-num">03</span><h3 class="font-serif text-base font-bold text-white">The envelopes</h3><p class="mt-1 max-w-[34ch] text-sm leading-relaxed text-stone-400">Stand on the ones that suit you. See what the house would see.</p></li>
+            <li class="step"><span class="step-num">04</span><h3 class="font-serif text-base font-bold text-white">The pavilion</h3><p class="mt-1 max-w-[34ch] text-sm leading-relaxed text-stone-400">Survey, covenants, price and title, straight answers.</p></li>
+        </ol>
+    </div>
+</section>
+
+<section class="sect reveal">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">07</span><span class="eyebrow">Terms</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">Plain, before anyone travels.</h2>
+        <div class="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-3">
+            <div class="bg-stone-950 p-5"><p class="text-[10px] uppercase tracking-[0.16em] text-stone-500">To reserve</p><p class="mt-1.5 font-serif text-base font-bold text-white">10% deposit</p><p class="mt-1.5 text-[13px] leading-relaxed text-stone-400">Holds the envelope 30 days while title and survey are checked.</p></div>
+            <div class="bg-stone-950 p-5"><p class="text-[10px] uppercase tracking-[0.16em] text-stone-500">Balance</p><p class="mt-1.5 font-serif text-base font-bold text-white">90 days</p><p class="mt-1.5 text-[13px] leading-relaxed text-stone-400">Completion on transfer, timed to approval.</p></div>
+            <div class="bg-stone-950 p-5"><p class="text-[10px] uppercase tracking-[0.16em] text-stone-500">Costs</p><p class="mt-1.5 font-serif text-base font-bold text-white">Buyer's side</p><p class="mt-1.5 text-[13px] leading-relaxed text-stone-400">Stamp duty and attorney fees. No estate commission.</p></div>
         </div>
     </div>
 </section>
 
-<section id="stewardship" class="py-16 border-t border-stone-800/70 reveal">
+<section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Stewardship</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">The covenant is the product as much as the parcel.</h2>
-        <p class="mt-4 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">A hundred acres held as one working estate, not carved and forgotten. What that means in practice:</p>
-        <div class="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-2">
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Canopy</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Mature hardwood is retained, not cleared to the boundary. Each envelope is cut to fit the trees rather than the reverse.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Water</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Springs feed the estate and the two retention ponds. Swales slow the runoff instead of piping it off the ridge.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Build standard</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Setbacks, height and material palette are fixed: stone, hardwood, metal, no ornament. Solar and rain capture are encouraged, not resisted.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-emerald-400">Density</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Sixteen envelopes across a hundred acres. The gaps are deliberate — they are what keeps the ridge quiet in a decade.</p></div>
-        </div>
-        <p class="mt-8 max-w-[46ch] text-[15px] leading-relaxed text-stone-400">The estate is run on site, by the people who live with the consequences of every cut. You will meet them on the viewing.</p>
-    </div>
-</section>
-<section class="py-16 border-t border-stone-800/70 reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Questions</span>
-        <h2 class="mt-3 max-w-[20ch] font-serif font-bold text-white">What buyers ask first.</h2>
-        <div class="mt-8 max-w-3xl">
-            <details class="faq"><summary>Has the subdivision been approved?</summary><p>Not yet. It is submitted and in progress. Parcels are sold pre-development, which is why entry sits below approved-land pricing — and why the survey extract and the approval status are released up front rather than after a deposit.</p></details>
-            <details class="faq"><summary>What happens if approval is refused?</summary><p>Deposits are held against the parcel and returned if the plan does not clear, per the reservation terms your attorney reviews. Nothing is payable to completion before approval.</p></details>
-            <details class="faq"><summary>Is the title freehold and clean?</summary><p>Yes — freehold, transferred by registered instrument. The survey extract and title are released with the parcel sheet so your attorney can review before you commit anything.</p></details>
-            <details class="faq"><summary>Do I have to build within a set time?</summary><p>No hard deadline. The covenant sets what may be built, not when. Land can be held without penalty.</p></details>
-            <details class="faq"><summary>Can foreign buyers purchase?</summary><p>Yes. Non-residents can hold Jamaican freehold through the standard transfer process. Your attorney handles the filing.</p></details>
-            <details class="faq"><summary>What do the covenants actually restrict?</summary><p>Setbacks, height, material palette and density — enough to protect the canopy and sightlines, not enough to dictate your house.</p></details>
-            <details class="faq"><summary>Water and power?</summary><p>Spring water is on the estate. Power and connectivity are confirmed parcel by parcel during due diligence — we will not promise a connection that isn't in.</p></details>
+        <div class="sect-head"><span class="sect-num">08</span><span class="eyebrow">Questions</span></div>
+        <div class="mt-5 max-w-3xl">
+            <details class="faq"><summary>Has it been approved?</summary><p>Not yet — submitted and in progress. Sold pre-development, which is why the entry sits below approved-land pricing.</p></details>
+            <details class="faq"><summary>What if approval is refused?</summary><p>Deposits are held against the parcel and returned if the plan does not clear. Nothing is payable to completion before approval.</p></details>
+            <details class="faq"><summary>Must I build within a set time?</summary><p>No. The covenant sets what may be built, not when.</p></details>
+            <details class="faq"><summary>Can foreign buyers purchase?</summary><p>Yes. Non-residents hold Jamaican freehold through the standard transfer process; your attorney files it.</p></details>
+            <details class="faq"><summary>Water and power?</summary><p>Spring water is on the estate. Power and connectivity are confirmed parcel by parcel in due diligence.</p></details>
         </div>
     </div>
 </section>
 
-<dialog id="lightbox" class="lightbox"><img alt="Enlarged estate photograph"></dialog>
-<section id="enquiry" class="border-t border-stone-800">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 px-5 py-16 lg:grid-cols-2 lg:items-center">
-        <div>
-            <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk, looking out over the canopy" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/3]">
-        </div>
-        <div>
-            <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Private viewing</span>
-            <h2 class="mt-3 font-serif font-bold text-white">Request the parcel sheet</h2>
-            <p class="mt-3 max-w-[32ch] text-sm leading-relaxed text-stone-400">Sizes, covenants, prices and the survey extract. Sent the same day. No list, no follow-up sequence.</p>
-            <a href="tel:+18765206119" class="mt-5 inline-block font-serif text-xl font-bold text-emerald-400">+1 876 520 6119</a>
-            {% if request.args.get('sent') %}<p class="mt-5 rounded-lg border border-emerald-400/30 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-300">Received. The sheet goes out today.</p>{% endif %}
-            {% if request.args.get('error') %}<p class="mt-5 rounded-lg border border-amber-400/30 bg-amber-950/40 px-4 py-3 text-sm text-amber-200">Name, phone and email needed. Or call the number.</p>{% endif %}
-            <form method="POST" action="{{ url_for('enquire') }}" class="mt-6 flex flex-col gap-4">
-                <input type="hidden" name="from" value="estates">
-                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Name</span><input name="name" required autocomplete="name" class="viewing-field"></label>
-                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Phone</span><input name="phone" required autocomplete="tel" inputmode="tel" class="viewing-field"></label>
-                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Email</span><input name="email" type="email" required autocomplete="email" class="viewing-field"></label>
-                <fieldset class="mt-2">
-                    <legend class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Parcel size you want</legend>
-                    <input type="hidden" name="size" id="lot-value" value="Not sure">
-                    <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                        <button type="button" class="lot-chip" data-lot="Quarter acre" aria-pressed="false">Quarter acre</button>
-                        <button type="button" class="lot-chip" data-lot="Third acre" aria-pressed="false">Third acre</button>
-                        <button type="button" class="lot-chip" data-lot="Half acre" aria-pressed="false">Half acre</button>
-                        <button type="button" class="lot-chip" data-lot="One acre" aria-pressed="false">One acre</button>
-                        <button type="button" class="lot-chip" data-lot="Two or more" aria-pressed="false">Two or more</button>
-                        <button type="button" class="lot-chip" data-lot="Not sure" aria-pressed="true">Not sure</button>
-                    </div>
-                </fieldset>
-                <button type="submit" class="btn-emerald mt-2 flex min-h-[52px] items-center justify-center rounded-xl text-xs font-bold uppercase tracking-[0.16em] text-white">Send the sheet</button>
-            </form>
-        </div>
+<section id="enquiry" class="sect">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">09</span><span class="eyebrow">Private viewing</span></div>
+        <h2 class="mt-2.5 max-w-[18ch] font-serif font-bold text-white">Request the parcel sheet.</h2>
+        <p class="mt-3 max-w-[30ch] text-sm leading-relaxed text-stone-400">Sizes, covenants, prices and the survey extract. Sent the same day, no follow-up sequence.</p>
+        <a href="tel:+18765206119" class="mt-4 inline-block font-serif text-xl font-bold text-emerald-400">+1 876 520 6119</a>
+        {% if request.args.get('sent') %}<p class="mt-4 rounded-lg border border-emerald-400/30 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-300">Received. The sheet goes out today.</p>{% endif %}
+        {% if request.args.get('error') %}<p class="mt-4 rounded-lg border border-amber-400/30 bg-amber-950/40 px-4 py-3 text-sm text-amber-200">Name, phone and email needed. Or call the number.</p>{% endif %}
+        <form method="POST" action="{{ url_for('enquire') }}" class="mt-6 flex flex-col gap-3 lg:max-w-xl">
+            <input type="hidden" name="from" value="estates">
+            <input name="name" required autocomplete="name" placeholder="Name" aria-label="Name" class="viewing-field">
+            <input name="phone" required autocomplete="tel" inputmode="tel" placeholder="Phone" aria-label="Phone" class="viewing-field">
+            <input name="email" type="email" required autocomplete="email" placeholder="Email" aria-label="Email" class="viewing-field">
+            <input type="hidden" name="size" id="lot-value" value="Not sure">
+            <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="lot-chip" data-lot="Quarter acre" aria-pressed="false">Quarter</button>
+                <button type="button" class="lot-chip" data-lot="Half acre" aria-pressed="false">Half</button>
+                <button type="button" class="lot-chip" data-lot="One acre+" aria-pressed="false">One acre+</button>
+            </div>
+            <button type="submit" class="btn-primary mt-1">Send the sheet</button>
+        </form>
     </div>
 </section>
 {% endblock %}
