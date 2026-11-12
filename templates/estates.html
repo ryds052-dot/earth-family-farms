@@ -1,106 +1,102 @@
 {% extends "base.html" %}
 {% block title %}<title>Highland Estate Lots — Ocho Rios</title>{% endblock %}
-{% block meta %}<meta name="description" content="Private parcels in a master-planned eco-subdivision with ocean views and off-grid infrastructure.">{% endblock %}
+{% block meta %}<meta name="description" content="Freehold parcels inside a 100-acre private highland estate above Ocho Rios. Spring water, ocean aspect, covenant-held. Request the parcel sheet.">{% endblock %}
 
 {% block content %}
-<section class="pt-32 pb-24 bg-stone-950 text-stone-100 min-h-screen">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="hero relative flex items-end overflow-hidden bg-stone-950">
+    <video autoplay loop muted playsinline preload="metadata" poster="{{ url_for('static', filename='images/villa-concept.jpg') }}" class="absolute inset-0 h-full w-full object-cover opacity-70" aria-hidden="true">
+        <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/55 to-stone-950/20"></div>
 
-        <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Private Highland Stewardship • Ocho Rios</span>
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">Highland estate lots</h1>
-            <p class="text-stone-400 text-sm md:text-base mt-4 leading-relaxed">
-                Freehold parcels inside a working 100-acre estate above Ocho Rios. Mature canopy, spring water, ocean aspect. Held under covenant so the land around you stays land.
-            </p>
+    <div class="relative w-full max-w-7xl mx-auto px-5 pb-14 pt-28">
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300 backdrop-blur">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Private highland stewardship
+        </span>
+        <h1 class="mt-5 font-serif font-bold text-white">Highland estate lots</h1>
+        <p class="mt-4 max-w-[34ch] text-[15px] leading-relaxed text-stone-300">
+            Freehold parcels inside a working 100-acre estate above Ocho Rios. Mature canopy, spring water, ocean aspect — held under covenant so the land around you stays land.
+        </p>
+        <div class="mt-8 flex flex-col gap-3">
+            <a href="#enquiry" class="btn-emerald flex min-h-[52px] items-center justify-center rounded-xl text-xs font-bold uppercase tracking-[0.16em] text-white">Request the parcel sheet</a>
+            <a href="{{ url_for('invest') }}" class="flex min-h-[52px] items-center justify-center rounded-xl border border-stone-600/60 text-xs font-bold uppercase tracking-[0.16em] text-stone-200">Investment case</a>
         </div>
+    </div>
+</section>
 
-        <!-- 1. Aerial Drone Video Flyover Showcase -->
-        <div class="max-w-6xl mx-auto mb-16">
-            <div class="bg-stone-900 rounded-3xl overflow-hidden border border-stone-800/80 shadow-2xl">
-                <div class="p-6 md:px-8 border-b border-stone-800 flex flex-wrap items-center justify-between gap-4">
-                    <div class="flex items-center gap-3">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Aerial flyover</span>
-                    </div>
-                    <span class="text-xs text-stone-400">Collier Gully & Highland Ridge • Ocho Rios</span>
-                </div>
+<section class="border-y border-stone-800/70 bg-stone-900/40">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 gap-px bg-stone-800/60 md:grid-cols-4">
+        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">100</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Acres, whole</p></div>
+        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Freehold</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Titled tenure</p></div>
+        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Ocean</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Ridge aspect</p></div>
+        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Spring</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Water on land</p></div>
+    </div>
+</section>
 
-                <video autoplay loop muted playsinline controls preload="metadata" class="w-full h-[420px] md:h-[540px] object-cover bg-stone-950">
-                    <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Why the land carries value</span>
+        <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">A ridge this close to the coast is not reproducible.</h2>
+        <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-stone-300">
+            <p>Coastal St. Ann is built out at the shoreline and climbing inland fast. Land above Ocho Rios with an ocean aspect, live spring water and mature hardwood canopy is a finite position — the parcels that exist are the parcels that will ever exist.</p>
+            <p>Inside the estate, the whole subdivision has already been surveyed, laid out and engineered. Access roads, lot boundaries and building envelopes are drawn. A buyer is not paying for raw bush and a promise; the expensive, slow, technical work is behind the land, not ahead of it.</p>
+            <p>Covenants do the rest. Minimum setbacks, material palette and density limits keep the canopy intact, which is what protects both the view and the resale argument for every parcel on the ridge.</p>
         </div>
+    </div>
+</section>
 
-        <!-- 2. Subdivision map Showcase -->
-        <div class="max-w-6xl mx-auto mb-16">
-            <div class="bg-stone-900 rounded-3xl p-6 md:p-10 border border-stone-800/80 shadow-2xl">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                    <div>
-                        <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Survey layout</span>
-                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mt-1">Subdivision map</h2>
-                        <p class="text-stone-400 text-sm mt-1">Tap the map to read individual lot boundaries at full resolution.</p>
-                    </div>
-                    <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20available%20subdivision%20estate%20lots." target="_blank" rel="noopener noreferrer" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-md text-center">
-                        Request the parcel sheet
-                    </a>
-                </div>
-
-                <div class="overflow-hidden rounded-lg border border-stone-800 bg-stone-950 p-2">
-                    <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Subdivision map" class="w-full max-h-[600px] object-contain mx-auto rounded-md">
-                </div>
-            </div>
+<section class="py-16 border-t border-stone-800/70">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Survey layout</span>
+        <h2 class="mt-3 font-serif font-bold text-white">The subdivision map</h2>
+        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Every lot, boundary and access line, drawn. Tap to read it at full resolution.</p>
+        <div class="mt-7 overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 p-2">
+            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Surveyed subdivision map showing lot boundaries and access roads" loading="lazy" class="w-full rounded-xl object-contain">
         </div>
+        <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20available%20subdivision%20estate%20lots." target="_blank" rel="noopener noreferrer" class="mt-4 flex min-h-[50px] items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-950/30 text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Ask about a specific lot</a>
+    </div>
+</section>
 
-        <!-- 3. Estates Flyer & Eco-Villa Architecture Grid -->
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
-            <div class="h-full bg-stone-900 border border-stone-800/80 rounded-lg p-6 md:p-8 flex flex-col justify-between shadow-2xl">
-                <div>
-                    <div class="overflow-hidden rounded-md mb-6 border border-stone-800 bg-stone-950 p-2">
-                        <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Earth Family Estates Official Flyer" class="w-full h-96 object-contain">
-                    </div>
-                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Investment Overview</span>
-                    <h3 class="text-2xl font-serif font-bold text-white mt-1">What is for sale</h3>
-                    <p class="text-stone-300 text-sm leading-relaxed mt-2">
-                        Tap the sheet for parcel sizes, covenants and stewardship terms.
-                    </p>
-                </div>
+<section class="py-16 border-t border-stone-800/70">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-6 px-5 md:grid-cols-2">
+        <article class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900">
+            <img src="{{ url_for('static', filename='estates-flyer.jpg') }}" alt="Earth Family Estates parcel sheet" loading="lazy" class="h-72 w-full object-contain bg-stone-950 p-3">
+            <div class="p-6">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">What is for sale</span>
+                <h3 class="mt-2 font-serif text-xl font-bold text-white">Parcel sheet</h3>
+                <p class="mt-2 text-sm leading-relaxed text-stone-400">Sizes, covenants, stewardship terms and pricing, on one page.</p>
             </div>
+        </article>
+        <article class="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900">
+            <img src="{{ url_for('static', filename='images/villa-concept.jpg') }}" alt="Eco-villa concept set into the hillside" loading="lazy" class="h-72 w-full object-cover">
+            <div class="p-6">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">What you can build</span>
+                <h3 class="mt-2 font-serif text-xl font-bold text-white">Villa concept</h3>
+                <p class="mt-2 text-sm leading-relaxed text-stone-400">Set into the slope: local stone, hardwood, solar, veranda to the sea. Plans come with the sheet.</p>
+            </div>
+        </article>
+    </div>
+</section>
 
-            <div class="h-full bg-stone-900 border border-stone-800/80 rounded-lg p-6 md:p-8 flex flex-col justify-between shadow-2xl">
-                <div>
-                    <div class="overflow-hidden rounded-md mb-6 border border-stone-800 bg-stone-950">
-                        <img src="{{ url_for('static', filename='images/villa-concept.jpg') }}" alt="Luxury Eco-Villa Concept" class="w-full h-96 object-cover">
-                    </div>
-                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Build vision</span>
-                    <h3 class="text-2xl font-serif font-bold text-white mt-1">What you can build</h3>
-                    <p class="text-stone-300 text-sm leading-relaxed mt-2">
-                        Designed to sit into the slope: local stone, hardwood, solar, and a veranda that takes the sea. Plans come with the parcel sheet.
-                    </p>
-                </div>
-            </div>
+<section id="enquiry" class="border-t border-stone-800 py-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-12 px-5 lg:grid-cols-2">
+        <div>
+            <h2 class="font-serif font-bold text-white">Request the parcel sheet</h2>
+            <p class="mt-3 max-w-[32ch] text-sm leading-relaxed text-stone-400">Sizes, covenants, prices and the survey extract. Sent the same day. No list, no follow-up sequence.</p>
+            <a href="tel:+18765206119" class="mt-6 inline-block font-serif text-xl font-bold text-emerald-400">+1 876 520 6119</a>
         </div>
-
+        <div>
+            {% if request.args.get('sent') %}<p class="mb-5 rounded-lg border border-emerald-400/30 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-300">Received. The sheet goes out today.</p>{% endif %}
+            {% if request.args.get('error') %}<p class="mb-5 rounded-lg border border-amber-400/30 bg-amber-950/40 px-4 py-3 text-sm text-amber-200">Name, phone and email needed. Or call the number.</p>{% endif %}
+            <form method="POST" action="{{ url_for('enquire') }}" class="flex flex-col gap-4">
+                <input type="hidden" name="from" value="estates">
+                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Name</span><input name="name" required autocomplete="name" class="viewing-field"></label>
+                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Phone</span><input name="phone" required autocomplete="tel" inputmode="tel" class="viewing-field"></label>
+                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Email</span><input name="email" type="email" required autocomplete="email" class="viewing-field"></label>
+                <label class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Parcel size you want</span><input name="size" class="viewing-field" placeholder="Quarter acre, half acre, not sure"></label>
+                <button type="submit" class="btn-emerald mt-2 flex min-h-[52px] items-center justify-center rounded-xl text-xs font-bold uppercase tracking-[0.16em] text-white">Send the sheet</button>
+            </form>
+        </div>
     </div>
 </section>
 {% endblock %}
-<section id="enquiry" class="px-6 py-20 border-t border-stone-800">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-    <div>
-      <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">Request the parcel sheet</h2>
-      <p class="text-sm text-stone-400 mt-3 max-w-sm">Sizes, covenants, prices and the survey extract. Sent the same day. No list, no follow-up sequence.</p>
-      <a href="tel:+18765206119" class="inline-block text-emerald-400 font-bold text-lg mt-6 hover:underline">+1 876 520 6119</a>
-    </div>
-    {% if request.args.get('sent') %}<p class="text-emerald-400 text-sm lg:col-span-2">Received. The sheet goes out today.</p>{% endif %}
-    {% if request.args.get('error') %}<p class="text-amber-300 text-sm lg:col-span-2">Name, phone and email needed. Or call the number on the left.</p>{% endif %}
-    <form method="POST" action="{{ url_for('enquire') }}" class="flex flex-col gap-5">
-      <input type="hidden" name="from" value="estates">
-      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Name</span><input name="name" required autocomplete="name" class="viewing-field"></label>
-      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Phone</span><input name="phone" required autocomplete="tel" inputmode="tel" class="viewing-field"></label>
-      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Email</span><input name="email" type="email" required autocomplete="email" class="viewing-field"></label>
-      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Parcel size you want</span><input name="size" class="viewing-field" placeholder="Quarter acre, half acre, not sure"></label>
-      <button type="submit" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-md mt-2">Send the sheet</button>
-    </form>
-  </div>
-</section>
