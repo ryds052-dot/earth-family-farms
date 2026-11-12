@@ -16,12 +16,15 @@
     <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/25"></div>
 
     <div class="relative w-full max-w-7xl mx-auto px-5 pb-14 pt-28">
-        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300 backdrop-blur">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Viewings by appointment
-        </span>
+        <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300 backdrop-blur">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Viewings by appointment
+            </span>
+            <span class="inline-flex items-center rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Awaiting approval</span>
+        </div>
         <h1 class="mt-5 font-serif font-bold text-white">Highland estate lots</h1>
         <p class="mt-4 max-w-[34ch] text-[15px] leading-relaxed text-stone-300">
-            Freehold parcels inside a working 100-acre estate above Ocho Rios. Mature canopy, spring water, ocean aspect — held under covenant so the land around you stays land.
+            Proposed freehold parcels inside a working 100-acre estate above Ocho Rios. Pre-development, with subdivision approval in progress. Mature canopy, spring water, ocean aspect.
         </p>
         <div class="mt-8 flex flex-col gap-3">
             <a href="#enquiry" class="btn-emerald flex min-h-[52px] items-center justify-center rounded-xl text-xs font-bold uppercase tracking-[0.16em] text-white">Request the parcel sheet</a>
@@ -33,9 +36,12 @@
 <section class="border-y border-stone-800/70 bg-stone-950">
     <div class="max-w-7xl mx-auto grid grid-cols-2 gap-px bg-stone-800/60 md:grid-cols-4">
         <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">100</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Acres, whole</p></div>
-        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Freehold</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Titled tenure</p></div>
+        <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Freehold</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Tenure, on transfer</p></div>
         <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Ocean</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Ridge aspect</p></div>
         <div class="bg-stone-950 px-5 py-6"><p class="font-serif text-2xl font-bold text-white">Spring</p><p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-stone-500">Water on land</p></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 py-4">
+        <p class="text-[11px] leading-relaxed text-amber-200/80"><span class="font-bold uppercase tracking-[0.14em] text-amber-300">Status:</span> subdivision approval in progress. Parcels are offered on a pre-development basis — lot lines, sizes and access are proposed until the survey is approved.</p>
     </div>
 </section>
 
@@ -45,7 +51,7 @@
         <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">A ridge this close to the coast is not reproducible.</h2>
         <div class="mt-6 space-y-4 text-[15px] leading-relaxed text-stone-300">
             <p>Coastal St. Ann is built out at the shoreline and climbing inland fast. Land above Ocho Rios with an ocean aspect, live spring water and mature hardwood canopy is a finite position — the parcels that exist are the parcels that will ever exist.</p>
-            <p>Inside the estate the whole subdivision has already been surveyed, laid out and engineered. Access roads, lot boundaries and building envelopes are drawn. A buyer is not paying for raw bush and a promise; the expensive, slow, technical work is behind the land, not ahead of it.</p>
+            <p>Inside the estate the land has been surveyed, laid out and engineered, and the subdivision plan is in for approval. Access roads, lot boundaries and building envelopes are drawn. A buyer is not paying for raw bush; the slow, technical work is behind the land, not ahead of it — and the price reflects pre-development, not approved.</p>
             <p>Covenants do the rest. Setbacks, material palette and density limits keep the canopy intact, which protects both the view and the resale argument for every parcel on the ridge.</p>
         </div>
     </div>
@@ -55,10 +61,10 @@
     <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full 100-acre development: spine road, terraced building pads and retained canopy" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/30"></div>
     <div class="relative max-w-7xl mx-auto px-5 py-20 md:py-28">
-        <span class="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Pre-development · Phase one</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Pre-development · Awaiting approval</span>
         <h2 class="mt-5 max-w-[20ch] font-serif font-bold text-white">The whole ridge, not a single pad.</h2>
         <p class="mt-4 max-w-[42ch] text-[15px] leading-relaxed text-stone-300">
-            One hundred acres read as a single plan: a switchback spine road, terraced building envelopes held in disciplined rows, canopy kept as a green matrix between every one of them, an arrival court and pavilion at the head of the drive, trails and two retention ponds in the gullies. Nothing is improvised lot by lot.
+            One hundred acres read as a single plan: a switchback spine road, terraced building envelopes held in disciplined rows, canopy kept as a green matrix between every one of them, an arrival court and pavilion at the head of the drive, trails and two retention ponds in the gullies. Nothing is improvised lot by lot. The plan is submitted, not yet approved.
         </p>
         <dl class="mt-9 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-stone-700/60 bg-stone-700/60">
             <div class="bg-stone-950/85 px-4 py-4"><dt class="text-[9px] uppercase tracking-[0.16em] text-stone-500">Envelopes</dt><dd class="mt-1 font-serif text-lg font-bold text-white">Cut &amp; terraced</dd></div>
@@ -72,6 +78,7 @@
     <div class="max-w-7xl mx-auto px-5 py-16">
         <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Build sequence</span>
         <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Infrastructure first, houses second.</h2>
+        <p class="mt-3 max-w-[40ch] text-sm leading-relaxed text-stone-400">Sequence runs on approval. Nothing is cut before the plan clears.</p>
         <ol class="mt-8 space-y-6">
             <li class="grid grid-cols-[auto_1fr] gap-4 border-b border-stone-800/70 pb-6">
                 <span class="font-serif text-2xl font-bold text-emerald-400">01</span>
@@ -152,8 +159,8 @@
 <section class="py-16 border-t border-stone-800/70 reveal">
     <div class="max-w-7xl mx-auto px-5">
         <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Survey layout</span>
-        <h2 class="mt-3 font-serif font-bold text-white">The subdivision map</h2>
-        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Every lot, boundary and access line, drawn. Tap to read it at full resolution.</p>
+        <h2 class="mt-3 font-serif font-bold text-white">The proposed layout</h2>
+        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Proposed lots, boundaries and access lines as drawn. Tap to read at full resolution. Subject to approval.</p>
         <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="mt-7 block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 p-2">
             <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="Surveyed subdivision map showing lot boundaries and access roads" loading="lazy" class="w-full rounded-xl object-contain">
         </a>
@@ -215,15 +222,15 @@
 <section class="py-16 border-t border-stone-800/70 reveal">
     <div class="max-w-7xl mx-auto px-5">
         <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Availability</span>
-        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Sixteen envelopes, released in order.</h2>
-        <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Upper terraces first. Struck through are taken, amber is under reservation, the rest are open.</p>
+        <h2 class="mt-3 max-w-[24ch] font-serif font-bold text-white">Sixteen proposed envelopes.</h2>
+        <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Upper terraces first. Struck through are spoken for, amber is under reservation, the rest are open. All pending approval.</p>
         <div class="mt-8 grid grid-cols-4 gap-2 sm:grid-cols-8">
             <span class="plot" data-state="held">A1</span><span class="plot" data-state="available">A2</span><span class="plot" data-state="reserved">A3</span><span class="plot" data-state="available">A4</span>
             <span class="plot" data-state="available">B1</span><span class="plot" data-state="held">B2</span><span class="plot" data-state="available">B3</span><span class="plot" data-state="available">B4</span>
             <span class="plot" data-state="available">C1</span><span class="plot" data-state="available">C2</span><span class="plot" data-state="reserved">C3</span><span class="plot" data-state="available">C4</span>
             <span class="plot" data-state="available">D1</span><span class="plot" data-state="available">D2</span><span class="plot" data-state="available">D3</span><span class="plot" data-state="available">D4</span>
         </div>
-        <p class="mt-4 text-[11px] text-stone-500">Plot references are illustrative pending the survey extract.</p>
+        <p class="mt-4 text-[11px] text-stone-500">Plot references and statuses are indicative until the survey is approved.</p>
     </div>
 </section>
 
@@ -247,7 +254,7 @@
         <h2 class="mt-3 max-w-[22ch] font-serif font-bold text-white">Plain terms, before anyone travels.</h2>
         <div class="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 sm:grid-cols-3">
             <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">To reserve</p><p class="mt-2 font-serif text-lg font-bold text-white">10% deposit</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Holds the envelope off the market for 30 days while title and survey are checked.</p></div>
-            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Balance</p><p class="mt-2 font-serif text-lg font-bold text-white">90 days</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Completion on transfer. Staged terms considered for larger parcels.</p></div>
+            <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Balance</p><p class="mt-2 font-serif text-lg font-bold text-white">90 days</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Completion on transfer, timed to approval. Staged terms considered for larger parcels.</p></div>
             <div class="bg-stone-950 p-6"><p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">Costs</p><p class="mt-2 font-serif text-lg font-bold text-white">Buyer's side</p><p class="mt-2 text-sm leading-relaxed text-stone-400">Stamp duty, transfer and attorney fees are the buyer's. No estate commission.</p></div>
         </div>
     </div>
@@ -272,6 +279,8 @@
         <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Questions</span>
         <h2 class="mt-3 max-w-[20ch] font-serif font-bold text-white">What buyers ask first.</h2>
         <div class="mt-8 max-w-3xl">
+            <details class="faq"><summary>Has the subdivision been approved?</summary><p>Not yet. It is submitted and in progress. Parcels are sold pre-development, which is why entry sits below approved-land pricing — and why the survey extract and the approval status are released up front rather than after a deposit.</p></details>
+            <details class="faq"><summary>What happens if approval is refused?</summary><p>Deposits are held against the parcel and returned if the plan does not clear, per the reservation terms your attorney reviews. Nothing is payable to completion before approval.</p></details>
             <details class="faq"><summary>Is the title freehold and clean?</summary><p>Yes — freehold, transferred by registered instrument. The survey extract and title are released with the parcel sheet so your attorney can review before you commit anything.</p></details>
             <details class="faq"><summary>Do I have to build within a set time?</summary><p>No hard deadline. The covenant sets what may be built, not when. Land can be held without penalty.</p></details>
             <details class="faq"><summary>Can foreign buyers purchase?</summary><p>Yes. Non-residents can hold Jamaican freehold through the standard transfer process. Your attorney handles the filing.</p></details>
