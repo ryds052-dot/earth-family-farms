@@ -2,6 +2,7 @@
   "name": "earth-family-farms",
   "private": true,
   "scripts": {
+    "dev": ".venv\\Scripts\\python.exe app.py",
     "build:css": "tailwindcss -i ./static/css/tailwind.input.css -o ./static/css/tailwind.css --minify"
   },
   "devDependencies": {

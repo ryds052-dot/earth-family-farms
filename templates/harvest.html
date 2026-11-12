@@ -11,7 +11,7 @@
             </p>
         </header>
 
-        <div class="portal-notice mb-8 rounded-2xl p-5 md:p-6" role="note">
+        <div class="portal-notice mb-8 rounded-lg p-5 md:p-6" role="note">
             <p class="text-sm font-semibold text-amber-100">Sample seasonal pipeline · All volumes and windows require confirmation</p>
             <p class="mt-2 text-xs leading-relaxed text-stone-300">This demonstration dashboard is not linked to field inventory, crop forecasting, certification records, or export documentation. Product, volume, quality, timing, and delivery are subject to confirmation by the estate team.</p>
         </div>
@@ -24,7 +24,7 @@
                 </div>
                 <span class="rounded-full border border-stone-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-stone-300">Planning view · not live stock</span>
             </div>
-            <div class="overflow-x-auto rounded-2xl border border-stone-800">
+            <div class="overflow-x-auto rounded-lg border border-stone-800">
                 <table class="min-w-full divide-y divide-stone-800 text-left">
                     <thead class="bg-stone-900/90">
                         <tr class="text-[10px] uppercase tracking-widest text-stone-400">
@@ -55,13 +55,13 @@
                 <p class="mt-3 text-sm leading-relaxed text-stone-400">Select products and requested volumes. Submitting opens a prefilled WhatsApp draft for the estate concierge; no order is placed until availability and terms are confirmed.</p>
             </div>
             {% if error %}
-            <p class="mt-6 rounded-xl border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">{{ error }}</p>
+            <p class="mt-6 rounded-md border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">{{ error }}</p>
             {% endif %}
 
             <form action="{{ url_for('harvest') }}" method="post" class="mt-8 space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                     {% for key, crop in crops.items() %}
-                    <div class="portal-metric rounded-2xl p-4">
+                    <div class="portal-metric rounded-lg p-4">
                         <div class="flex items-start gap-3">
                             <input id="crop-{{ key }}" type="checkbox" name="crops" value="{{ key }}" {% if key in form_data.get('crops', []) %}checked{% endif %} class="mt-1 accent-amber-300">
                             <label for="crop-{{ key }}" class="min-w-0 flex-1 cursor-pointer">
@@ -81,11 +81,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                     <div>
                         <label for="buyer-company" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Organization</label>
-                        <input id="buyer-company" name="company" required maxlength="120" value="{{ form_data.get('company', '') }}" autocomplete="organization" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <input id="buyer-company" name="company" required maxlength="120" value="{{ form_data.get('company', '') }}" autocomplete="organization" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                     </div>
                     <div>
                         <label for="buyer-type" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Buyer type</label>
-                        <select id="buyer-type" name="buyer_type" required class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <select id="buyer-type" name="buyer_type" required class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             <option value="">Select buyer type</option>
                             {% for key, label in buyer_types.items() %}
                             <option value="{{ key }}" {% if form_data.get('buyer_type') == key %}selected{% endif %}>{{ label }}</option>
@@ -94,19 +94,19 @@
                     </div>
                     <div>
                         <label for="buyer-contact" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Contact name</label>
-                        <input id="buyer-contact" name="contact_name" required maxlength="100" value="{{ form_data.get('contact_name', '') }}" autocomplete="name" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <input id="buyer-contact" name="contact_name" required maxlength="100" value="{{ form_data.get('contact_name', '') }}" autocomplete="name" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                     </div>
                     <div>
                         <label for="buyer-email" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Business email</label>
-                        <input id="buyer-email" type="email" name="email" required maxlength="254" value="{{ form_data.get('email', '') }}" autocomplete="email" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <input id="buyer-email" type="email" name="email" required maxlength="254" value="{{ form_data.get('email', '') }}" autocomplete="email" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                     </div>
                     <div>
                         <label for="buyer-phone" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Phone / WhatsApp</label>
-                        <input id="buyer-phone" type="tel" name="phone" required maxlength="25" pattern="[0-9+().\- ]{7,25}" value="{{ form_data.get('phone', '') }}" autocomplete="tel" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <input id="buyer-phone" type="tel" name="phone" required maxlength="25" pattern="[0-9+().\- ]{7,25}" value="{{ form_data.get('phone', '') }}" autocomplete="tel" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                     </div>
                     <div>
                         <label for="delivery-window" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Preferred delivery</label>
-                        <select id="delivery-window" name="delivery_window" required class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <select id="delivery-window" name="delivery_window" required class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             <option value="">Select a window</option>
                             <option value="0-30" {% if form_data.get('delivery_window') == '0-30' %}selected{% endif %}>Within 30 days</option>
                             <option value="31-90" {% if form_data.get('delivery_window') == '31-90' %}selected{% endif %}>31–90 days</option>
@@ -117,9 +117,9 @@
 
                 <div>
                     <label for="buyer-notes" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Specifications, delivery location, or additional requirements</label>
-                    <textarea id="buyer-notes" name="notes" rows="3" maxlength="2000" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">{{ form_data.get('notes', '') }}</textarea>
+                    <textarea id="buyer-notes" name="notes" rows="3" maxlength="2000" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">{{ form_data.get('notes', '') }}</textarea>
                 </div>
-                <button type="submit" class="inline-flex items-center justify-center rounded-xl border border-amber-200/40 bg-amber-200 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-stone-950 transition hover:bg-amber-100">
+                <button type="submit" class="inline-flex items-center justify-center rounded-md border border-amber-200/40 bg-amber-200 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-stone-950 transition hover:bg-amber-100">
                     Prepare wholesale inquiry in WhatsApp
                 </button>
             </form>

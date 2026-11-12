@@ -11,7 +11,7 @@
             </p>
         </header>
 
-        <div class="portal-notice mb-10 rounded-2xl p-5 md:p-6" role="note">
+        <div class="portal-notice mb-10 rounded-lg p-5 md:p-6" role="note">
             <p class="text-sm font-semibold text-amber-100">Illustrative scenario only · Not an offer, appraisal, or return forecast</p>
             <p class="mt-2 text-xs leading-relaxed text-stone-300">
                 All prices, appreciation rates, and income yields below are hypothetical planning inputs, not verified parcel pricing or financial projections. No investment return is promised. Confirm title, zoning, utilities, access, costs, taxes, and market assumptions independently before making any decision.
@@ -40,7 +40,7 @@
 
                     <div class="mt-7">
                         <label for="development-use" class="block text-sm font-medium text-stone-200">Intended development use</label>
-                        <select id="development-use" name="development_use" class="mt-2 w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                        <select id="development-use" name="development_use" class="mt-2 w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             {% for key, use in investment_uses.items() %}
                             <option value="{{ key }}" data-yield="{{ use.gross_rental_yield_percent }}" data-summary="{{ use.summary }}" {% if form_data.get('development_use') == key %}selected{% endif %}>{{ use.label }} · {{ use.gross_rental_yield_percent }}% illustrative gross yield</option>
                             {% endfor %}
@@ -49,22 +49,22 @@
                     </div>
 
                     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-                        <article class="portal-metric rounded-2xl p-4">
+                        <article class="portal-metric rounded-lg p-4">
                             <p class="text-[10px] uppercase tracking-widest text-stone-400">Illustrative land basis</p>
                             <p id="land-basis" class="mt-3 text-xl font-semibold text-white">$25,000</p>
                             <p class="mt-1 text-[10px] text-stone-500">$25,000 / acre assumption</p>
                         </article>
-                        <article class="portal-metric rounded-2xl p-4">
+                        <article class="portal-metric rounded-lg p-4">
                             <p class="text-[10px] uppercase tracking-widest text-stone-400">Year 5 land scenario</p>
                             <p id="year-five-value" class="mt-3 text-xl font-semibold text-amber-200">$31,907</p>
                             <p class="mt-1 text-[10px] text-stone-500">At 5% annual illustrative growth</p>
                         </article>
-                        <article class="portal-metric rounded-2xl p-4">
+                        <article class="portal-metric rounded-lg p-4">
                             <p class="text-[10px] uppercase tracking-widest text-stone-400">5-year value increase</p>
                             <p id="appreciation-uplift" class="mt-3 text-xl font-semibold text-amber-200">$6,907</p>
                             <p class="mt-1 text-[10px] text-stone-500">Illustrative appreciation only</p>
                         </article>
-                        <article class="portal-metric rounded-2xl p-4">
+                        <article class="portal-metric rounded-lg p-4">
                             <p class="text-[10px] uppercase tracking-widest text-stone-400">Annual gross income</p>
                             <p id="annual-income" class="mt-3 text-xl font-semibold text-white">$2,000</p>
                             <p id="yield-label" class="mt-1 text-[10px] text-stone-500">8% illustrative gross yield</p>
@@ -80,15 +80,15 @@
                     <h2 class="mt-2 text-2xl font-semibold text-white">Infrastructure hookup status</h2>
                     <p class="mt-2 text-xs leading-relaxed text-stone-400">Parcel-specific service availability has not been verified. Confirm all connections and access with the seller and independent surveyors.</p>
                     <ul class="mt-6 space-y-3">
-                        <li class="flex items-center justify-between gap-4 rounded-xl border border-stone-800 bg-stone-950/60 px-4 py-3">
+                        <li class="flex items-center justify-between gap-4 rounded-md border border-stone-800 bg-stone-950/60 px-4 py-3">
                             <span class="text-sm text-stone-200">Water connection</span>
                             <span class="text-[10px] font-bold uppercase tracking-widest text-amber-200">Verify</span>
                         </li>
-                        <li class="flex items-center justify-between gap-4 rounded-xl border border-stone-800 bg-stone-950/60 px-4 py-3">
+                        <li class="flex items-center justify-between gap-4 rounded-md border border-stone-800 bg-stone-950/60 px-4 py-3">
                             <span class="text-sm text-stone-200">Solar / power</span>
                             <span class="text-[10px] font-bold uppercase tracking-widest text-amber-200">Verify</span>
                         </li>
-                        <li class="flex items-center justify-between gap-4 rounded-xl border border-stone-800 bg-stone-950/60 px-4 py-3">
+                        <li class="flex items-center justify-between gap-4 rounded-md border border-stone-800 bg-stone-950/60 px-4 py-3">
                             <span class="text-sm text-stone-200">Road access</span>
                             <span class="text-[10px] font-bold uppercase tracking-widest text-amber-200">Verify</span>
                         </li>
@@ -106,24 +106,24 @@
                     </div>
                     <div class="lg:col-span-2">
                         {% if error %}
-                        <p class="mb-5 rounded-xl border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">{{ error }}</p>
+                        <p class="mb-5 rounded-md border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-200" role="alert">{{ error }}</p>
                         {% endif %}
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label for="investor-name" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Full name</label>
-                                <input id="investor-name" name="name" required maxlength="100" autocomplete="name" value="{{ form_data.get('name', '') }}" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                                <input id="investor-name" name="name" required maxlength="100" autocomplete="name" value="{{ form_data.get('name', '') }}" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             </div>
                             <div>
                                 <label for="investor-email" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Email</label>
-                                <input id="investor-email" type="email" name="email" required maxlength="254" autocomplete="email" value="{{ form_data.get('email', '') }}" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                                <input id="investor-email" type="email" name="email" required maxlength="254" autocomplete="email" value="{{ form_data.get('email', '') }}" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             </div>
                             <div>
                                 <label for="investor-phone" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Phone / WhatsApp</label>
-                                <input id="investor-phone" type="tel" name="phone" required maxlength="25" pattern="[0-9+().\- ]{7,25}" autocomplete="tel" value="{{ form_data.get('phone', '') }}" class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                                <input id="investor-phone" type="tel" name="phone" required maxlength="25" pattern="[0-9+().\- ]{7,25}" autocomplete="tel" value="{{ form_data.get('phone', '') }}" class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                             </div>
                             <div>
                                 <label for="request-type" class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Inquiry type</label>
-                                <select id="request-type" name="request_type" required class="w-full rounded-xl border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
+                                <select id="request-type" name="request_type" required class="w-full rounded-md border border-stone-700 bg-stone-950 px-4 py-3 text-sm text-white">
                                     <option value="memorandum" {% if form_data.get('request_type') == 'memorandum' %}selected{% endif %}>Offering memorandum</option>
                                     <option value="parcel" {% if form_data.get('request_type') == 'parcel' %}selected{% endif %}>Parcel reservation discussion</option>
                                 </select>
@@ -133,7 +133,7 @@
                             <input type="checkbox" name="consent" value="yes" required {% if form_data.get('consent') == 'yes' %}checked{% endif %} class="mt-0.5 accent-amber-300">
                             <span>I understand the simulator uses illustrative assumptions only and this inquiry is non-binding. My contact and selection details will be included in a WhatsApp message addressed to the estate concierge.</span>
                         </label>
-                        <button type="submit" class="mt-6 inline-flex items-center justify-center rounded-xl border border-amber-200/40 bg-amber-200 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-stone-950 transition hover:bg-amber-100">
+                        <button type="submit" class="mt-6 inline-flex items-center justify-center rounded-md border border-amber-200/40 bg-amber-200 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-stone-950 transition hover:bg-amber-100">
                             Continue to WhatsApp concierge
                         </button>
                     </div>
