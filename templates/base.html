@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earth Family Farms | 100-Acre Eco-Sanctuary & Estates • Ocho Rios, Jamaica</title>
+    <title>Earth Family Farms — Highland Estates, Ocho Rios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <header class="fixed top-0 left-0 right-0 z-40 bg-stone-950/85 backdrop-blur-xl border-b border-stone-800/80">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="{{ url_for('home') }}" class="flex items-center gap-3.5 group">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-11 w-11 rounded-lg object-contain bg-white p-1 shadow-md group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms Logo" class="h-11 w-11 rounded-md object-contain bg-white p-1 shadow-md group-hover:scale-105 transition-transform">
                 <div>
                     <span class="block text-base md:text-lg font-serif font-bold tracking-wider text-white leading-none">EARTH FAMILY</span>
                     <span class="block text-[10px] uppercase tracking-[0.22em] text-emerald-400 font-semibold mt-1">Sanctuary & Farms</span>
@@ -36,7 +36,7 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="{{ url_for('stays') }}#stay-inquiry" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl">
+                <a href="{{ url_for('stays') }}#stay-inquiry" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-md">
                     Reserve Stay
                 </a>
             </div>
@@ -104,7 +104,7 @@
 
         <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
             <p>© 2026 Earth Family Farms. All Rights Reserved.</p>
-            <p class="uppercase tracking-widest text-stone-400">Unplug • Reclaim • Own The Earth</p>
+            <p class="uppercase tracking-widest text-stone-400">Unplug • Reclaim • Own the earth</p>
         </div>
     </footer>
 
@@ -113,7 +113,7 @@
         <button id="image-lightbox-close" type="button" aria-label="Close image preview" class="absolute top-6 right-6 text-stone-300 hover:text-white text-xs uppercase tracking-widest border border-stone-700 px-4 py-2 rounded-full bg-stone-900/90">
             Close [ESC]
         </button>
-        <img id="lightbox-img" src="" alt="Full Resolution Preview" class="max-h-[94vh] max-w-[96vw] object-contain rounded-2xl border border-stone-800 shadow-2xl">
+        <img id="lightbox-img" src="" alt="Full Resolution Preview" class="max-h-[94vh] max-w-[96vw] object-contain rounded-lg border border-stone-800 shadow-2xl">
     </div>
 
     <script src="{{ url_for('static', filename='js/portal.js') }}" defer></script>

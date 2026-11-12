@@ -140,3 +140,7 @@ main > section:first-child {
 .portal-panel input[type="range"] {
     accent-color: var(--botanical-gold);
 }
+
+.image-lightbox[aria-hidden="true"] { display: none !important; }
+.image-lightbox[aria-hidden="false"] { display: flex !important; }
+

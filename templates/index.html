@@ -2,11 +2,11 @@
 
 {% block content %}
 <!-- Cinematic Drone Video Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
-    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/villa-concept.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105">
+<section class="relative min-h-[88svh] flex items-center justify-center overflow-hidden pt-28 pb-16">
+    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/villa-concept.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-55 scale-105">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/50 to-stone-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/75 via-stone-950/35 to-stone-950"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <div class="inline-flex items-center gap-2 bg-stone-900/80 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-6">
@@ -15,8 +15,8 @@
         </div>
 
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white leading-tight tracking-tight">
-            Escape The Ordinary.<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">Own The Highland.</span>
+            Escape the ordinary.<br>
+            <span class="text-emerald-400">Own the highland.</span>
         </h1>
 
         <p class="text-stone-300 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
@@ -24,11 +24,11 @@
         </p>
 
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a href="{{ url_for('experiences') }}" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl">
-                Explore Farm Tours
+            <a href="{{ url_for('experiences') }}" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-md">
+                Explore farm tours
             </a>
-            <a href="{{ url_for('estates') }}" class="bg-stone-900/90 hover:bg-stone-800 text-stone-100 border border-stone-700 text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all">
-                View Highland Estates
+            <a href="{{ url_for('estates') }}" class="bg-stone-900/90 hover:bg-stone-800 text-stone-100 border border-stone-700 text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-md transition-all">
+                View highland estates
             </a>
         </div>
     </div>
@@ -63,32 +63,32 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest">Farm • Nature • Community</span>
-            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-2">The Sanctuary Experience</h2>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-2">The sanctuary experience</h2>
             <p class="text-stone-400 text-sm md:text-base mt-3">Discover our three core pillars of sustainable island living in St. Ann, Jamaica.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Pillar 1: Experiences -->
-            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
+            <div class="bg-stone-900 rounded-lg p-7 flex flex-col justify-between">
                 <div>
-                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
-                        <img src="{{ url_for('static', filename='images/farm-tour.jpg') }}" alt="Cannabis & Exotic Fruit Tour" class="w-full h-72 object-contain p-1">
+                    <div class="overflow-hidden rounded-md mb-6 border border-stone-800 bg-stone-950">
+                        <img src="{{ url_for('static', filename='images/farm-tour.jpg') }}" alt="Cannabis & Exotic Fruit Tour" class="w-full h-72 object-cover" loading="lazy" decoding="async">
                     </div>
                     <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">01 • Guided Excursions</span>
-                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Botanical & River Tours</h3>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Botanical & river tours</h3>
                     <p class="text-stone-300 text-sm leading-relaxed mt-3">
                         Walk our organic cannabis and exotic fruit groves or trek down to the crystal-clear spring pools of Collier Gully.
                     </p>
                 </div>
-                <a href="{{ url_for('experiences') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
-                    View Experiences ($20–$30)
+                <a href="{{ url_for('experiences') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-md">
+                    View experiences ($20–$30)
                 </a>
             </div>
 
             <!-- Pillar 2: Eco-Stays -->
-            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
+            <div class="bg-stone-900 rounded-lg p-7 flex flex-col justify-between">
                 <div>
-                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
+                    <div class="overflow-hidden rounded-md mb-6 border border-stone-800 bg-stone-950">
                         <img src="{{ url_for('static', filename='images/queen-cabin.jpg') }}" alt="The Queen Cabin Experience" class="w-full h-72 object-cover">
                     </div>
                     <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">02 • Eco-Sanctuary Stays</span>
@@ -97,25 +97,25 @@
                         Unwind in a private handcrafted timber cabin featuring a veranda hammock, solar warm lighting, and stone campfire pit.
                     </p>
                 </div>
-                <a href="{{ url_for('stays') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
-                    Book Cabin ($55 / Night)
+                <a href="{{ url_for('stays') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-md">
+                    Book cabin ($55 / night)
                 </a>
             </div>
 
             <!-- Pillar 3: Estates -->
-            <div class="bg-stone-900 rounded-2xl p-7 flex flex-col justify-between">
+            <div class="bg-stone-900 rounded-lg p-7 flex flex-col justify-between">
                 <div>
-                    <div class="overflow-hidden rounded-xl mb-6 border border-stone-800 bg-stone-950">
+                    <div class="overflow-hidden rounded-md mb-6 border border-stone-800 bg-stone-950">
                         <img src="{{ url_for('static', filename='images/villa-concept.jpg') }}" alt="Earth Family Estates Villa Concept" class="w-full h-72 object-cover">
                     </div>
                     <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">03 • Land Stewardship</span>
-                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Highland Estate Lots</h3>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-1">Highland estate lots</h3>
                     <p class="text-stone-300 text-sm leading-relaxed mt-3">
                         Claim your private parcel in our master-planned eco-subdivision with sweeping ocean vistas and sustainable off-grid infrastructure.
                     </p>
                 </div>
-                <a href="{{ url_for('estates') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-xl">
-                    Explore Subdivision Map
+                <a href="{{ url_for('estates') }}" class="mt-6 text-center btn-emerald text-white text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-md">
+                    Explore subdivision map
                 </a>
             </div>
         </div>
