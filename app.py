@@ -234,6 +234,10 @@ def experiences():
 def estates():
     return render_template("estates.html")
 
+@app.route("/livity")
+def livity():
+    return render_template("livity.html")
+
 
 @app.route("/estate-parcels", methods=["GET", "POST"])
 @app.route("/invest", methods=["GET", "POST"])

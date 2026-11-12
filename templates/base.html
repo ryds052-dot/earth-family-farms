@@ -26,7 +26,7 @@
                 </div>
             </a>
 
-                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300"><a href="{{ url_for('estates') }}" class="hover:text-emerald-400">The Land</a><a href="{{ url_for('invest') }}" class="text-amber-200">Invest</a><a href="tel:+18765206119" class="hover:text-emerald-400">Call</a></nav>
+                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300"><a href="{{ url_for('estates') }}" class="hover:text-emerald-400">The Land</a><a href="{{ url_for('invest') }}" class="text-amber-200">Invest</a><a href="{{ url_for('livity') }}" class="hover:text-emerald-400">Livity</a><a href="tel:+18765206119" class="hover:text-emerald-400">Call</a></nav>
 
             <div class="flex items-center gap-3">
                 <a href="{{ url_for('estates') }}" class="btn-primary btn-sm">
@@ -51,7 +51,10 @@
         <a class="dock-item" href="{{ url_for('invest') }}"{% if request.endpoint == 'invest' %} aria-current="page"{% endif %}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg>Invest
         </a>
-        <a class="dock-item" href="tel:+18765206119">
+                <a class="dock-item" href="{{ url_for('livity') }}"{% if request.endpoint == 'livity' %} aria-current="page"{% endif %}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M12 8c0-3 2-5 5-5 0 3-2 5-5 5z"/><path d="M12 13c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg>Livity
+        </a>
+<a class="dock-item" href="tel:+18765206119">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Call
         </a>
         <a class="dock-cta" href="{{ url_for('estates') }}">Enquire</a>

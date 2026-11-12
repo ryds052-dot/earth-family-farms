@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}<title>Livity — Earth Family Farms</title>{% endblock %}
+{% block meta %}<meta name="description" content="How the villas at Earth Family Farms are built: local limestone, island hardwood, spring water, solar, cross-ventilation. The covenant that keeps the ridge intact.">{% endblock %}
+
+{% block content %}
+<section class="relative overflow-hidden bg-stone-950" style="min-height:52svh">
+    <img src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood above the drop" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/30"></div>
+    <div class="relative max-w-7xl mx-auto px-5 pb-8 pt-24">
+        <span class="eyebrow">Livity</span>
+        <h1 class="mt-2 font-serif font-bold text-white">Built the way the ridge already lives.</h1>
+        <p class="mt-3 max-w-[34ch] text-[15px] leading-snug text-stone-300">Stone quarried down the road, island hardwood, unlacquered brass, no ornament.</p>
+    </div>
+</section>
+
+<section class="sect">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">01</span><span class="eyebrow">The language</span></div>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white">The house borrows the view, it doesn't take it.</h2>
+        <p class="mt-3.5 max-w-[44ch] text-[15px] leading-relaxed text-stone-400">Setbacks and height keep every house low enough that the canopy stays the horizon. The covenant fixes the language — never your floor plan.</p>
+    </div>
+    <div class="mt-6 grid grid-cols-2 gap-px bg-stone-800/60">
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full object-cover aspect-[3/4]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Set into the slope</figcaption>
+        </figure>
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="w-full object-cover aspect-[3/4]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Rafters, not ceilings</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="sect">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">02</span><span class="eyebrow">The systems</span></div>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white">Water, power and air handled on the land.</h2>
+        <div class="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-stone-800 bg-stone-800">
+            <div class="bg-stone-950 p-4"><p class="text-[9px] uppercase tracking-[0.16em] text-emerald-400">Water</p><p class="mt-1 text-[13px] leading-relaxed text-stone-400">Spring-fed, rain captured.</p></div>
+            <div class="bg-stone-950 p-4"><p class="text-[9px] uppercase tracking-[0.16em] text-emerald-400">Power</p><p class="mt-1 text-[13px] leading-relaxed text-stone-400">Solar first, grid second.</p></div>
+            <div class="bg-stone-950 p-4"><p class="text-[9px] uppercase tracking-[0.16em] text-emerald-400">Air</p><p class="mt-1 text-[13px] leading-relaxed text-stone-400">Cross-ventilated, no sealed boxes.</p></div>
+        </div>
+    </div>
+    <div class="mt-6 grid grid-cols-2 gap-px bg-stone-800/60">
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full object-cover aspect-[3/4]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Treetops as the wall</figcaption>
+        </figure>
+        <figure class="relative">
+            <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="w-full object-cover aspect-[3/4]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Lantern, not floodlight</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="sect">
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="sect-head"><span class="sect-num">03</span><span class="eyebrow">What comes with the parcel</span></div>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white">You are not handed an empty slope.</h2>
+        <p class="mt-3.5 max-w-[42ch] text-[15px] leading-relaxed text-stone-400">Plans and a contractor shortlist come with the parcel sheet — people who have built on this slope, not a list of names.</p>
+        <div class="mt-6 flex flex-col gap-2 sm:flex-row">
+            <a href="{{ url_for('estates') }}#enquiry" class="btn-primary">Request the parcel sheet</a>
+            <a href="tel:+18765206119" class="btn-ghost">Call +1 876 520 6119</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
