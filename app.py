@@ -239,8 +239,8 @@ def estates():
     return render_template("estates.html")
 
 
-@app.route("/invest", methods=["GET", "POST"])
 @app.route("/estate-parcels", methods=["GET", "POST"])
+@app.route("/invest", methods=["GET", "POST"])
 def invest():
     form_data = {
         "name": "",
