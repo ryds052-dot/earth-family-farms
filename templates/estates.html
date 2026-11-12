@@ -4,13 +4,13 @@
 <meta property="og:title" content="Highland estate lots — private viewing, Ocho Rios">
 <meta property="og:description" content="Freehold parcels inside a 100-acre covenant-held highland estate. Viewings by appointment.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ url_for('static', filename='ridge-aerial.jpg', _external=True) }}">
+<meta property="og:image" content="{{ url_for('static', filename='images/ridge-aerial.jpg', _external=True) }}">
 <meta name="twitter:card" content="summary_large_image">{% endblock %}
 
 {% block content %}
 <section class="hero relative flex items-end overflow-hidden bg-stone-950">
-    <img src="{{ url_for('static', filename='ridge-aerial.jpg') }}" alt="Forested ridge above the Ocho Rios coastline at golden hour" class="absolute inset-0 h-full w-full object-cover">
-    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='ridge-aerial.jpg') }}" class="absolute inset-0 hidden h-full w-full object-cover md:block" aria-hidden="true">
+    <img src="{{ url_for('static', filename='images/ridge-aerial.jpg') }}" alt="Forested ridge above the Ocho Rios coastline at golden hour" class="absolute inset-0 h-full w-full object-cover">
+    <video autoplay loop muted playsinline preload="none" poster="{{ url_for('static', filename='images/ridge-aerial.jpg') }}" class="absolute inset-0 hidden h-full w-full object-cover md:block" aria-hidden="true">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/25"></div>
@@ -52,7 +52,7 @@
 </section>
 
 <section class="relative overflow-hidden bg-stone-950">
-    <img src="{{ url_for('static', filename='project-masterplan.jpg') }}" alt="Aerial of the full 100-acre development: spine road, terraced building pads and retained canopy" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+    <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full 100-acre development: spine road, terraced building pads and retained canopy" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/30"></div>
     <div class="relative max-w-7xl mx-auto px-5 py-20 md:py-28">
         <span class="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 backdrop-blur">Pre-development · Phase one</span>
@@ -96,15 +96,15 @@
         <p class="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Low density by design. Homes step down the slope on an elevated hardwood walk, sharing a fire pavilion and the view — the shape of a small eco-retreat rather than a subdivision.</p>
     </div>
     <div class="mt-9 overflow-hidden reveal">
-        <img data-full="{{ url_for('static', filename='villa-community.jpg') }}" src="{{ url_for('static', filename='villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2] md:aspect-[21/9]">
+        <img data-full="{{ url_for('static', filename='images/villa-community.jpg') }}" src="{{ url_for('static', filename='images/villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[3/2] md:aspect-[21/9]">
     </div>
     <div class="max-w-7xl mx-auto grid grid-cols-1 gap-6 px-5 pt-6 md:grid-cols-2">
         <figure>
-            <img data-full="{{ url_for('static', filename='villa-dusk.jpg') }}" src="{{ url_for('static', filename='villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
+            <img data-full="{{ url_for('static', filename='images/villa-dusk.jpg') }}" src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
             <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 04</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Build vision</span>The house sits into the slope. Stone below, hardwood above, glass to the drop.</figcaption>
         </figure>
         <figure>
-            <img data-full="{{ url_for('static', filename='villa-interior.jpg') }}" src="{{ url_for('static', filename='villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
+            <img data-full="{{ url_for('static', filename='images/villa-interior.jpg') }}" src="{{ url_for('static', filename='images/villa-interior.jpg') }}" alt="Villa interior opening onto a veranda above the treetops" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/5]">
             <figcaption class="mt-3 text-sm leading-relaxed text-stone-400"><span class="plate">Plate 05</span><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Inside out</span>Every principal room opens. The treetops are the wall.</figcaption>
         </figure>
     </div>
@@ -112,9 +112,9 @@
 
 <section class="border-t border-stone-800/70">
     <div class="grid grid-cols-3 gap-px bg-stone-800/60 snap">
-        <img src="{{ url_for('static', filename='villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-        <img src="{{ url_for('static', filename='villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
-        <img data-full="{{ url_for('static', filename='pavilion-night.jpg') }}" src="{{ url_for('static', filename='pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
+        <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
+        <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
+        <img data-full="{{ url_for('static', filename='images/pavilion-night.jpg') }}" src="{{ url_for('static', filename='images/pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="h-full w-full object-cover aspect-[4/5]">
     </div>
     <div class="max-w-7xl mx-auto px-5 py-10">
         <p class="max-w-[46ch] text-[15px] leading-relaxed text-stone-400"><span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Materials</span>Local limestone, stained hardwood, brass, no ornament. The palette is fixed by covenant so the ridge reads as one place in thirty years, not thirty houses.</p>
@@ -153,7 +153,7 @@
   "description": "Freehold parcels inside a 100-acre private highland estate above Ocho Rios, St. Ann, Jamaica.",
   "address": { "@type": "PostalAddress", "addressLocality": "Ocho Rios", "addressRegion": "St. Ann", "addressCountry": "JM" },
   "telephone": "+18765206119",
-  "image": "{{ url_for('static', filename='ridge-aerial.jpg', _external=True) }}"
+  "image": "{{ url_for('static', filename='images/ridge-aerial.jpg', _external=True) }}"
 }
 </script>
 <section class="py-16 border-t border-stone-800/70 reveal">
@@ -201,7 +201,7 @@
 <section id="enquiry" class="border-t border-stone-800">
     <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 px-5 py-16 lg:grid-cols-2 lg:items-center">
         <div>
-            <img src="{{ url_for('static', filename='villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk, looking out over the canopy" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/3]">
+            <img src="{{ url_for('static', filename='images/villa-veranda-dusk.jpg') }}" alt="Veranda under exposed rafters at dusk, looking out over the canopy" loading="lazy" class="w-full rounded-2xl object-cover aspect-[4/3]">
         </div>
         <div>
             <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">Private viewing</span>
