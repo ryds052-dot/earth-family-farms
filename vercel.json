@@ -1,4 +1,11 @@
 ﻿{
   "buildCommand": "npm run build:css",
-  "rewrites": [{ "source": "/(.*)", "destination": "/app.py" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/app.py" }],
+  "redirects": [
+    { "source": "/experiences", "destination": "/estates", "permanent": true },
+    { "source": "/stays", "destination": "/estates", "permanent": true },
+    { "source": "/viewings", "destination": "/estates", "permanent": true },
+    { "source": "/harvest", "destination": "/invest", "permanent": true },
+    { "source": "/vitals", "destination": "/invest", "permanent": true }
+  ]
 }
