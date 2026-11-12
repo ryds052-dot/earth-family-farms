@@ -85,3 +85,22 @@
     </div>
 </section>
 {% endblock %}
+<section id="enquiry" class="px-6 py-20 border-t border-stone-800">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">Request the parcel sheet</h2>
+      <p class="text-sm text-stone-400 mt-3 max-w-sm">Sizes, covenants, prices and the survey extract. Sent the same day. No list, no follow-up sequence.</p>
+      <a href="tel:+18765206119" class="inline-block text-emerald-400 font-bold text-lg mt-6 hover:underline">+1 876 520 6119</a>
+    </div>
+    {% if request.args.get('sent') %}<p class="text-emerald-400 text-sm lg:col-span-2">Received. The sheet goes out today.</p>{% endif %}
+    {% if request.args.get('error') %}<p class="text-amber-300 text-sm lg:col-span-2">Name, phone and email needed. Or call the number on the left.</p>{% endif %}
+    <form method="POST" action="{{ url_for('enquire') }}" class="flex flex-col gap-5">
+      <input type="hidden" name="from" value="estates">
+      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Name</span><input name="name" required autocomplete="name" class="viewing-field"></label>
+      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Phone</span><input name="phone" required autocomplete="tel" inputmode="tel" class="viewing-field"></label>
+      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Email</span><input name="email" type="email" required autocomplete="email" class="viewing-field"></label>
+      <label class="flex flex-col gap-2"><span class="text-xs uppercase tracking-[0.16em] text-stone-400">Parcel size you want</span><input name="size" class="viewing-field" placeholder="Quarter acre, half acre, not sure"></label>
+      <button type="submit" class="btn-emerald text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-md mt-2">Send the sheet</button>
+    </form>
+  </div>
+</section>

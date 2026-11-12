@@ -586,3 +586,17 @@ def not_found(e):
 @app.route('/viewings')
 def viewings():
     return render_template('viewings.html')
+
+
+@app.route('/enquire', methods=['POST'])
+def enquire():
+    f = {k: (request.form.get(k) or '').strip() for k in ('name','phone','email','size','from')}
+    if not f['name'] or not f['phone'] or not f['email']:
+        return redirect(url_for('estates', error=1) + '#enquiry')
+    try:
+        payload = json.dumps({**f, '_subject': 'Parcel sheet - ' + f['name']}).encode()
+        req = urllib.request.Request(os.environ.get('FORM_ENDPOINT', 'https://formspree.io/f/mljbrlzr'), data=payload, headers={'Content-Type': 'application/json', 'Accept': 'application/json'})
+        urllib.request.urlopen(req, timeout=12)
+    except Exception:
+        return redirect(url_for('estates', error=1) + '#enquiry')
+    return redirect(url_for('estates', sent=1) + '#enquiry')
