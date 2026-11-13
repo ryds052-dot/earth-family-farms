@@ -57,14 +57,60 @@
             <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full ridge: spine road, terraced places to build and retained canopy" loading="lazy" class="w-full aspect-[16/10] md:aspect-[16/9] object-cover object-center">
         </figure>
 
-        <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-            <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="block overflow-hidden p-3 transition-opacity hover:opacity-90" style="border:1px solid rgba(233,222,205,.11);background:rgba(233,222,205,.02)">
-                <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="The plan as drawn, boundaries and access roads" loading="lazy" class="w-full aspect-[4/3] object-contain">
-            </a>
+        <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="p-6 sm:p-8" style="border:1px solid rgba(233,222,205,.11);background:rgba(233,222,205,.02)">
+                <div class="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-[#ded5c8]/50">
+                    <span>Land Allocation</span>
+                    <span>Ridge Survey</span>
+                </div>
+
+                <div class="mt-5 flex h-2 w-full overflow-hidden gap-px" style="background:rgba(233,222,205,.08)">
+                    <div style="width:60.4%;background:#8a9a5b" title="61 acres eco-tourism"></div>
+                    <div style="width:36.6%;background:#c8845a" title="37 acres development"></div>
+                    <div style="width:3%;background:#ded5c8" title="3 acres initial release"></div>
+                </div>
+
+                <div class="mt-6 divide-y divide-[rgba(233,222,205,.11)]">
+                    <div class="py-3.5 flex items-baseline justify-between gap-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="inline-block h-2 w-2 shrink-0" style="background:#8a9a5b"></span>
+                            <div>
+                                <p class="text-sm font-medium" style="color:#ded5c8">Eco-tourism &amp; canopy reserve</p>
+                                <p class="text-xs text-[#ded5c8]/50">Working coconut groves, springs &amp; trails</p>
+                            </div>
+                        </div>
+                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">61 ac</span>
+                    </div>
+                    <div class="py-3.5 flex items-baseline justify-between gap-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="inline-block h-2 w-2 shrink-0" style="background:#c8845a"></span>
+                            <div>
+                                <p class="text-sm font-medium" style="color:#ded5c8">Planned development ground</p>
+                                <p class="text-xs text-[#ded5c8]/50">Spine road &amp; terraced places, awaiting approval</p>
+                            </div>
+                        </div>
+                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">37 ac</span>
+                    </div>
+                    <div class="py-3.5 flex items-baseline justify-between gap-4">
+                        <div class="flex items-center gap-2.5">
+                            <span class="inline-block h-2 w-2 shrink-0" style="background:#ded5c8"></span>
+                            <div>
+                                <p class="text-sm font-medium" style="color:#ded5c8">Initial pre-development release</p>
+                                <p class="text-xs text-[#ded5c8]/50">Select ridge places · $100k USD per acre</p>
+                            </div>
+                        </div>
+                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">3 ac</span>
+                    </div>
+                </div>
+            </div>
+
             <div>
-                <h3 class="font-serif text-xl font-bold" style="color:#ded5c8">Read it full size</h3>
-                <p class="mt-2.5 max-w-[36ch] text-sm leading-relaxed text-[#ded5c8]/70">Every proposed place and access line, drawn. Tap to open the drawing, then ask about the ones that suit you.</p>
-                <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing." target="_blank" rel="noopener noreferrer" class="btn-ghost mt-5 inline-flex">Ask about the plan</a>
+                <h3 class="font-serif text-2xl font-bold" style="color:#ded5c8">How the ground is divided.</h3>
+                <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-[#ded5c8]/70">Sixty-one acres remain protected in eco-tourism, spring water and hardwood canopy. Thirty-seven acres are drawn for low-density building, with three acres in the initial release while parish approval is pending.</p>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing." target="_blank" rel="noopener noreferrer" class="btn-ghost inline-flex">Ask about the plan</a>
+                    <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="text-[11px] uppercase tracking-[0.16em] text-[#ded5c8]/55 hover:text-[#ded5c8] transition-colors">View original drawing &#8599;</a>
+                </div>
             </div>
         </div>
     </div>
