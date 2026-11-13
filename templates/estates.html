@@ -10,63 +10,62 @@
 {% endblock %}
 
 {% block content %}
-<section class="hero relative flex items-end overflow-hidden bg-stone-950" style="min-height:86svh">
-    <video autoplay loop muted playsinline preload="auto" class="hero-vid" aria-hidden="true">
+<section class="hero relative flex items-end overflow-hidden" style="min-height:86svh;background:#0d0b09">
+    <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="hero-vid" aria-hidden="true">
         <source src="{{ url_for('static', filename='land-drone.mp4') }}" type="video/mp4">
     </video>
-    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/55 to-stone-950/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0d0b09] via-[#0d0b09]/55 to-[#0d0b09]/10"></div>
 
-    <div class="relative w-full max-w-7xl mx-auto px-5 pb-7 pt-16">
-        <div class="flex flex-wrap gap-2">
-            <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300 backdrop-blur"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>By appointment</span>
-            <span class="inline-flex items-center rounded-full border border-amber-300/30 bg-amber-950/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-200 backdrop-blur">Awaiting approval</span>
-        </div>
-        <h1 class="mt-3.5 font-serif font-bold text-white">A hundred acres, brought back to life.</h1>
-        <p class="mt-2.5 max-w-[28ch] text-[15px] leading-snug text-stone-300">Coconut groves, spring water and canopy on a ridge above Ocho Rios, already standing and already worked. The plan for what comes next is drawn and with the parish for approval.</p>
-        <div class="mt-5 flex flex-col gap-2">
-            <a href="#enquiry" class="btn-primary">See the plan</a>
-            <a href="#plan" class="btn-ghost">See the plan</a>
+    <div class="relative w-full max-w-7xl mx-auto px-5 pb-9 pt-20">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.22em]" style="color:#c8845a">By appointment · Awaiting parish approval</p>
+        <h1 class="mt-3.5 font-serif font-bold" style="color:#ded5c8">A hundred acres, brought back to life.</h1>
+        <p class="mt-3 max-w-[30ch] text-[15px] leading-relaxed text-[#ded5c8]/80">Coconut groves, spring water and canopy on a ridge above Ocho Rios, already standing and already worked. The plan for what comes next is drawn and with the parish for approval.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#enquiry" class="btn-primary">Request the plan</a>
+            <a href="#plan" class="btn-ghost">See the drawing</a>
         </div>
     </div>
 </section>
 
-<section class="bg-stone-950 border-b border-stone-800/70">
-    <div class="max-w-7xl mx-auto grid grid-cols-4 gap-px bg-stone-800/60">
-        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">100</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Acres</p></div>
-        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Freehold</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Tenure</p></div>
-        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Ocean</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Aspect</p></div>
-        <div class="bg-stone-950 px-3 py-3.5"><p class="font-serif text-base font-bold text-white">Spring</p><p class="mt-0.5 text-[8px] uppercase tracking-[0.12em] text-stone-500">Water</p></div>
+<section style="background:#0d0b09;border-bottom:1px solid rgba(233,222,205,.11)">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[rgba(233,222,205,.11)]">
+        <div class="px-5 py-4"><p class="font-serif text-lg font-bold" style="color:#ded5c8">100</p><p class="mt-0.5 text-[10px] uppercase tracking-[0.16em] text-[#ded5c8]/50">Acres</p></div>
+        <div class="px-5 py-4"><p class="font-serif text-lg font-bold" style="color:#ded5c8">Freehold</p><p class="mt-0.5 text-[10px] uppercase tracking-[0.16em] text-[#ded5c8]/50">Tenure</p></div>
+        <div class="px-5 py-4"><p class="font-serif text-lg font-bold" style="color:#ded5c8">Ocean</p><p class="mt-0.5 text-[10px] uppercase tracking-[0.16em] text-[#ded5c8]/50">Aspect</p></div>
+        <div class="px-5 py-4"><p class="font-serif text-lg font-bold" style="color:#ded5c8">Spring</p><p class="mt-0.5 text-[10px] uppercase tracking-[0.16em] text-[#ded5c8]/50">Water</p></div>
     </div>
 </section>
 
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">Why here</span></div>
-        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white"><span>A ridge this close to the coast is not reproducible.</span></h2>
-        <div class="mt-4 space-y-3 text-[15px] leading-relaxed text-stone-300">
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>A ridge this close to the coast is not reproducible.</span></h2>
+        <div class="mt-4 max-w-[48ch] space-y-3 text-[15px] leading-relaxed text-[#ded5c8]/75">
             <p>Coastal St. Ann is built out at the shoreline and climbing inland fast. Land above Ocho Rios with an ocean aspect, live spring water and mature hardwood is finite — the ground that exists is the ground that will ever exist.</p>
-            <p>The slow, technical work is already behind it: surveyed, laid out, engineered, submitted. A buyer is not paying for raw bush.</p>
+            <p>The slow, technical work is already behind it: surveyed, laid out, engineered, submitted. You are not looking at raw bush.</p>
         </div>
     </div>
 </section>
 
-<section id="plan" class="sect reveal" style="padding-bottom:0">
+<section id="plan" class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The plan</span></div>
-        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white"><span>The whole ridge, not a single pad.</span></h2>
-        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">A spine road, terraced envelopes in rows, canopy held between every one.</p>
-    </div>
-    <div class="mt-7 overflow-hidden border-y border-stone-800">
-        <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full development: spine road, terraced pads and retained canopy" loading="lazy" class="w-full object-cover aspect-[4/3] md:aspect-[21/9]">
-    </div>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 gap-4 px-5 py-8 lg:grid-cols-2 lg:items-center">
-        <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="block overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 p-2">
-            <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="The plan as drawn, boundaries and access roads" loading="lazy" class="w-full rounded-xl object-contain">
-        </a>
-        <div>
-            <h3 class="font-serif text-lg font-bold text-white">Read it full size</h3>
-            <p class="mt-2 max-w-[34ch] text-sm leading-relaxed text-stone-400">Every proposed place and access line, drawn. Tap to open the map, then ask about the ones that suit you.</p>
-            <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing." target="_blank" rel="noopener noreferrer" class="btn-ghost mt-4">Ask about the plan</a>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>The whole ridge, not a single pad.</span></h2>
+        <p class="mt-3.5 max-w-[42ch] text-[15px] leading-relaxed text-[#ded5c8]/70">A graded spine road, terraced places to build, canopy held between every one.</p>
+
+        <figure class="mt-8 overflow-hidden" style="border:1px solid rgba(233,222,205,.11)">
+            <img src="{{ url_for('static', filename='images/project-masterplan.jpg') }}" alt="Aerial of the full ridge: spine road, terraced places to build and retained canopy" loading="lazy" class="w-full aspect-[16/10] md:aspect-[16/9] object-cover object-center">
+        </figure>
+
+        <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <a href="{{ url_for('static', filename='subdivision-map.jpg') }}" target="_blank" rel="noopener" class="block overflow-hidden p-3 transition-opacity hover:opacity-90" style="border:1px solid rgba(233,222,205,.11);background:rgba(233,222,205,.02)">
+                <img src="{{ url_for('static', filename='subdivision-map.jpg') }}" alt="The plan as drawn, boundaries and access roads" loading="lazy" class="w-full aspect-[4/3] object-contain">
+            </a>
+            <div>
+                <h3 class="font-serif text-xl font-bold" style="color:#ded5c8">Read it full size</h3>
+                <p class="mt-2.5 max-w-[36ch] text-sm leading-relaxed text-[#ded5c8]/70">Every proposed place and access line, drawn. Tap to open the drawing, then ask about the ones that suit you.</p>
+                <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing." target="_blank" rel="noopener noreferrer" class="btn-ghost mt-5 inline-flex">Ask about the plan</a>
+            </div>
         </div>
     </div>
 </section>
@@ -74,86 +73,68 @@
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The drawing</span></div>
-        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white"><span>Sixteen places to build, drawn and waiting.</span></h2>
-        <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-stone-400">Two are held, two are under reservation. Nothing on this drawing is approved yet, so any of them can still move.</p>
-        <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] tracking-[0.14em] text-stone-400">
-    <span><span class="text-stone-600">Held</span> A1 B2</span>
-    <span><span class="text-stone-600">Reserved</span> A3 C3</span>
-    <span><span class="text-stone-600">Open</span> the other twelve</span>
-</div>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold" style="color:#ded5c8"><span>Sixteen places to build, drawn and waiting.</span></h2>
+        <p class="mt-3 max-w-[40ch] text-sm leading-relaxed text-[#ded5c8]/70">Two are held, two are under reservation. Nothing on this drawing is approved yet, so any of them can still move.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.14em] text-[#ded5c8]/80">
+            <span><span class="text-[#ded5c8]/45">Held</span> A1 B2</span>
+            <span><span class="text-[#ded5c8]/45">Reserved</span> A3 C3</span>
+            <span><span class="text-[#ded5c8]/45">Open</span> the other twelve</span>
+        </div>
     </div>
 </section>
 
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">Livity</span></div>
-        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white"><span>Stone below, hardwood above, glass to the drop.</span></h2>
-        <p class="mt-3.5 max-w-[42ch] text-[15px] leading-relaxed text-stone-400">The covenant fixes the language, not your floor plan: local limestone, stained hardwood, brass, no ornament. Setbacks and height keep every house low enough for the canopy to stay the horizon.</p>
-    </div>
-    <div class="mt-6 grid grid-cols-2 gap-px bg-stone-800/60">
-        <figure class="relative">
-            <img src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full object-cover aspect-[3/4]">
-            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Set into the slope</figcaption>
-        </figure>
-        <figure class="relative">
-            <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="w-full object-cover aspect-[3/4]">
-            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950 to-transparent p-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-200">Lantern, not floodlight</figcaption>
-        </figure>
-    </div>
-    <div class="max-w-7xl mx-auto px-5 py-8">
-        <p class="max-w-[44ch] text-[15px] leading-relaxed text-stone-400">The drawings and a contractor shortlist come with the plan. You are not handed an empty slope and a set of rules.</p>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>Stone below, hardwood above, glass to the drop.</span></h2>
+        <p class="mt-3.5 max-w-[44ch] text-[15px] leading-relaxed text-[#ded5c8]/70">The covenant fixes the language, not your floor plan: local limestone, stained hardwood, brass, no ornament. Setbacks and height keep every house low enough for the canopy to stay the horizon.</p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <figure>
+                <div class="overflow-hidden" style="border:1px solid rgba(233,222,205,.11)">
+                    <img src="{{ url_for('static', filename='images/villa-dusk.jpg') }}" alt="Cantilevered villa in stone and hardwood with a plunge pool over the drop" loading="lazy" class="w-full aspect-[4/5] object-cover object-center">
+                </div>
+                <figcaption class="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#ded5c8]/60">Set into the slope</figcaption>
+            </figure>
+            <figure>
+                <div class="overflow-hidden" style="border:1px solid rgba(233,222,205,.11)">
+                    <img src="{{ url_for('static', filename='images/villa-veranda-night.jpg') }}" alt="Lantern-lit veranda above a dark canopy at night" loading="lazy" class="w-full aspect-[4/5] object-cover object-center">
+                </div>
+                <figcaption class="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#ded5c8]/60">Lantern, not floodlight</figcaption>
+            </figure>
+        </div>
+
+        <p class="mt-8 max-w-[44ch] text-[15px] leading-relaxed text-[#ded5c8]/70">The drawings and a contractor shortlist come with the plan. You are not handed an empty slope and a set of rules.</p>
     </div>
 </section>
 
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The community</span></div>
-        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold text-white"><span>A handful of villas and a fire pavilion. Nothing else.</span></h2>
-        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">Homes step down an elevated hardwood walk toward the shared room at the head of the ridge.</p>
-    </div>
-    <div class="mt-6 overflow-hidden">
-        <img src="{{ url_for('static', filename='images/villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full object-cover aspect-[16/9]">
-    </div>
-    <div class="max-w-7xl mx-auto px-5 pt-5">
-        <img src="{{ url_for('static', filename='images/pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="w-full rounded-2xl object-cover aspect-[21/9]">
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold" style="color:#ded5c8"><span>A handful of villas and a fire pavilion. Nothing else.</span></h2>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-[#ded5c8]/70">Homes step down an elevated hardwood walk toward the shared room at the head of the ridge.</p>
+
+        <div class="mt-8 grid grid-cols-1 gap-5">
+            <figure class="overflow-hidden" style="border:1px solid rgba(233,222,205,.11)">
+                <img src="{{ url_for('static', filename='images/villa-community.jpg') }}" alt="Three villas stepping down a misty forested ridge, linked by a timber walkway" loading="lazy" class="w-full aspect-[16/9] object-cover object-center">
+            </figure>
+            <figure class="overflow-hidden" style="border:1px solid rgba(233,222,205,.11)">
+                <img src="{{ url_for('static', filename='images/pavilion-night.jpg') }}" alt="Open-air pavilion with a fire bowl at night" loading="lazy" class="w-full aspect-[16/10] object-cover object-center">
+            </figure>
+        </div>
     </div>
 </section>
 
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The viewing</span></div>
-        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white"><span>Forty minutes on the ridge beats any brochure.</span></h2>
-        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-stone-400">One party at a time, no other buyers on the road. You walk the actual envelopes with the survey in hand.</p>
-        <div class="mt-5 max-w-xl">
-            <div class="view-row"><span>01</span><h3>The gate</h3><p>Met and driven in.</p></div>
-            <div class="view-row"><span>02</span><h3>The canopy walk</h3><p>Up past the springs to where the sea opens.</p></div>
-            <div class="view-row"><span>03</span><h3>The envelopes</h3><p>Stand on the ones that suit you.</p></div>
-            <div class="view-row"><span>04</span><h3>The pavilion</h3><p>Survey, covenants, price and title.</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="sect reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <div class="sect-head"><span class="eyebrow">Terms</span></div>
-        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold text-white"><span>Plain, before anyone travels.</span></h2>
-        <div class="mt-5 max-w-xl">
-            <div class="view-row"><span>10%</span><h3>Deposit to reserve</h3><p>Holds the envelope 30 days while title and survey are checked.</p></div>
-            <div class="view-row"><span>90d</span><h3>Balance</h3><p>Completion on transfer, timed to approval.</p></div>
-            <div class="view-row"><span>—</span><h3>Costs</h3><p>Stamp duty and attorney fees. No estate commission.</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="sect reveal">
-    <div class="max-w-7xl mx-auto px-5">
-        <div class="sect-head"><span class="eyebrow">Questions</span></div>
-        <div class="mt-5 max-w-3xl">
-            <details class="faq"><summary>Has it been approved?</summary><p>Not yet — submitted and in progress. Sold pre-development, which is why the entry sits below approved-land pricing.</p></details>
-            <details class="faq"><summary>What if approval is refused?</summary><p>Deposits are held against the place and returned if the plan does not clear. Nothing is payable to completion before approval.</p></details>
-            <details class="faq"><summary>Must I build within a set time?</summary><p>No. The covenant sets what may be built, not when.</p></details>
-            <details class="faq"><summary>Can foreign buyers purchase?</summary><p>Yes. Non-residents hold Jamaican freehold through the standard transfer process; your attorney files it.</p></details>
-            <details class="faq"><summary>Water and power?</summary><p>Spring water is on the estate. Power and connectivity are confirmed place by place in due diligence.</p></details>
+        <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>Forty minutes on the ridge beats any brochure.</span></h2>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-[#ded5c8]/70">One party at a time, no one else on the road. You walk the ground with the drawing in hand.</p>
+        <div class="mt-6 max-w-xl">
+            <div class="view-row"><span>—</span><h3>The gate</h3><p>Met and driven in.</p></div>
+            <div class="view-row"><span>—</span><h3>The canopy walk</h3><p>Up past the springs to where the sea opens.</p></div>
+            <div class="view-row"><span>—</span><h3>The ground</h3><p>Stand on the places that suit you.</p></div>
+            <div class="view-row"><span>—</span><h3>The pavilion</h3><p>Survey, covenants and the plan as drawn.</p></div>
         </div>
     </div>
 </section>
@@ -162,11 +143,11 @@
     <div class="max-w-7xl mx-auto px-5 grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-20">
         <div>
             <span class="eyebrow">Private viewing</span>
-            <h2 class="mt-2.5 max-w-[18ch] font-serif font-bold text-white"><span>Come and see it.</span></h2>
-            <p class="mt-3 max-w-[34ch] text-sm leading-relaxed text-stone-400">The survey, the covenant and the plan as drawn, sent the same day. Approval is pending, so the plan can still move.</p>
-            <a href="tel:+18765206119" class="mt-5 inline-block font-serif text-xl font-bold text-emerald-400">+1 876 520 6119</a>
-            {% if request.args.get('sent') %}<p class="mt-5 max-w-md border-l border-emerald-400/40 pl-4 text-sm text-emerald-300">Received. The sheet goes out today.</p>{% endif %}
-            {% if request.args.get('error') %}<p class="mt-5 max-w-md border-l border-amber-400/40 pl-4 text-sm text-amber-200">Name, phone and email needed. Or call the number.</p>{% endif %}
+            <h2 class="mt-2.5 max-w-[18ch] font-serif font-bold" style="color:#ded5c8"><span>Come and see it.</span></h2>
+            <p class="mt-3 max-w-[34ch] text-sm leading-relaxed text-[#ded5c8]/70">The survey, the covenant and the plan as drawn, sent the same day. Approval is pending, so the plan can still move.</p>
+            <a href="tel:+18765206119" class="mt-5 inline-block font-serif text-xl font-bold" style="color:#8a9a5b">+1 876 520 6119</a>
+            {% if request.args.get('sent') %}<p class="mt-5 max-w-md pl-4 text-sm" style="border-left:1px solid #8a9a5b;color:#ded5c8">Received. The drawing goes out today.</p>{% endif %}
+            {% if request.args.get('error') %}<p class="mt-5 max-w-md pl-4 text-sm" style="border-left:1px solid #c8845a;color:#ded5c8">Name, phone and email needed. Or call the number.</p>{% endif %}
         </div>
         <div class="lg:sticky lg:top-24 self-start">
             <form method="POST" action="{{ url_for('enquire') }}" class="flex flex-col gap-3">
@@ -191,7 +172,7 @@
     var v=document.querySelector('.hero video');
     if(!v) return;
     v.muted=true; v.defaultMuted=true;
-    v.setAttribute('muted',''); v.setAttribute('playsinline','');
+    v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
     v.addEventListener('loadeddata',function(){ if(v.paused) v.play().catch(function(){}); });
     window.addEventListener('touchstart',function(){ if(v.paused) v.play().catch(function(){}); },{passive:true,once:true});
