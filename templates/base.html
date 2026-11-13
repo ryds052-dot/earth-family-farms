@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Earth Family Farms — Highland Estates, Ocho Rios</title>{% endblock %}{% block meta %}<meta name="description" content="100-acre eco-sanctuary in Ocho Rios: guided farm tours, the Queen Cabin, and private highland estate lots.">{% endblock %}
+    {% block title %}<title>Earth Family Farms — Highland Estates, Ocho Rios</title>{% endblock %}{% block meta %}<meta name="description" content="100-acre eco-sanctuary in Ocho Rios: guided farm tours, the Queen Cabin, and pre-development highland sanctuary above Ocho Rios.">{% endblock %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css' + "?v=3" + "?v=3") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css' + "?v=4") }}">
     <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css' + "?v=3" + "?v=3") }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/premium.css' + "?v=3" + "?v=3") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css' + "?v=4") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/premium.css' + "?v=4") }}">
 </head>
 <body class="bg-stone-950 text-stone-100 antialiased selection:bg-emerald-500 selection:text-stone-950">
 
@@ -26,10 +26,10 @@
                 </div>
             </a>
 
-                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300"><a href="{{ url_for('estates') }}" class="hover:text-emerald-400">The Land</a><a href="{{ url_for('invest') }}" class="text-amber-200">Invest</a><a href="{{ url_for('livity') }}" class="hover:text-emerald-400">Livity</a><a href="tel:+18765206119" class="hover:text-emerald-400">Call</a></nav>
+                        <nav class="hidden lg:flex items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300"><a href="{{ url_for('livity') }}" class="hover:text-emerald-400">Livity</a><a href="{{ url_for('invest') }}" class="text-amber-200">Invest</a><a href="tel:+18765206119" class="hover:text-emerald-400">Call</a></nav>
 
             <div class="flex items-center gap-3">
-                <a href="{{ url_for('estates') }}" class="btn-primary btn-sm">
+                <a href="{{ url_for('livity') }}" class="btn-primary btn-sm">
                     Enquire
                 </a>
             </div>
@@ -40,12 +40,12 @@
 
     <!-- Main Page Content -->
     <a href="#main" class="skip-link">Skip to content</a>
-    <main id="main">
+    <main id="main" class="pt-14 lg:pt-16">
         {% block content %}{% endblock %}
     </main>
 
     <nav class="mobile-dock" aria-label="Quick actions">
-        <a class="dock-item" href="{{ url_for('estates') }}"{% if request.endpoint == 'estates' %} aria-current="page"{% endif %}>
+        <a class="dock-item" href="{{ url_for('livity') }}"{% if request.endpoint == 'livity' %} aria-current="page"{% endif %}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 19 6-9 4 5 3-4 5 8z"/><circle cx="8" cy="6" r="2"/></svg>The Land
         </a>
         <a class="dock-item" href="{{ url_for('invest') }}"{% if request.endpoint == 'invest' %} aria-current="page"{% endif %}>
@@ -57,7 +57,7 @@
 <a class="dock-item" href="tel:+18765206119">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Call
         </a>
-        <a class="dock-cta" href="{{ url_for('estates') }}">Enquire</a>
+        <a class="dock-cta" href="{{ url_for('livity') }}">Enquire</a>
     </nav>
     <footer class="site-footer">
         <div class="footer-top">
@@ -69,9 +69,9 @@
                 </span>
             </a>
             <nav class="footer-links" aria-label="Footer">
-                <a href="{{ url_for('estates') }}">Highland Estate Lots</a>
+                <a href="{{ url_for('livity') }}">Livity &amp; The Land</a>
                 <a href="{{ url_for('invest') }}">Private Estate Investment</a>
-                <a href="{{ url_for('estates') }}#stewardship">Stewardship</a>
+                <a href="{{ url_for('livity') }}#stewardship">Stewardship</a>
             </nav>
             <div class="footer-contact">
                 <a href="https://wa.me/18765206119" target="_blank" rel="noopener noreferrer">876-520-6119</a>

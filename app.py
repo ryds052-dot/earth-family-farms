@@ -222,7 +222,7 @@ def render_whatsapp_error(template, form_data, error, status_code=400, **context
 
 @app.route("/")
 def home():
-    return redirect(url_for('estates'))
+    return redirect(url_for('livity'))
 
 
 @app.route("/experiences")
@@ -232,7 +232,7 @@ def experiences():
 
 @app.route("/estates")
 def estates():
-    return render_template("estates.html")
+    return redirect(url_for('livity'))
 
 @app.route("/livity")
 def livity():
@@ -587,11 +587,11 @@ def not_found(e):
 def enquire():
     f = {k: (request.form.get(k) or '').strip() for k in ('name','phone','email','size','from')}
     if not f['name'] or not f['phone'] or not f['email']:
-        return redirect(url_for('estates', error=1) + '#enquiry')
+        return redirect(url_for('livity', error=1) + '#enquiry')
     try:
         payload = json.dumps({**f, '_subject': 'Parcel sheet - ' + f['name']}).encode()
         req = urllib.request.Request(os.environ.get('FORM_ENDPOINT', 'https://formspree.io/f/mljbrlzr'), data=payload, headers={'Content-Type': 'application/json', 'Accept': 'application/json'})
         urllib.request.urlopen(req, timeout=12)
     except Exception:
-        return redirect(url_for('estates', error=1) + '#enquiry')
-    return redirect(url_for('estates', sent=1) + '#enquiry')
+        return redirect(url_for('livity', error=1) + '#enquiry')
+    return redirect(url_for('livity', sent=1) + '#enquiry')

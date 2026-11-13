@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="hero relative flex flex-col justify-end overflow-hidden pt-20 pb-8 md:pt-28 md:pb-12 md:min-h-[84svh]" style="background:#0d0b09">
+<section class="hero relative flex flex-col justify-end overflow-hidden pt-6 pb-8 md:pt-16 md:pb-12 md:min-h-[82svh]" style="background:#0d0b09">
     <div class="relative w-full px-5 md:px-0 md:static">
         <div class="relative aspect-[16/9] w-full overflow-hidden md:aspect-auto md:absolute md:inset-0 md:z-0" style="border:1px solid rgba(233,222,205,.12)">
             <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="{{ url_for('static', filename='images/video-poster.jpg') }}" class="w-full h-full object-cover object-center" style="display:block" aria-hidden="true">
@@ -45,8 +45,8 @@
         <div class="sect-head"><span class="eyebrow">Why here</span></div>
         <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>Inland from Ocho Rios, above the noise of the coast.</span></h2>
         <div class="mt-4 max-w-[48ch] space-y-3 text-[15px] leading-relaxed text-[#ded5c8]/75">
-            <p>Collier sits in the hills of Bonham Spring, St. Ann — minutes from Ocho Rios and Tower Isle, yet held in cool highland air. A natural gully runs the length of the ground, bordered by main-road frontage on the west and an internal spine road climbing the eastern ridge.</p>
-            <p>The slow groundwork is already done: surveyed at 1:1500, laid out around the Earth Family Village and the gully, and submitted for statutory review. You are not looking at raw bush.</p>
+            <p>Collier sits in the hills of Bonham Spring, St. Ann — minutes from Ocho Rios and Tower Isle, yet held in cool highland air. A natural gully runs the length of the ground, bordered by main-road frontage on the west and an internal 12.19m spine road climbing the eastern ridge.</p>
+            <p>The slow groundwork is already done: surveyed at 1:1500, laid out around the Earth Family compound, J.P.S. power corridor and gully, and submitted for statutory review. You are not looking at raw bush.</p>
         </div>
     </div>
 </section>
@@ -80,20 +80,20 @@
                             <span class="inline-block h-2 w-2 shrink-0" style="background:#8a9a5b"></span>
                             <div>
                                 <p class="text-sm font-medium" style="color:#ded5c8">Eco-tourism &amp; canopy reserve</p>
-                                <p class="text-xs text-[#ded5c8]/50">Earth Family Village, natural gully &amp; working groves</p>
+                                <p class="text-xs text-[#ded5c8]/50">3.0 ac Earth Family compound, gully &amp; working groves</p>
                             </div>
                         </div>
-                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">61 ac</span>
+                        <span class="font-serif text-lg font-bold shrink-0 whitespace-nowrap" style="color:#ded5c8">61 ac</span>
                     </div>
                     <div class="py-3.5 flex items-baseline justify-between gap-4">
                         <div class="flex items-center gap-2.5">
                             <span class="inline-block h-2 w-2 shrink-0" style="background:#c8845a"></span>
                             <div>
                                 <p class="text-sm font-medium" style="color:#ded5c8">Planned development ground</p>
-                                <p class="text-xs text-[#ded5c8]/50">Ridge sections (1.6 – 10.0 ac) along the spine road</p>
+                                <p class="text-xs text-[#ded5c8]/50">Ridge sections (0.50 – 10.0 ac) along the 12.19m spine road</p>
                             </div>
                         </div>
-                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">37 ac</span>
+                        <span class="font-serif text-lg font-bold shrink-0 whitespace-nowrap" style="color:#ded5c8">37 ac</span>
                     </div>
                     <div class="py-3.5 flex items-baseline justify-between gap-4">
                         <div class="flex items-center gap-2.5">
@@ -103,17 +103,17 @@
                                 <p class="text-xs text-[#ded5c8]/50">Select ridge places · $100k USD per acre</p>
                             </div>
                         </div>
-                        <span class="font-serif text-lg font-bold shrink-0" style="color:#ded5c8">3 ac</span>
+                        <span class="font-serif text-lg font-bold shrink-0 whitespace-nowrap" style="color:#ded5c8">3 ac</span>
                     </div>
                 </div>
             </div>
 
             <div>
                 <h3 class="font-serif text-2xl font-bold" style="color:#ded5c8">How the ground is divided.</h3>
-                <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-[#ded5c8]/70">Sixty-one acres remain protected in eco-tourism, the gully watercourse, and the Earth Family Village. Thirty-seven acres are drawn along the upper spine road in sections from 1.6 to 10.0 acres, with three acres in the initial release while parish approval is pending.</p>
+                <p class="mt-3 max-w-[38ch] text-sm leading-relaxed text-[#ded5c8]/70">Sixty-one acres remain protected in eco-tourism, the gully watercourse, and the Earth Family compound. Thirty-seven acres are drawn along the 12.19m spine road in sections from 0.50 to 10.0 acres, with three acres in the initial release while parish approval is pending.</p>
                 <div class="mt-6 flex flex-wrap items-center gap-4">
                     <a href="https://wa.me/18765206119?text=Hello%20Earth%20Family%20Farms!%20I%20am%20interested%20in%20a%20private%20viewing%20at%20Bonham%20Spring." target="_blank" rel="noopener noreferrer" class="btn-ghost inline-flex">Ask about the plan</a>
-                    <a href="{{ url_for('static', filename='images/bonham-spring-plan.jpg') }}" target="_blank" rel="noopener" class="text-[11px] uppercase tracking-[0.16em] text-[#ded5c8]/55 hover:text-[#ded5c8] transition-colors">Open Sheet SA-01 &#8599;</a>
+                    <a href="{{ url_for('static', filename='bonham-spring-plan.pdf') }}" target="_blank" rel="noopener" class="text-[11px] uppercase tracking-[0.16em] text-[#ded5c8]/55 hover:text-[#ded5c8] transition-colors">Open Survey PDF (SA-01) &#8599;</a>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The drawing</span></div>
         <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold" style="color:#ded5c8"><span>Drawn at 1:1500, waiting on parish sign-off.</span></h2>
-        <p class="mt-3 max-w-[44ch] text-sm leading-relaxed text-[#ded5c8]/70">Registered at Vol. 1405 Fol. 836. Nothing on this drawing is approved or for sale yet, and distances and areas remain subject to minor adjustment during final survey.</p>
+        <p class="mt-3 max-w-[44ch] text-sm leading-relaxed text-[#ded5c8]/70">Registered at Vol. 1405 Fol. 836 (ECL · April 2024). Nothing on this drawing is approved or for sale yet, and distances and areas remain subject to minor adjustment during final survey.</p>
         <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.14em] text-[#ded5c8]/80">
             <span><span class="text-[#ded5c8]/45">Held</span> A1 B2</span>
             <span><span class="text-[#ded5c8]/45">Reserved</span> A3 C3</span>
@@ -132,12 +132,12 @@
         </div>
 
         <figure class="mt-8">
-            <a href="{{ url_for('static', filename='images/bonham-spring-plan.jpg') }}" target="_blank" rel="noopener" class="block p-3 sm:p-4 transition-opacity hover:opacity-95" style="border:1px solid rgba(233,222,205,.11);background:rgba(233,222,205,.02)">
-                <img src="{{ url_for('static', filename='images/bonham-spring-plan.jpg') }}" alt="Collier, formerly Bonham Spring, St. Ann — proposed layout showing Earth Family Village, gully, spine road and ridge sections" loading="lazy" class="w-full aspect-[4/3] object-contain">
+            <a href="{{ url_for('static', filename='bonham-spring-plan.pdf') }}" target="_blank" rel="noopener" class="block p-3 sm:p-4 transition-opacity hover:opacity-95" style="border:1px solid rgba(233,222,205,.11);background:rgba(233,222,205,.02)">
+                <img src="{{ url_for('static', filename='images/bonham-spring-plan.jpg') }}" alt="Collier, formerly Bonham Spring, St. Ann — proposed layout showing Earth Family compound, gully, 12.19m spine road and ridge sections" loading="lazy" class="w-full aspect-[4/3] object-contain">
             </a>
             <figcaption class="mt-3 flex flex-wrap items-center justify-between gap-2 text-[10px] uppercase tracking-[0.16em] text-[#ded5c8]/50">
-                <span>Collier · Bonham Spring, St. Ann · Sheet SA-01 (1:1500)</span>
-                <span>Tap to open full size &#8599;</span>
+                <span>Collier · Bonham Spring, St. Ann · Sheet SA-01 (ECL · Apr 2024)</span>
+                <span>Tap to open PDF &#8599;</span>
             </figcaption>
         </figure>
     </div>
@@ -183,7 +183,7 @@
 <section class="sect reveal">
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The village</span></div>
-        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold" style="color:#ded5c8"><span>Earth Family Village and a fire pavilion. Nothing else.</span></h2>
+        <h2 class="mt-2.5 max-w-[22ch] font-serif font-bold" style="color:#ded5c8"><span>Earth Family compound and a fire pavilion. Nothing else.</span></h2>
         <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-[#ded5c8]/70">Homes step down an elevated hardwood walk toward the gully and the shared room at the head of the ridge.</p>
 
         <div class="mt-8 grid grid-cols-1 gap-5">
@@ -201,10 +201,10 @@
     <div class="max-w-7xl mx-auto px-5">
         <div class="sect-head"><span class="eyebrow">The viewing</span></div>
         <h2 class="mt-2.5 max-w-[20ch] font-serif font-bold" style="color:#ded5c8"><span>Forty minutes on the ridge beats any brochure.</span></h2>
-        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-[#ded5c8]/70">One party at a time, no one else on the road. You walk the ground from the main road up the spine with Sheet SA-01 in hand.</p>
+        <p class="mt-3.5 max-w-[40ch] text-[15px] leading-relaxed text-[#ded5c8]/70">One party at a time, no one else on the road. You walk the ground from the main road up the 12.19m spine with Sheet SA-01 in hand.</p>
         <div class="mt-6 max-w-xl">
             <div class="view-row"><span>—</span><h3>The main road gate</h3><p>Met at the Collier entrance and driven in.</p></div>
-            <div class="view-row"><span>—</span><h3>Earth Family Village &amp; gully</h3><p>Along the live watercourse into the sixty-one acre reserve.</p></div>
+            <div class="view-row"><span>—</span><h3>Earth Family compound &amp; gully</h3><p>Along the live watercourse into the sixty-one acre reserve.</p></div>
             <div class="view-row"><span>—</span><h3>The ridge ground</h3><p>Stand on the thirty-seven acre upper sections that suit you.</p></div>
             <div class="view-row"><span>—</span><h3>The pavilion</h3><p>Vol. 1405 Fol. 836, covenants and the 1:1500 plan as drawn.</p></div>
         </div>
