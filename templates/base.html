@@ -61,7 +61,7 @@
     </nav>
     <footer class="site-footer">
         <div class="footer-top">
-            <a class="footer-brand" href="{{ url_for('index') }}">
+            <a class="footer-brand" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Earth Family Farms" class="footer-logo">
                 <span class="footer-wordmark">
                     <b>Earth Family Farms</b>
@@ -149,7 +149,16 @@
     .sect > *{position:relative;z-index:1}
     .sect h2 > span{display:block;transform:translateY(105%);transition:transform .9s cubic-bezier(.16,.84,.24,1)}
     .sect.is-in h2 > span{transform:translateY(0)}
-    .sect h1,.sect h2{text-wrap:balance}    </style>
+    .sect h1,.sect h2{text-wrap:balance}    
+    .mobile-dock{gap:0!important;padding:6px 10px calc(7px + env(safe-area-inset-bottom))!important;justify-content:space-between!important}
+    .dock-item{font-size:9px!important;letter-spacing:.1em!important;gap:3px!important;padding:7px 6px!important;opacity:.62;transition:opacity .2s}
+    .dock-item svg{width:16px!important;height:16px!important;stroke-width:1.5!important}
+    .dock-item[aria-current]{opacity:1}
+    .dock-cta{padding:9px 16px!important;font-size:10.5px!important;letter-spacing:.12em!important}    
+    .hero{position:relative!important;overflow:hidden!important}
+    .hero-vid{position:absolute!important;top:0!important;left:0!important;width:100%!important;height:100%!important;object-fit:cover!important;z-index:0!important;display:block!important}
+    .hero > div{position:relative;z-index:2}
+    .hero > .absolute{z-index:1}    </style>
 
     <!-- Fullscreen High-Res Image Lightbox Modal -->
     <div id="image-lightbox" class="image-lightbox fixed inset-0 z-50 hidden bg-stone-950/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10 cursor-zoom-out" role="dialog" aria-modal="true" aria-label="Image preview" aria-hidden="true">
